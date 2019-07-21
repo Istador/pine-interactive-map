@@ -1,0 +1,38 @@
+{
+  "name": "pine-interactive-map",
+  "version": "1.0.0",
+  "description": "Interactive Map for the video game Pine, that is currently in development.",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Istador/pine-interactive-map.git"
+  },
+  "keywords": [
+    "html",
+    "js",
+    "css",
+    "leaflet",
+    "axios",
+    "webpack"
+  ],
+  "author": "Robin C. Ladiges",
+  "license": "MPL-2.0",
+  "licenses": [
+    {
+      "type": "MPL-2.0",
+      "url": "https://github.com/Istador/pine-interactive-map/raw/public/LICENSE.md"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Istador/pine-interactive-map/issues"
+  },
+  "homepage": "https://github.com/Istador/pine-interactive-map",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6"
+  }
+}
