@@ -10,8 +10,8 @@
   }
 
   const maps = {
-    'Map'         : L.imageOverlay('img/map/sharp.png', bounds, mapOptions),
-    'Bump mapped' : L.imageOverlay('img/map/bump.png', bounds, mapOptions),
+    '3D' : L.imageOverlay('img/map/render.png', bounds, mapOptions),
+    '2D' : L.imageOverlay('img/map/sharp.png', bounds, mapOptions),
   }
 
   const overlays = {
@@ -38,7 +38,7 @@
     maxBoundsViscosity : 1.0,
     attributionControl : false,
     layers: [
-      maps['Bump mapped'],
+      maps['3D'],
       overlays.NPC,
       overlays.unique.emphiscis,
       overlays.unique.chest,
