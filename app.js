@@ -1,8 +1,8 @@
 (function () {
-  // bounding box of the coordinate system used by the map (is this correct? maybe 1024?)
+  // bounding box of the coordinate system used by the map
   const bounds = [
-    [ -1000, -1000 ],
-    [  1000,  1000 ]
+    [ -1024, -1024 ],
+    [  1024,  1024 ]
   ]
 
   const mapOptions = {
