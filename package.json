@@ -1,6 +1,6 @@
 {
   "name": "pine-interactive-map",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Interactive Map for the video game Pine, that is currently in development.",
   "main": "app.js",
   "scripts": {

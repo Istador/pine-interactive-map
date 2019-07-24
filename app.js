@@ -43,16 +43,32 @@
     )
   })()
 
+  // TODO: comment in irrelevant layers, once a hierarchical control panel is implemented
   const overlays = {
     NPC: L.layerGroup([]),
     resource: {
-      gravelmoss : L.layerGroup([]),
-      obergine   : L.layerGroup([]),
+      anurashroom : L.layerGroup(),
+      beagalite   : L.layerGroup(),
+      dryclay     : L.layerGroup(),
+      //dullrock    : L.layerGroup(),
+      edenfruit   : L.layerGroup(),
+      gravelmoss  : L.layerGroup(),
+      leaniron    : L.layerGroup(),
+      lunarodos   : L.layerGroup(),
+      //marwood     : L.layerGroup(),
+      morrowhay   : L.layerGroup(),
+      //mudbeet     : L.layerGroup(),
+      //obergine    : L.layerGroup(),
+      sandstone   : L.layerGroup(),
+      //toothstone  : L.layerGroup(),
     },
     unique: {
-      emphiscis   : L.layerGroup([]),
-      keygraphite : L.layerGroup([]),
-      chest       : L.layerGroup([]),
+      cave        : L.layerGroup(),
+      chest       : L.layerGroup(),
+      emphiscis   : L.layerGroup(),
+      idea        : L.layerGroup(),
+      keygraphite : L.layerGroup(),
+      mohlenhill  : L.layerGroup(),
     },
   }
 
@@ -96,6 +112,7 @@
       overlays.NPC,
       overlays.unique.emphiscis,
       overlays.unique.chest,
+      overlays.unique.idea,
     ],
   })
 
@@ -107,6 +124,8 @@
 
   // allow the user to change the map and to select / deselect specific layers
   // TODO: save selection in localStorage
+  // TODO: offer an hierarchical selection (unique, resource)
+  // TODO: display icons in control panel
   L.control.layers(
     layers,
     {
@@ -151,6 +170,13 @@
         tooltipAnchor : [  0, -5 ],
       }) },
       chest: { icon: L.icon({
+        iconUrl       : 'img/icons/chest.png',
+        iconSize      : [ 16, 11.0 ],
+        iconAnchor    : [  8,  5.5 ],
+        popupAnchor   : [  0, -5.5 ],
+        tooltipAnchor : [  0, -5.5 ],
+      }) },
+      idea: { icon: L.icon({
         iconUrl       : 'img/icons/chest.png',
         iconSize      : [ 16, 11.0 ],
         iconAnchor    : [  8,  5.5 ],
@@ -222,6 +248,9 @@
             [ row.x - 1024, row.y + 1024 ],
             ( row.type in icons ? icons[row.type][row.item] || icons[row.type].default || icons.default : icons.default )
           )
+          // TODO: add 'mark completed' mechanic to hide already visited poi
+          // TODO: HTML instead of JSON
+          // TODO: images and/or videos
           .bindPopup(() => '<pre>' + JSON.stringify(row, Object.keys(row).sort(), 2) + '</pre>')
           .bindTooltip(
             () => row.item + '<br/>(' + row.y + ', ' + row.x + ')',
