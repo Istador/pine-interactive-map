@@ -156,8 +156,8 @@
         iconUrl       : 'img/icons/npc.png',
         iconSize      : [ 16, 16 ],
         iconAnchor    : [  8,  8 ],
-        popupAnchor   : [  0,  0 ],
-        tooltipAnchor : [  0,  0 ],
+        popupAnchor   : [  0, -8 ],
+        tooltipAnchor : [  0, -8 ],
       }) },
     },
     unique: {
