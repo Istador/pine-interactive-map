@@ -264,6 +264,7 @@
               + row.item
               + (row.description ? ': ' + row.description : '')
               + '<br/>(' + row.y + ', ' + row.x + ')'
+              + (row.area ? ' in ' + row.area : '')
             ),
             { direction: 'top' })
           .addTo(overlays[row.type][row.item])
