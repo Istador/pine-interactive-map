@@ -207,6 +207,7 @@
   const classes = (key, row) => {
     return `pine-${key} pine-${key}-${row.type} pine-${key}-${row.type}-${row.item}`
   }
+  const escape = (str) => str.replace(/[&<>'"]/g, x => '&#' + x.charCodeAt(0) + ';')
 
   axios
     // get spreadsheet as json
@@ -216,7 +217,7 @@
       data.feed.entry
         .map(e => {
           const cell = e.title.$t
-          const val = e.content.$t
+          const val = escape(e.content.$t)
           const num = Number(val.replace(',', '.'))
           return { [cell]: isNaN(num) ? val : num }
         })
