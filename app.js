@@ -259,10 +259,12 @@
           // TODO: images and/or videos
           .bindPopup(() => '<pre>' + JSON.stringify(row, Object.keys(row).sort(), 2) + '</pre>')
           .bindTooltip(
-            () =>
+            () => (
               (row.amount && ! isNaN(Number(row.amount)) ? row.amount + 'x ' : '')
               + row.item
-              + '<br/>(' + row.y + ', ' + row.x + ')',
+              + (row.description ? ': ' + row.description : '')
+              + '<br/>(' + row.y + ', ' + row.x + ')'
+            ),
             { direction: 'top' })
           .addTo(overlays[row.type][row.item])
         )
