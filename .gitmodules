@@ -2,3 +2,7 @@
 	path = img
 	url = ./
 	branch = img
+[submodule "tiles"]
+	path = tiles
+	url = ./
+	branch = tiles

@@ -5,3 +5,20 @@ body {
 #map {
   height: 100vh;
 }
+
+#map .leaflet-overlay-pane {
+  z-index: 199;
+}
+
+#map .leaflet-overlay-pane svg {
+  z-index: -1;
+}
+
+/*#map .leaflet-overlay-pane svg rect {
+  animation: water 120s infinite linear;
+}
+
+@keyframes water {
+  0% { transform: translate(0px, 0px); }
+  100% { transform: translate(256px, 256px); }
+}*/

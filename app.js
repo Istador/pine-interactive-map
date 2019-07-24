@@ -1,18 +1,47 @@
-(function () {
+(() => {
   // bounding box of the coordinate system used by the map
   const bounds = [
-    [ -1024, -1024 ],
-    [  1024,  1024 ]
+    [ -2048,   -0 ],
+    [    +0, 2048 ],
   ]
 
-  const mapOptions = {
+  const layerOptions = {
     attribution: '&copy; <a href="https://twirlbound.com/" target="_blank">Twirlbound</a>',
   }
 
-  const maps = {
-    '3D' : L.imageOverlay('img/map/render.png', bounds, mapOptions),
-    '2D' : L.imageOverlay('img/map/sharp.png', bounds, mapOptions),
+  const layers = {
+    '3D': L.tileLayer('tiles/{z}/{x}/{y}.png', L.extend({}, layerOptions, {
+      minNativeZoom : 0,
+      maxNativeZoom : 4,
+      tileSize      : 256,
+      noWrap        : true,
+      bounds        : bounds,
+    })),
+    '2D': L.imageOverlay('img/map/sharp.png', bounds, layerOptions),
   }
+
+  const water = (() => {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+    svg.setAttribute('xmlns', "http://www.w3.org/2000/svg")
+    svg.setAttribute('xmlns:xlink', "http://www.w3.org/1999/xlink")
+    svg.setAttribute('viewBox', "0 0 8192 8192")
+    svg.innerHTML = (''
+      + '<defs>'
+      +   '<pattern patternUnits="userSpaceOnUse" id="water" x="0" y="0" width="256" height="256">'
+      +     '<image width="256" height="256" xlink:href="img/map/water.png"/>'
+      +   '</pattern>'
+      + '</defs>'
+      + '<rect width="8192" height="8192" fill="url(#water)" fill-opacity="0.5"/>'
+    )
+    return L.svgOverlay(
+      svg,
+      [
+        [ -8192 -2048 , -8192       ],
+        [ +8192       , +8192 +2048 ],
+      ],
+      layerOptions
+    )
+  })()
 
   const overlays = {
     NPC: L.layerGroup([]),
@@ -27,30 +56,59 @@
     },
   }
 
+  // Custom Coordinate System - see https://gis.stackexchange.com/questions/200865/leaflet-crs-simple-custom-scale
+  L.CRS.Pine = L.extend({}, L.CRS.Simple, {
+    projection: L.Projection.LonLat,
+    // transf = tilesize ÷ mapsize = tilesize ÷ d(-1024,+1024) = 256 ÷ 2048 = 0.125
+    transformation: new L.Transformation(0.125, 0, -0.125, 0),
+    scale: (z) => Math.pow(2, z),
+    zoom: (s) => Math.log(s) / Math.LN2,
+    distance: (a, b) => {
+      const dx = b.lng - a.lng
+      const dy = b.lat - a.lat
+      return Math.sqrt(dx * dx + dy * dy);
+    },
+    infinite: true,
+  })
+
   // initialize the map
   const map = L.map('map', {
-    crs                : L.CRS.Simple,
+    crs                : L.CRS.Pine,
     center             : [ 0, 0 ],
-    minZoom            : -2,
-    maxZoom            : 2,
-    zoom               : -2,
-    maxBounds          : bounds,
+    minZoom            : 0,
+    maxZoom            : 5,
+    zoom               : 0,
     maxBoundsViscosity : 1.0,
     attributionControl : false,
+    continuousWorld    : true,
+    noWrap             : true,
+
+    // bigger maximum bounds for better UX
+    maxBounds: [
+      bounds[0].map(x => x - 512),
+      bounds[1].map(x => x + 512),
+    ],
+
+    // default selected layers
     layers: [
-      maps['3D'],
+      water,
+      layers['3D'],
       overlays.NPC,
       overlays.unique.emphiscis,
       overlays.unique.chest,
     ],
   })
 
+  // auto zoom
+  map.fitBounds(bounds)
+
   // Link to the spreadsheet
   L.control.attribution({ prefix: `<a href="${__SOURCE__}" target="_blank">Data source</a>` }).addTo(map)
 
   // allow the user to change the map and to select / deselect specific layers
+  // TODO: save selection in localStorage
   L.control.layers(
-    maps,
+    layers,
     {
       NPC: overlays.NPC,
       ...overlays.unique,
@@ -161,7 +219,7 @@
         .filter(row => row.type in overlays && (row.type === 'NPC' || row.item in overlays[row.type]))
         .forEach(row =>
           L.marker(
-            [ row.x, row.y ],
+            [ row.x - 1024, row.y + 1024 ],
             ( row.type in icons ? icons[row.type][row.item] || icons[row.type].default : icons.default )
           )
           .bindPopup(() => '<pre>' + JSON.stringify(row, Object.keys(row).sort(), 2) + '</pre>')
