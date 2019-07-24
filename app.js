@@ -145,10 +145,10 @@
       }) },
       keygraphite: { icon: L.icon({
         iconUrl       : 'img/icons/keygraphite.png',
-        iconSize      : [ 16, 16 ],
-        iconAnchor    : [  8,  8 ],
-        popupAnchor   : [  0, -8 ],
-        tooltipAnchor : [  0, -8 ],
+        iconSize      : [ 10, 10 ],
+        iconAnchor    : [  5,  5 ],
+        popupAnchor   : [  0, -5 ],
+        tooltipAnchor : [  0, -5 ],
       }) },
       chest: { icon: L.icon({
         iconUrl       : 'img/icons/chest.png',
@@ -220,7 +220,7 @@
         .forEach(row =>
           L.marker(
             [ row.x - 1024, row.y + 1024 ],
-            ( row.type in icons ? icons[row.type][row.item] || icons[row.type].default : icons.default )
+            ( row.type in icons ? icons[row.type][row.item] || icons[row.type].default || icons.default : icons.default )
           )
           .bindPopup(() => '<pre>' + JSON.stringify(row, Object.keys(row).sort(), 2) + '</pre>')
           .bindTooltip(
