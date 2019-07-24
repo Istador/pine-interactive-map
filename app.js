@@ -198,10 +198,11 @@
   )
   const merge = (target, source) => {
     for (let key of Object.keys(source)) {
-      if (source[key] instanceof Object) Object.assign(source[key], merge(target[key], source[key]))
+      if (source[key] instanceof Object) {
+        source[key] = merge(target[key], source[key])
+      }
     }
-    Object.assign(target || {}, source)
-    return target
+    return { ...target, ...source}
   }
   const classes = (key, row) => {
     return `pine-${key} pine-${key}-${row.type} pine-${key}-${row.type}-${row.item}`
@@ -262,7 +263,7 @@
           // TODO: add 'mark completed' mechanic to hide already visited poi
           // TODO: HTML instead of JSON
           // TODO: images and/or videos
-          .bindPopup(() => '<pre>' + JSON.stringify(row, Object.keys(row).sort(), 2) + '</pre>')
+          .bindPopup(() => '<pre>' + JSON.stringify(row, null, 2) + '</pre>')
           .bindTooltip(
             () => (
               (row.amount && ! isNaN(Number(row.amount)) ? row.amount + 'x ' : '')
