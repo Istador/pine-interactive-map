@@ -1,4 +1,40 @@
 (() => {
+  const lazy = (func) => {
+    let cache = () => {
+      const val = func()
+      cache = () => val
+      return val
+    }
+    return cache
+  }
+
+  const storage = lazy(() => {
+    const dummy = {
+      can: () => false,
+      has: () => false,
+      get: () => undefined,
+      set: () => false,
+    }
+    // test localStorage to work
+    try {
+      if (! window || ! window.localStorage) { return dummy }
+      const store = window.localStorage
+      const test = Math.random().toString()
+      store.setItem('store_test', test)
+      if (store.getItem('store_test') !== test) { return dummy }
+      store.removeItem('store_test')
+      if (store.getItem('store_test') !==  null) { return dummy }
+      // it does work
+      return {
+        can: () => true,
+        has: (key) => store.getItem(key) !== null,
+        get: (key) => JSON.parse(store.getItem(key)),
+        set: (key, val) => store.setItem(key, JSON.stringify(val)),
+      }
+    }
+    catch (err) { return dummy }
+  })
+
   // bounding box of the coordinate system used by the map
   const bounds = [
     [ -2048,   -0 ],
@@ -132,6 +168,8 @@
   // TODO: save selection in localStorage
   // TODO: offer an hierarchical selection (unique, resource)
   // TODO: display icons in control panel
+  // TODO: ability to hide all completed poi
+  // TODO: ability to show only completed poi
   L.control.layers(
     layers,
     {
@@ -204,9 +242,8 @@
     }
     return { ...target, ...source}
   }
-  const classes = (key, row) => {
-    return `pine-${key} pine-${key}-${row.type} pine-${key}-${row.type}-${row.item}`
-  }
+  const classes = (key, row, seen = false) =>
+    `pine-${key} pine-${key}-${row.type} pine-${key}-${row.type}-${row.item}` + (seen ? ' pine-poi-seen' : '')
   const escape = (str) => str.replace(/[&<>'"]/g, x => '&#' + x.charCodeAt(0) + ';')
 
   axios
@@ -248,23 +285,23 @@
       rows
         // only rows that have a designated layer
         .filter(row => row.type in overlays && row.item in overlays[row.type] && row.x !== undefined && row.y !== undefined)
-        .forEach(row =>
-          L.marker(
+        .forEach(row => {
+          let seen = (row.ID && storage().get('pine-poi-seen-' + row.ID))
+          const marker = L.marker(
             [ row.x - 1024, row.y + 1024 ],
             {
               icon: L.divIcon(L.extend(
                 {},
                 ( row.type in iconOpts ? iconOpts[row.type][row.item] || iconOpts[row.type].default || iconOpts.default : iconOpts.default ),
                 {
-                  className: classes('marker', row)
+                  className: classes('marker', row, seen)
                 },
               ))
             }
           )
-            // TODO: add 'mark completed' mechanic to hide already visited poi
             // TODO: images and/or videos
             .bindPopup(() => {
-              const div = L.DomUtil.create('div', classes('popup', row))
+              const div = L.DomUtil.create('div', classes('popup', row, seen))
               const tbody = L.DomUtil.create('tbody', '', L.DomUtil.create('table', '', div))
               Object.keys(row).forEach((k) => {
                 const v = row[k]
@@ -275,6 +312,20 @@
                 const td = L.DomUtil.create('td', '', tr)
                 td.innerHTML = v
               })
+              if (row.ID && storage().can() && [ 'unique', 'quest' ].includes(row.type)) {
+                const toggle = L.DomUtil.create('button', '', div)
+                toggle.setAttribute('type', 'button')
+                toggle.setAttribute('title', (seen ? 'Mark not completed' : 'Mark completed'))
+                toggle.innerHTML = '<span>' + (seen ? '&#x21ba;' : '&#x2713;') + '</span>'
+                L.DomEvent.on(toggle, 'click', () => {
+                  seen = ! seen
+                  storage().set('pine-poi-seen-' + row.ID, seen)
+                  toggle.setAttribute('title', (seen ? 'Mark not completed' : 'Mark completed'))
+                  toggle.innerHTML = '<span>' + (seen ? '&#x21ba;' : '&#x2713;') + '</span>'
+                  div.classList[seen ? 'add' : 'remove']('pine-poi-seen')
+                  marker._icon.classList[seen ? 'add' : 'remove']('pine-poi-seen')
+                })
+              }
               return div
             })
             .bindTooltip(
@@ -288,6 +339,7 @@
               { direction: 'top' }
             )
             .addTo(overlays[row.type][row.item])
-          )
+          return marker
+        })
     )
 })()

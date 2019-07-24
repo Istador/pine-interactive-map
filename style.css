@@ -39,7 +39,7 @@ body {
 }
 
 .pine-marker.pine-poi-seen {
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .pine-marker-quest {
@@ -69,4 +69,12 @@ body {
   background-size: 16px 11px;
   width: 16px;
   height: 11px;
+}
+
+.pine-popup.pine-poi-seen button span {
+  display: inline-block;
+  -webkit-transform: rotate(-180deg);
+     -moz-transform: rotate(-180deg);
+       -o-transform: rotate(-180deg);
+          transform: rotate(-180deg);
 }
