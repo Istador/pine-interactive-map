@@ -30,3 +30,43 @@ body {
   0% { transform: translate(0px, 0px); }
   100% { transform: translate(256px, 256px); }
 }*/
+
+.pine-marker {
+  background-image: url(img/icons/default.png);
+  background-size: 16px 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.pine-marker.pine-poi-seen {
+  opacity: 0.4;
+}
+
+.pine-marker-quest {
+  background-image: url(img/icons/npc.png);
+  background-size: 16px 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.pine-marker-unique-emphiscis {
+  background-image: url(img/icons/emphiscis.png);
+  background-size: 16px 20px;
+  width: 16px;
+  height: 20px;
+}
+
+.pine-marker-unique-keygraphite {
+  background-image: url(img/icons/keygraphite.png);
+  background-size: 10px 10px;
+  width: 10px;
+  height: 10px;
+}
+
+.pine-marker-unique-chest
+, .pine-marker-unique-idea {
+  background-image: url(img/icons/chest.png);
+  background-size: 16px 11px;
+  width: 16px;
+  height: 11px;
+}

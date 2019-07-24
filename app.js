@@ -143,52 +143,46 @@
   ).addTo(map)
 
   // icons
-  const icons = {
-    default: { icon: L.icon({
-      iconUrl       : 'img/icons/default.png',
-      iconSize      : [ 16, 16 ],
+  const iconOpts = {
+    default: {
+      iconSize      : null,
       iconAnchor    : [  8,  8 ],
       popupAnchor   : [  0,  0 ],
       tooltipAnchor : [  0,  0 ],
-    }) },
+    },
     quest: {
-      default: { icon: L.icon({
-        iconUrl       : 'img/icons/npc.png',
-        iconSize      : [ 16, 16 ],
+      default: {
+        iconSize      : null,
         iconAnchor    : [  8,  8 ],
         popupAnchor   : [  0, -8 ],
         tooltipAnchor : [  0, -8 ],
-      }) },
+      },
     },
     unique: {
-      emphiscis: { icon: L.icon({
-        iconUrl       : 'img/icons/emphiscis.png',
-        iconSize      : [ 16,  20 ],
+      emphiscis: {
+        iconSize      : null,
         iconAnchor    : [  8,  10 ],
         popupAnchor   : [  0, -10 ],
         tooltipAnchor : [  0, -10 ],
-      }) },
-      keygraphite: { icon: L.icon({
-        iconUrl       : 'img/icons/keygraphite.png',
-        iconSize      : [ 10, 10 ],
+      },
+      keygraphite: {
+        iconSize      : null,
         iconAnchor    : [  5,  5 ],
         popupAnchor   : [  0, -5 ],
         tooltipAnchor : [  0, -5 ],
-      }) },
-      chest: { icon: L.icon({
-        iconUrl       : 'img/icons/chest.png',
-        iconSize      : [ 16, 11.0 ],
+      },
+      chest: {
+        iconSize      : null,
         iconAnchor    : [  8,  5.5 ],
         popupAnchor   : [  0, -5.5 ],
         tooltipAnchor : [  0, -5.5 ],
-      }) },
-      idea: { icon: L.icon({
-        iconUrl       : 'img/icons/chest.png',
-        iconSize      : [ 16, 11.0 ],
+      },
+      idea: {
+        iconSize      : null,
         iconAnchor    : [  8,  5.5 ],
         popupAnchor   : [  0, -5.5 ],
         tooltipAnchor : [  0, -5.5 ],
-      }) },
+      },
     },
   }
 
@@ -208,6 +202,9 @@
     }
     Object.assign(target || {}, source)
     return target
+  }
+  const classes = (key, row) => {
+    return `pine-${key} pine-${key}-${row.type} pine-${key}-${row.type}-${row.item}`
   }
 
   axios
@@ -252,7 +249,15 @@
         .forEach(row =>
           L.marker(
             [ row.x - 1024, row.y + 1024 ],
-            ( row.type in icons ? icons[row.type][row.item] || icons[row.type].default || icons.default : icons.default )
+            {
+              icon: L.divIcon(L.extend(
+                {},
+                ( row.type in iconOpts ? iconOpts[row.type][row.item] || iconOpts[row.type].default || iconOpts.default : iconOpts.default ),
+                {
+                  className: classes('marker', row)
+                },
+              ))
+            }
           )
           // TODO: add 'mark completed' mechanic to hide already visited poi
           // TODO: HTML instead of JSON
