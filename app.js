@@ -45,7 +45,11 @@
 
   // TODO: comment in irrelevant layers, once a hierarchical control panel is implemented
   const overlays = {
-    NPC: L.layerGroup([]),
+    quest: {
+      npc   : L.layerGroup(),
+      item  : L.layerGroup(),
+      vault : L.layerGroup(),
+    },
     resource: {
       anurashroom : L.layerGroup(),
       beagalite   : L.layerGroup(),
@@ -109,7 +113,9 @@
     layers: [
       water,
       layers['3D'],
-      overlays.NPC,
+      overlays.quest.npc,
+      overlays.quest.item,
+      overlays.quest.vault,
       overlays.unique.emphiscis,
       overlays.unique.chest,
       overlays.unique.idea,
@@ -129,7 +135,7 @@
   L.control.layers(
     layers,
     {
-      NPC: overlays.NPC,
+      ...overlays.quest,
       ...overlays.unique,
       ...overlays.resource,
     },
@@ -145,7 +151,7 @@
       popupAnchor   : [  0,  0 ],
       tooltipAnchor : [  0,  0 ],
     }) },
-    NPC: {
+    quest: {
       default: { icon: L.icon({
         iconUrl       : 'img/icons/npc.png',
         iconSize      : [ 16, 16 ],
@@ -242,7 +248,7 @@
     .then(rows =>
       rows
         // only rows that have a designated layer
-        .filter(row => row.type in overlays && (row.type === 'NPC' || row.item in overlays[row.type]))
+        .filter(row => row.type in overlays && row.item in overlays[row.type] && row.x !== undefined && row.y !== undefined)
         .forEach(row =>
           L.marker(
             [ row.x - 1024, row.y + 1024 ],
@@ -258,7 +264,7 @@
               + row.item
               + '<br/>(' + row.y + ', ' + row.x + ')',
             { direction: 'top' })
-          .addTo(row.type === 'NPC' ? overlays[row.type] : overlays[row.type][row.item])
+          .addTo(overlays[row.type][row.item])
         )
     )
 })()
