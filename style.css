@@ -6,18 +6,26 @@ body {
   height: 100vh;
 }
 
+/* desaturate map, to better see the icons */
+#map .leaflet-tile-container {
+  filter: saturate(0.8);
+}
+#map .leaflet-overlay-pane > img {
+  filter: saturate(0.6);
+}
+
+/* position water behind the map */
 #map .leaflet-overlay-pane {
   z-index: 199;
 }
-
 #map .leaflet-overlay-pane svg {
   z-index: -1;
 }
 
+/* animate the water */
 /*#map .leaflet-overlay-pane svg rect {
   animation: water 120s infinite linear;
 }
-
 @keyframes water {
   0% { transform: translate(0px, 0px); }
   100% { transform: translate(256px, 256px); }
