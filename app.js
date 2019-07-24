@@ -261,20 +261,33 @@
               ))
             }
           )
-          // TODO: add 'mark completed' mechanic to hide already visited poi
-          // TODO: HTML instead of JSON
-          // TODO: images and/or videos
-          .bindPopup(() => '<pre>' + JSON.stringify(row, null, 2) + '</pre>')
-          .bindTooltip(
-            () => (
-              (row.amount && ! isNaN(Number(row.amount)) ? row.amount + 'x ' : '')
-              + row.item
-              + (row.description ? ': ' + row.description : '')
-              + '<br/>(' + row.y + ', ' + row.x + ')'
-              + (row.area ? ' in ' + row.area : '')
-            ),
-            { direction: 'top' })
-          .addTo(overlays[row.type][row.item])
-        )
+            // TODO: add 'mark completed' mechanic to hide already visited poi
+            // TODO: images and/or videos
+            .bindPopup(() => {
+              const div = L.DomUtil.create('div', classes('popup', row))
+              const tbody = L.DomUtil.create('tbody', '', L.DomUtil.create('table', '', div))
+              Object.keys(row).forEach((k) => {
+                const v = row[k]
+                const tr = L.DomUtil.create('tr', '', tbody)
+                if(row.ID) { tr.setAttribute('data-ID', row.ID) }
+                const th = L.DomUtil.create('th', '', tr)
+                th.innerHTML = k
+                const td = L.DomUtil.create('td', '', tr)
+                td.innerHTML = v
+              })
+              return div
+            })
+            .bindTooltip(
+              () => (
+                (row.amount && ! isNaN(Number(row.amount)) ? row.amount + 'x ' : '')
+                + row.item
+                + (row.description ? ': ' + row.description : '')
+                + '<br/>(' + row.y + ', ' + row.x + ')'
+                + (row.area ? ' in ' + row.area : '')
+              ),
+              { direction: 'top' }
+            )
+            .addTo(overlays[row.type][row.item])
+          )
     )
 })()
