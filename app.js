@@ -170,6 +170,7 @@
   // TODO: display icons in control panel
   // TODO: ability to hide all completed poi
   // TODO: ability to show only completed poi
+  // TODO: show coordinates onMouseMove
   L.control.layers(
     layers,
     {
@@ -225,23 +226,6 @@
   }
 
   // utility functions
-  const combine = (out, e) => ({...out, ...e})
-  const partition = (arr, pred) => arr.reduce(
-    ([t, f], e) => (
-      pred(e)
-      ? [[...t, e], f]
-      : [t, [...f, e]]
-    ),
-    [[], []]
-  )
-  const merge = (target, source) => {
-    for (let key of Object.keys(source)) {
-      if (source[key] instanceof Object) {
-        source[key] = merge(target[key], source[key])
-      }
-    }
-    return { ...target, ...source}
-  }
   const classes = (key, row, seen = false) =>
     `pine-${key} pine-${key}-${row.type} pine-${key}-${row.type}-${row.item}` + (seen ? ' pine-poi-seen' : '')
   const escape = (str) => str.replace(/[&<>'"]/g, x => '&#' + x.charCodeAt(0) + ';')
@@ -249,43 +233,46 @@
   axios
     // get spreadsheet as json
     .get(`${__JSON__}`)
-    // extract cell contents
-    .then(({data}) =>
-      data.feed.entry
-        .map(e => {
-          const cell = e.title.$t
-          const val = escape(e.content.$t)
-          const num = Number(val.replace(',', '.'))
-          return { [cell]: isNaN(num) ? val : num }
-        })
-        .reduce(combine, {})
-      )
-    // separate table header from content
-    .then(cells =>
-      partition(
-        Object.keys(cells),
-        cell => /^[A-Z]+1$/.test(cell)
-      )
-      .map(arr => arr.map(cell => ({ [cell]: cells[cell] })).reduce(combine, {}))
-    )
-    // combine cells in the same row together by using the table header as the properties name
-    .then(([keys, vals]) =>
-      Object.values(Object.keys(vals)
-        .map(cell => {
-            const val = vals[cell]
-            const row = cell.replace(/[A-Z]/g, '')
-            const col = cell.replace(/[0-9]/g, '')
-            return { [ row ]: { [keys[ col + '1' ]]: val } }
-        })
-        .reduce(merge, {})
-      )
-    )
+    // convert cells into objects
+    .then(({data: { feed: { entry: entries } }}) => {
+      const keys = {}
+      const objs = {}
+      let moreKeys = true
+      const isKey = (cell) => moreKeys && /^[A-Z]+1$/.test(cell)
+      const n = entries.length
+      for (let i = 0 ; i < n; i++) {
+        if (!(i in entries)) { continue }
+        const e = entries[i]
+        const cell = e.title.$t
+        const cont = escape(e.content.$t)
+        if (isKey(cell)) {
+          keys[cell] = cont
+        }
+        else {
+          moreKeys = false
+          const num = Number(cont.replace(',', '.'))
+          const val = ( isNaN(num) ? cont : num )
+          objs[cell] = val
+          const row = cell.replace(/[A-Z]/g, '')
+          const col = cell.replace(/[0-9]/g, '')
+          if (! (row in objs)) { objs[row] = {} }
+          objs[row][keys[ col + '1' ]] = val
+        }
+      }
+      return Object.values(objs)
+    })
     // add markers to map
     .then(rows =>
       rows
         // only rows that have a designated layer
-        .filter(row => row.type in overlays && row.item in overlays[row.type] && row.x !== undefined && row.y !== undefined)
+        .filter(row =>
+             row.type in overlays
+          && row.item in overlays[row.type]
+          && typeof row.x === 'number'
+          && typeof row.y === 'number'
+        )
         .forEach(row => {
+          // TODO: do not count the POI as seen, if it's ID is non-unique
           let seen = (row.ID && storage().get('pine-poi-seen-' + row.ID))
           const marker = L.marker(
             [ row.x - 1024, row.y + 1024 ],
@@ -312,6 +299,7 @@
                 const td = L.DomUtil.create('td', '', tr)
                 td.innerHTML = v
               })
+              // TODO: disable mark completed feature for POI with IDs that aren't unique
               if (row.ID && storage().can() && [ 'unique', 'quest' ].includes(row.type)) {
                 const toggle = L.DomUtil.create('button', '', div)
                 toggle.setAttribute('type', 'button')
@@ -339,7 +327,6 @@
               { direction: 'top' }
             )
             .addTo(overlays[row.type][row.item])
-          return marker
         })
     )
 })()
