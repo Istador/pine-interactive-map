@@ -81,34 +81,70 @@
 
   // TODO: comment in irrelevant layers, once a hierarchical control panel is implemented
   const overlays = {
-    quest: {
-      npc   : L.layerGroup(),
-      item  : L.layerGroup(),
-      vault : L.layerGroup(),
+    entrance: {
+      cave       : L.layerGroup(),
+      mohlenhill : L.layerGroup(),
+      vault      : L.layerGroup(),
     },
-    resource: {
-      anurashroom : L.layerGroup(),
-      beagalite   : L.layerGroup(),
-      dryclay     : L.layerGroup(),
-      //dullrock    : L.layerGroup(),
-      edenfruit   : L.layerGroup(),
-      gravelmoss  : L.layerGroup(),
-      leaniron    : L.layerGroup(),
-      lunarodos   : L.layerGroup(),
-      //marwood     : L.layerGroup(),
-      morrowhay   : L.layerGroup(),
-      //mudbeet     : L.layerGroup(),
-      //obergine    : L.layerGroup(),
-      sandstone   : L.layerGroup(),
-      //toothstone  : L.layerGroup(),
+    food: {
+      //anurashroom  : L.layerGroup(),
+      //avianpepper  : L.layerGroup(),
+      //carrant      : L.layerGroup(),
+      //commonwheat  : L.layerGroup(),
+      //dunerice     : L.layerGroup(),
+      edenfruit    : L.layerGroup(),
+      //fatplant     : L.layerGroup(),
+      leafdough    : L.layerGroup(),
+      //meageryam    : L.layerGroup(),
+      //mudbeet      : L.layerGroup(),
+      //nuctus       : L.layerGroup(),
+      //obergine     : L.layerGroup(),
+      //pufflegg     : L.layerGroup(),
+      //roseberry    : L.layerGroup(),
+      //telkinchives : L.layerGroup(),
+      //tingflower   : L.layerGroup(),
+    },
+    item: {
+      equip: L.layerGroup(),
+      quest: L.layerGroup(),
+    },
+    material: {
+      //alpafantleather : L.layerGroup(),
+      beagalite       : L.layerGroup(),
+      //bleekerantenna  : L.layerGroup(),
+      dryclay         : L.layerGroup(),
+      //dullrock        : L.layerGroup(),
+      grandcone       : L.layerGroup(),
+      gravelmoss      : L.layerGroup(),
+      leaniron        : L.layerGroup(),
+      lunarodos       : L.layerGroup(),
+      //marrwood        : L.layerGroup(),
+      morrowhay       : L.layerGroup(),
+      //pufflefeather   : L.layerGroup(),
+      sandstone       : L.layerGroup(),
+      slickpearl      : L.layerGroup(),
+      solfodil        : L.layerGroup(),
+      spystal         : L.layerGroup(),
+      //toothstone      : L.layerGroup(),
+    },
+    mechanic: {
+      arrowtarget    : L.layerGroup(),
+      //door           : L.layerGroup(),
+      electrotrigger : L.layerGroup(),
+      lever          : L.layerGroup(),
+      pinsocket      : L.layerGroup(),
+    },
+    npc: {
+      //chief    : L.layerGroup(),
+      //merchant : L.layerGroup(),
+      quest    : L.layerGroup(),
     },
     unique: {
-      cave        : L.layerGroup(),
       chest       : L.layerGroup(),
-      emphiscis   : L.layerGroup(),
+      emblem      : L.layerGroup(),
       idea        : L.layerGroup(),
+      journal     : L.layerGroup(),
       keygraphite : L.layerGroup(),
-      mohlenhill  : L.layerGroup(),
     },
   }
 
@@ -149,11 +185,12 @@
     layers: [
       water,
       layers['3D'],
-      overlays.quest.npc,
-      overlays.quest.item,
-      overlays.quest.vault,
-      overlays.unique.emphiscis,
+      overlays.npc.quest,
+      overlays.item.quest,
+      overlays.item.equip,
+      overlays.entrance.vault,
       overlays.unique.chest,
+      overlays.unique.emblem,
       overlays.unique.idea,
     ],
   })
@@ -171,16 +208,28 @@
   // TODO: ability to hide all completed poi
   // TODO: ability to show only completed poi
   // TODO: show coordinates onMouseMove
+  // TODO: show the amount of items in each layer
   L.control.layers(
     layers,
     {
-      ...overlays.quest,
+      npc   : overlays.npc.quest,
+      item  : overlays.item.quest,
+      equip : overlays.item.equip,
       ...overlays.unique,
-      ...overlays.resource,
+      ...overlays.entrance,
+      ...overlays.mechanic,
+      ...overlays.material,
+      ...overlays.food,
     },
     { collapsed: false }
   ).addTo(map)
 
+  const quest = {
+    iconSize      : null,
+    iconAnchor    : [  8,  8 ],
+    popupAnchor   : [  0, -8 ],
+    tooltipAnchor : [  0, -8 ],
+  }
   // icons
   const iconOpts = {
     default: {
@@ -189,16 +238,18 @@
       popupAnchor   : [  0,  0 ],
       tooltipAnchor : [  0,  0 ],
     },
-    quest: {
-      default: {
-        iconSize      : null,
-        iconAnchor    : [  8,  8 ],
-        popupAnchor   : [  0, -8 ],
-        tooltipAnchor : [  0, -8 ],
-      },
+    entrance: {
+      vault: quest,
+    },
+    item: {
+      quest,
+      equip: quest,
+    },
+    npc: {
+      quest,
     },
     unique: {
-      emphiscis: {
+      emblem: {
         iconSize      : null,
         iconAnchor    : [  8,  10 ],
         popupAnchor   : [  0, -10 ],
@@ -300,7 +351,7 @@
                 td.innerHTML = v
               })
               // TODO: disable mark completed feature for POI with IDs that aren't unique
-              if (row.ID && storage().can() && [ 'unique', 'quest' ].includes(row.type)) {
+              if (row.ID && storage().can() && [ 'unique', 'item', 'npc', 'entrance' ].includes(row.type)) {
                 const toggle = L.DomUtil.create('button', '', div)
                 toggle.setAttribute('type', 'button')
                 toggle.setAttribute('title', (seen ? 'Mark not completed' : 'Mark completed'))

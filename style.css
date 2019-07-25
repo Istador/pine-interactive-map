@@ -42,15 +42,19 @@ body {
   opacity: 0.5;
 }
 
-.pine-marker-quest {
+.pine-marker-item
+, .pine-marker-npc-quest
+, .pine-marker-entrance-quest
+, .pine-marker-entrance-vault
+{
   background-image: url(img/icons/npc.png);
   background-size: 16px 16px;
   width: 16px;
   height: 16px;
 }
 
-.pine-marker-unique-emphiscis {
-  background-image: url(img/icons/emphiscis.png);
+.pine-marker-unique-emblem {
+  background-image: url(img/icons/emblem.png);
   background-size: 16px 20px;
   width: 16px;
   height: 20px;
@@ -64,7 +68,8 @@ body {
 }
 
 .pine-marker-unique-chest
-, .pine-marker-unique-idea {
+, .pine-marker-unique-idea
+{
   background-image: url(img/icons/chest.png);
   background-size: 16px 11px;
   width: 16px;
