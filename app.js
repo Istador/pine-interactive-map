@@ -41,19 +41,15 @@
     [    +0, 2048 ],
   ]
 
-  const layerOptions = {
-    attribution: '&copy; <a href="https://twirlbound.com/" target="_blank">Twirlbound</a>',
-  }
-
   const layers = {
-    '3D': L.tileLayer('tiles/{z}/{x}/{y}.png', L.extend({}, layerOptions, {
+    '3D': L.tileLayer('tiles/{z}/{x}/{y}.png', {
       minNativeZoom : 0,
       maxNativeZoom : 4,
       tileSize      : 256,
       noWrap        : true,
       bounds        : bounds,
-    })),
-    '2D': L.imageOverlay('img/map/sharp.png', bounds, layerOptions),
+    }),
+    '2D': L.imageOverlay('img/map/sharp.png', bounds, {}),
   }
 
   const water = (() => {
@@ -75,7 +71,7 @@
         [ -8192 -2048 , -8192       ],
         [ +8192       , +8192 +2048 ],
       ],
-      layerOptions
+      {}
     )
   })()
 
@@ -198,8 +194,11 @@
   // auto zoom
   map.fitBounds(bounds)
 
-  // Link to the spreadsheet
-  L.control.attribution({ prefix: `<a href="${__SOURCE__}" target="_blank">Data source</a>` }).addTo(map)
+  // Attributions
+  L.control.attribution({ prefix: `<a href="https://github.com/Istador/pine-interactive-map" target="_blank">Github</a>` })
+    .addAttribution('&copy; <a href="https://twirlbound.com/" target="_blank">Twirlbound</a>')
+    .addAttribution(`<a href="${__SOURCE__}" target="_blank">Data source</a>`)
+    .addTo(map)
 
   // allow the user to change the map and to select / deselect specific layers
   // TODO: save selection in localStorage
