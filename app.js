@@ -42,14 +42,14 @@
   ]
 
   const layers = {
-    '3D': L.tileLayer('tiles/{z}/{x}/{y}.png', {
+    '3D': L.tileLayer(`${__TILES__}`, {
       minNativeZoom : 0,
       maxNativeZoom : 4,
       tileSize      : 256,
       noWrap        : true,
       bounds        : bounds,
     }),
-    '2D': L.imageOverlay('img/map/sharp.png', bounds, {}),
+    '2D': L.imageOverlay(`${__2D_MAP__}`, bounds, {}),
   }
 
   const water = (() => {
