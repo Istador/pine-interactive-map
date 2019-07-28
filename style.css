@@ -31,6 +31,13 @@ body {
   100% { transform: translate(256px, 256px); }
 }*/
 
+.pine-mouse-coordinates {
+  cursor: default;
+  background-color: white;
+  font-weight: bold;
+  padding: 6px;
+}
+
 .pine-marker {
   background-image: url(img/icons/default.png);
   background-size: 16px 16px;

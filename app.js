@@ -1,4 +1,8 @@
 (() => {
+  // utility functions
+  const classes = (key, row, seen = false) =>
+    `pine-${key} pine-${key}-${row.type} pine-${key}-${row.type}-${row.item}` + (seen ? ' pine-poi-seen' : '')
+  const escape = (str) => str.replace(/[&<>'"]/g, x => '&#' + x.charCodeAt(0) + ';')
   const lazy = (func) => {
     let cache = () => {
       const val = func()
@@ -7,7 +11,6 @@
     }
     return cache
   }
-
   const storage = lazy(() => {
     const dummy = {
       can: () => false,
@@ -223,13 +226,29 @@
     { collapsed: false }
   ).addTo(map)
 
+  // Mouse Coordinates
+  L.Control.Coordinates = L.Control.extend({
+    onAdd(map) {
+      const div = L.DomUtil.create('div')
+      div.classList.add('pine-mouse-coordinates', 'leaflet-bar')
+      div.innerHTML = '(0.0, 0.0)'
+      this.mousehandler = (ev) => div.innerHTML = '(' + Math.round(ev.latlng.lng - 1024) + ', ' + Math.round(ev.latlng.lat + 1024) + ')'
+      map.addEventListener('mousemove', this.mousehandler)
+      return div
+    },
+    onRemove(map) {
+      map.removeEventListener('mousemove', this.mousehandler)
+    },
+  })
+  new L.Control.Coordinates({ position: 'bottomleft' }).addTo(map)
+
+  // Icons
   const quest = {
     iconSize      : null,
     iconAnchor    : [  8,  8 ],
     popupAnchor   : [  0, -8 ],
     tooltipAnchor : [  0, -8 ],
   }
-  // icons
   const iconOpts = {
     default: {
       iconSize      : null,
@@ -274,11 +293,6 @@
       },
     },
   }
-
-  // utility functions
-  const classes = (key, row, seen = false) =>
-    `pine-${key} pine-${key}-${row.type} pine-${key}-${row.type}-${row.item}` + (seen ? ' pine-poi-seen' : '')
-  const escape = (str) => str.replace(/[&<>'"]/g, x => '&#' + x.charCodeAt(0) + ';')
 
   axios
     // get spreadsheet as json
