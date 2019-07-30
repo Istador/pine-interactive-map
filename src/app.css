@@ -31,6 +31,25 @@ body {
   100% { transform: translate(256px, 256px); }
 }*/
 
+.leaflet-panel-layers {
+  border-radius: 4px;
+}
+
+.leaflet-panel-layers-list {
+  height: unset !important;
+  max-height: calc(100vh - 60px) !important;
+  overflow-y: auto;
+}
+
+.leaflet-panel-layers-icon > i
+, .leaflet-panel-layers-title > * {
+  vertical-align: middle;
+}
+
+.leaflet-panel-layers-icon > .pine-marker {
+  display: inline-block;
+}
+
 .pine-mouse-coordinates {
   cursor: default;
   background-color: white;
@@ -39,7 +58,7 @@ body {
 }
 
 .pine-marker {
-  background-image: url(img/icons/default.png);
+  background-image: url('img/icons/default.png');
   background-size: 16px 16px;
   width: 16px;
   height: 16px;
@@ -54,21 +73,21 @@ body {
 , .pine-marker-entrance-quest
 , .pine-marker-entrance-vault
 {
-  background-image: url(img/icons/npc.png);
+  background-image: url('img/icons/npc.png');
   background-size: 16px 16px;
   width: 16px;
   height: 16px;
 }
 
 .pine-marker-unique-emblem {
-  background-image: url(img/icons/emblem.png);
+  background-image: url('img/icons/emblem.png');
   background-size: 16px 20px;
   width: 16px;
   height: 20px;
 }
 
 .pine-marker-unique-keygraphite {
-  background-image: url(img/icons/keygraphite.png);
+  background-image: url('img/icons/keygraphite.png');
   background-size: 10px 10px;
   width: 10px;
   height: 10px;
@@ -77,7 +96,7 @@ body {
 .pine-marker-unique-chest
 , .pine-marker-unique-idea
 {
-  background-image: url(img/icons/chest.png);
+  background-image: url('img/icons/chest.png');
   background-size: 16px 11px;
   width: 16px;
   height: 11px;
