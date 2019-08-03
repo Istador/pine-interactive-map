@@ -2,6 +2,8 @@ const webpack = require('webpack')
 const path = require('path')
 const dotenv  = require('dotenv')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 require('dotenv').config()
 
@@ -17,11 +19,17 @@ module.exports = {
     ],
     app: [
       './src/app.js',
-      './src/app.css',
+      './src/app.scss',
     ],
   },
   mode  : 'production',
-  //optimization: { minimize: false },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({ parallel: true }),
+      new OptimizeCSSAssetsPlugin,
+    ],
+  },
   output: {
     filename : '[name].min.js',
     path     : __dirname,
@@ -29,16 +37,17 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /app\.css$/i,
+        test: /\.s(a|c)ss$/i,
         use: [
-          { loader: MiniCssExtractPlugin.loader },
+          MiniCssExtractPlugin.loader,
           'css-loader?-url',
+          'sass-loader',
         ],
       },
       {
-        test: /\.(min|fullscreen)\.css$/i,
+        test: /\.css$/i,
         use: [
-          { loader: MiniCssExtractPlugin.loader },
+          MiniCssExtractPlugin.loader,
           'css-loader',
         ],
       },

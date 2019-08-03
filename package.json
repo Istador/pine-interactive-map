@@ -38,6 +38,9 @@
     "leaflet-fullscreen": "^1.0.2",
     "leaflet-panel-layers": "^1.2.5",
     "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass-loader": "^7.1.0",
     "webpack": "^4.38.0",
     "webpack-cli": "^3.3.6"
   }

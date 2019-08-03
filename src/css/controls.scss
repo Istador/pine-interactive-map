@@ -1,0 +1,69 @@
+#map {
+  // popup
+  div.leaflet-popup {
+    h4, table {
+      margin: 1em 0;
+    }
+    // buttons
+    button {
+      height: 27px;
+      cursor: pointer;
+      border-radius: 6px;
+      border: 0;
+      padding: 5px 10px;
+      &:focus {
+        outline: 0;
+      }
+    }
+    // mark not completed
+    div.pine-popup.pine-poi-seen > button > span {
+      display: inline-block;
+      -webkit-transform: rotate(-180deg);
+         -moz-transform: rotate(-180deg);
+           -o-transform: rotate(-180deg);
+              transform: rotate(-180deg);
+    }
+  }
+
+  // controls
+  div.leaflet-control {
+    // mouse coordinates
+    &.pine-mouse-coordinates {
+      cursor: default;
+      background-color: white;
+      font-weight: bold;
+      padding: 6px;
+    }
+  }
+
+  // layer control
+  div.leaflet-panel-layers {
+    border-radius: 4px;
+    // Map Title
+    > label.leaflet-panel-layers-title {
+      font-size: 1.3em;
+    }
+    // content without title (scrollable)
+    form.leaflet-panel-layers-list {
+      height: unset !important;
+      max-height: calc(100vh - 60px) !important;
+      overflow-y: auto;
+      // hr - between maps and overlays
+      div.leaflet-panel-layers-separator {
+        visibility: hidden;
+        margin: 0;
+      }
+      // overlay layer row
+      label.leaflet-panel-layers-title {
+        > * {
+          vertical-align: middle;
+        }
+        // markers in controlcontrol
+        i.leaflet-panel-layers-icon > i.pine-marker {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
