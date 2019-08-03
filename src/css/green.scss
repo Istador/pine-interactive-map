@@ -1,0 +1,163 @@
+$text:       rgb(209, 229, 207);
+$link:       rgb(200, 251, 195);
+$title:      rgb(228, 209, 163);
+$lightblack: rgb( 51,  72,  48);
+$black:      rgb( 21,  42,  18);
+$lightwhite: rgb(229, 255, 226); $lightwhite_transp: rgba(229, 255, 226, 0.2);
+$white:      #fff;
+
+$black2lightwhite: brightness(0) invert(1) sepia(2) saturate(2.3) hue-rotate(46deg);
+
+// light
+$green1: rgb(131, 171, 125); $green1_transp: rgba(131, 171, 125, 0.975);
+$green2: rgb(101, 136,  96);
+$green3: rgb( 98, 132,  93); $green3_transp: rgba( 98, 132,  93, 0.800);
+$green4: rgb( 82,  99,  69);
+$green5: rgb( 72,  99,  68); $green5_transp: rgba( 72,  99,  68, 0.700);
+// dark
+
+#map {
+  color: $text;
+
+  a {
+    color: $link;
+    &:hover {
+      color: $lightwhite;
+    }
+  }
+
+  // tooltip
+  div.leaflet-tooltip {
+    background-color: $green1_transp;
+    border-color: $green5;
+    color: $black;
+    &:before {
+      border-top-color: $green1_transp;
+    }
+  }
+
+  // popup
+  div.leaflet-popup {
+    // content
+    div.leaflet-popup-content-wrapper {
+      background-color: $green5;
+      border: 2px solid $green2;
+      border-right-color: $lightblack;
+      border-bottom-color: $lightblack;
+      color: $text;
+      // headers
+      th, h4 {
+        color: $title;
+      }
+      // buttons
+      button {
+        color: $link;
+        background-color: $green2;
+        &:hover {
+          background-color: $green1;
+        }
+      }
+    }
+    // arrowhead facing marker
+    div.leaflet-popup-tip {
+      background-color: $green5;
+      border: 1px solid $lightblack;
+    }
+    // close button
+    a.leaflet-popup-close-button:hover {
+      opacity: 0.5;
+    }
+  }
+
+  // controls
+  div.leaflet-control {
+    border-color: $lightwhite_transp;
+    // zoom
+    &.leaflet-control-zoom {
+      > a, > a:hover {
+        background-color: $green5_transp;
+        border-color: $lightwhite;
+        color: $lightwhite;
+      }
+    }
+    // fullscreen
+    &.leaflet-control-fullscreen {
+      background-color: $green5_transp;
+      // icon
+      > a {
+        background-color: transparent;
+        filter: $black2lightwhite;
+      }
+    }
+    // mouse coordinates
+    &.pine-mouse-coordinates {
+      background-color: $green5_transp;
+      border-color: transparent;
+    }
+    // attribution
+    &.leaflet-control-attribution {
+      background-color: $green5_transp;
+      color: $text;
+    }
+  }
+
+  // layer control
+  div.leaflet-panel-layers {
+    background-color: $green5_transp;
+    color: $white;
+    // Map Title
+    > label.leaflet-panel-layers-title {
+      color: $title;
+    }
+    // content without title (scrollable)
+    form.leaflet-panel-layers-list {
+      -ms-scrollbar-base-color: $green1;
+          scrollbar-base-color: $green1;
+      -ms-scrollbar-track-color: $green5;
+          scrollbar-track-color: $green5;
+      -ms-scrollbar-arrow-color: $lightwhite;
+          scrollbar-arrow-color: $lightwhite;
+      scrollbar-color: $green1 $green5;
+      /* +++ webkit +++ */
+      &::-webkit-scrollbar {
+        width: 12px;
+        box-shadow:  1px -1px 1px $green5,
+                    -1px -1px 1px $green5,
+                     1px  1px 1px $green5,
+                    -1px  1px 1px $green5;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: $green5;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: $green1;
+        border: 1px solid $green5;
+        border-width: 4px 0;
+        &:hover {
+          background-color: $green2;
+        }
+      }
+      &::-webkit-scrollbar-button:single-button {
+        background-color: $green5;
+        display: block;
+        width: 12px;
+        height: 8px;
+        border: 6px solid transparent;
+        &:vertical:decrement { border-top-width:    0px; border-bottom-color: $lightwhite_transp; &:hover { border-bottom-color: $lightwhite; } } // UP
+        &:vertical:increment { border-bottom-width: 0px; border-top-color:    $lightwhite_transp; &:hover { border-top-color:    $lightwhite; } } // DOWN
+      }
+      /* --- webkit --- */
+
+      // type
+      div.leaflet-panel-layers-group {
+        background-color: $green3_transp;
+        color: $text;
+        // item
+        div.leaflet-panel-layers-item {
+          background-color: $green1;
+          color: $lightblack;
+        }
+      }
+    }
+  }
+}
