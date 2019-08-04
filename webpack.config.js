@@ -4,6 +4,7 @@ const dotenv  = require('dotenv')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 require('dotenv').config()
 
@@ -12,8 +13,11 @@ const github = process.env.IMGMODE === 'github'
 module.exports = {
   entry : {
     vendor: [
-      './node_modules/leaflet-panel-layers/dist/leaflet-panel-layers.min.js',
-      './node_modules/leaflet-panel-layers/dist/leaflet-panel-layers.min.css',
+      './src/axios.js',
+      './node_modules/leaflet/dist/leaflet.js',
+      './node_modules/leaflet/dist/leaflet.css',
+      './node_modules/leaflet-panel-layers/dist/leaflet-panel-layers.src.js',
+      './node_modules/leaflet-panel-layers/dist/leaflet-panel-layers.src.css',
       './node_modules/leaflet-fullscreen/dist/Leaflet.fullscreen.js',
       './node_modules/leaflet-fullscreen/dist/leaflet.fullscreen.css',
     ],
@@ -22,7 +26,7 @@ module.exports = {
       './src/app.scss',
     ],
   },
-  mode  : 'production',
+  mode: 'production',
   optimization: {
     minimize: true,
     minimizer: [
@@ -31,8 +35,8 @@ module.exports = {
     ],
   },
   output: {
-    filename : '[name].min.js',
-    path     : __dirname,
+    filename : '[name].[contenthash].min.js',
+    path     : path.join(__dirname, 'build'),
   },
   module: {
     rules: [
@@ -56,12 +60,12 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: '[name].[ext]',
+            name: '[name].[contenthash].[ext]',
             publicPath: 'img/vendor/',
             outputPath: 'img/vendor/',
           }
         }],
-      }
+      },
     ],
   },
   resolve: {
@@ -85,11 +89,12 @@ module.exports = {
         : 'img/map/sharp.png'
       ),
     }),
-    new webpack.IgnorePlugin({
-      resourceRegExp: /^img\//,
+    new HtmlWebpackPlugin({
+      filename: path.join(__dirname, 'index.html'),
+      template: 'src/index.template.html',
     }),
     new MiniCssExtractPlugin({
-        filename: '[name].min.css'
+        filename: '[name].[contenthash].min.css'
     }),
   ],
 }

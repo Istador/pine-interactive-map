@@ -1,0 +1,1 @@
+window.axios = require('axios')

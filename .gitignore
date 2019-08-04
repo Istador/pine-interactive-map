@@ -1,6 +1,4 @@
 /node_modules/
-/app.min.js
-/app.min.css
-/vendor.min.js
-/vendor.min.css
+/build/
 /.env
+/index.html

@@ -31,9 +31,11 @@
   },
   "homepage": "https://github.com/Istador/pine-interactive-map",
   "dependencies": {
+    "axios": "^0.19.0",
     "css-loader": "^3.1.0",
     "dotenv": "^8.0.0",
     "file-loader": "^4.1.0",
+    "html-webpack-plugin": "^3.2.0",
     "leaflet": "^1.5.1",
     "leaflet-fullscreen": "^1.0.2",
     "leaflet-panel-layers": "^1.2.5",

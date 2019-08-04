@@ -1,7 +1,7 @@
 #map div.leaflet-marker-pane > div.pine-marker
 , #map i.leaflet-panel-layers-icon > i.pine-marker
 {
-  background-image: url('img/icons/default.png');
+  background-image: url('../img/icons/default.png');
   background-size: 16px 16px;
   width: 16px;
   height: 16px;
@@ -17,7 +17,7 @@
   , &.pine-marker-entrance-quest
   , &.pine-marker-entrance-vault
   {
-    background-image: url('img/icons/npc.png');
+    background-image: url('../img/icons/npc.png');
     background-size: 16px 16px;
     width: 16px;
     height: 16px;
@@ -27,14 +27,14 @@
   &.pine-marker-unique {
     // emblem
     &.pine-marker-unique-emblem {
-      background-image: url('img/icons/emblem.png');
+      background-image: url('../img/icons/emblem.png');
       background-size: 16px 20px;
       width: 16px;
       height: 20px;
     }
     // keygraphite
     &.pine-marker-unique-keygraphite {
-      background-image: url('img/icons/keygraphite.png');
+      background-image: url('../img/icons/keygraphite.png');
       background-size: 10px 10px;
       width: 10px;
       height: 10px;
@@ -43,7 +43,7 @@
     &.pine-marker-unique-chest
     , &.pine-marker-unique-idea
     {
-      background-image: url('img/icons/chest.png');
+      background-image: url('../img/icons/chest.png');
       background-size: 16px 11px;
       width: 16px;
       height: 11px;
