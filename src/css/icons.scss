@@ -18,15 +18,6 @@
   ));
 }
 
-#icons-preload {
-  width: 1px;
-  height: 1px;
-  display: block;
-  position: fixed;
-  opacity: 0;
-  background-image: url(#{$pine-icons-image});
-}
-
 #map div.leaflet-marker-pane > div.pine-marker
 , #map i.leaflet-panel-layers-icon > i.pine-marker
 {

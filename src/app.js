@@ -13,6 +13,8 @@
     minZoom            : 0,
     maxZoom            : 5,
     zoom               : 0,
+    zoomSnap           : 0.25,
+    wheelPxPerZoomLevel: 120,
     maxBoundsViscosity : 1.0,
     attributionControl : false,
     continuousWorld    : true,
@@ -26,7 +28,7 @@
   })
 
   // auto zoom
-  map.fitBounds(bounds)
+  map.fitBounds(bounds, { animate: false })
 
   // attributions
   L.control.attribution({ prefix: `<a href="https://github.com/Istador/pine-interactive-map" target="_blank">Github</a>` })
@@ -46,4 +48,6 @@
     .then(rows => rows.forEach(row => addMarker(row.type, row.item, obj2marker(row))))
     // control panel to allow the user to change the map and to select / deselect specific layers
     .then(() => layerControl.init().addTo(map))
+    // invalidate size (no animation)
+    .then(() => map.invalidateSize(false))
 })()

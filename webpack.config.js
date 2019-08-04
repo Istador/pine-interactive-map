@@ -5,6 +5,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
+const PreloadWebpackPlugin = require('preload-webpack-plugin')
 const SpritesmithPlugin = require('webpack-spritesmith')
 
 require('dotenv').config()
@@ -38,6 +40,7 @@ module.exports = {
   output: {
     filename : '[name].[contenthash].min.js',
     path     : path.join(__dirname, 'build'),
+    publicPath : 'build/',
   },
   module: {
     rules: [
@@ -65,7 +68,7 @@ module.exports = {
             name: '[name].[contenthash].[ext]',
             publicPath: 'img/vendor/',
             outputPath: 'img/vendor/',
-          }
+          },
         }],
       },
       {
@@ -73,9 +76,10 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: 'img/[name].[ext]',
-            emitFile: false,
-          }
+            name: '[name].[ext]',
+            publicPath: 'img',
+            outputPath: 'img',
+          },
         }],
       },
     ],
@@ -108,6 +112,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: path.join(__dirname, 'index.html'),
       template: 'src/index.template.html',
+    }),
+    new PreloadWebpackPlugin({
+      rel: 'preload',
+      include: 'allAssets',
+      fileBlacklist: [ /@2x/, /-2x/, /layers\./, /marker-icon\./ ],
+      as: (name) => ( /\.png$/.test(name) ? 'image' : ( /\.css$/.test(name) ? 'style' : 'script' ) ),
+    }),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'defer',
     }),
     new MiniCssExtractPlugin({
         filename: '[name].[contenthash].min.css',
