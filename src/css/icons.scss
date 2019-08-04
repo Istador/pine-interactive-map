@@ -1,10 +1,36 @@
+@import '~icons.scss';
+
+@mixin scaled($sprite, $scale: 0.5) {
+  $w: nth($sprite, 7) * $scale;
+  $h: nth($sprite, 8) * $scale;
+  background-size: $w $h;
+  @include sprite((
+    nth($sprite,  1) * $scale,
+    nth($sprite,  2) * $scale,
+    nth($sprite,  3) * $scale,
+    nth($sprite,  4) * $scale,
+    nth($sprite,  5) * $scale,
+    nth($sprite,  6) * $scale,
+    $w,
+    $h,
+    nth($sprite,  9),
+    nth($sprite, 10),
+  ));
+}
+
+#icons-preload {
+  width: 1px;
+  height: 1px;
+  display: block;
+  position: fixed;
+  opacity: 0;
+  background-image: url(#{$pine-icons-image});
+}
+
 #map div.leaflet-marker-pane > div.pine-marker
 , #map i.leaflet-panel-layers-icon > i.pine-marker
 {
-  background-image: url('../img/icons/default.png');
-  background-size: 16px 16px;
-  width: 16px;
-  height: 16px;
+  @include scaled($pine-icon-default);
 
   // seen
   &.pine-poi-seen {
@@ -17,36 +43,24 @@
   , &.pine-marker-entrance-quest
   , &.pine-marker-entrance-vault
   {
-    background-image: url('../img/icons/npc.png');
-    background-size: 16px 16px;
-    width: 16px;
-    height: 16px;
+    @include scaled($pine-icon-npc);
   }
 
   // unique
   &.pine-marker-unique {
     // emblem
     &.pine-marker-unique-emblem {
-      background-image: url('../img/icons/emblem.png');
-      background-size: 16px 20px;
-      width: 16px;
-      height: 20px;
+      @include scaled($pine-icon-emblem);
     }
     // keygraphite
     &.pine-marker-unique-keygraphite {
-      background-image: url('../img/icons/keygraphite.png');
-      background-size: 10px 10px;
-      width: 10px;
-      height: 10px;
+      @include scaled($pine-icon-keygraphite, 10/32);
     }
     // chest, idea
     &.pine-marker-unique-chest
     , &.pine-marker-unique-idea
     {
-      background-image: url('../img/icons/chest.png');
-      background-size: 16px 11px;
-      width: 16px;
-      height: 11px;
+      @include scaled($pine-icon-chest);
     }
   }
 }

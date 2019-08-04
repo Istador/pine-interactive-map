@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const SpritesmithPlugin = require('webpack-spritesmith')
 
 require('dotenv').config()
 
@@ -44,7 +45,7 @@ module.exports = {
         test: /\.s(a|c)ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader?-url',
+          'css-loader',
           'sass-loader',
         ],
       },
@@ -57,12 +58,23 @@ module.exports = {
       },
       {
         test: /\.png$/,
+        exclude: /icons\.[a-z0-9]+\.png/,
         use: [{
           loader: 'file-loader',
           options: {
             name: '[name].[contenthash].[ext]',
             publicPath: 'img/vendor/',
             outputPath: 'img/vendor/',
+          }
+        }],
+      },
+      {
+        test: /icons\.[a-z0-9]+\.png$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'img/[name].[ext]',
+            emitFile: false,
           }
         }],
       },
@@ -73,6 +85,10 @@ module.exports = {
       // do not let webpack resolve leaflet normally, as it'd install the wrong version
       leaflet: path.join(__dirname, 'src', 'leaflet.js'),
     },
+    modules: [
+      'node_modules',
+      'build/img',
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -94,7 +110,27 @@ module.exports = {
       template: 'src/index.template.html',
     }),
     new MiniCssExtractPlugin({
-        filename: '[name].[contenthash].min.css'
+        filename: '[name].[contenthash].min.css',
+    }),
+    new SpritesmithPlugin({
+        src: {
+          cwd: path.join(__dirname, 'img/icons'),
+          glob: '*.png',
+        },
+        target: {
+          image: path.resolve(__dirname, 'build/img/icons.[contenthash].png'),
+          css: [[
+            path.resolve(__dirname, 'build/img/icons.scss'),
+            { spritesheetName: 'pine-icons' },
+          ]],
+        },
+        apiOptions: {
+          cssImageRef: "~icons.[contenthash].png",
+          generateSpriteName: (p) => `pine-icon-${path.parse(p).name}`,
+        },
+        spritesmithOptions: {
+          padding: 4,
+        },
     }),
   ],
 }
