@@ -1,0 +1,5 @@
+/assets_*
+/gameobjects/
+/selectedassets/
+/transforms/
+/batchexport.bat
