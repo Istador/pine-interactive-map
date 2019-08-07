@@ -35,6 +35,6 @@ module.exports = {
     // only rows that have coordinates
     .then(objs => objs.filter(row =>
          typeof row.x === 'number'
-      && typeof row.y === 'number'
+      && typeof row.z === 'number'
     )),
 }

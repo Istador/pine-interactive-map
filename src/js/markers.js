@@ -8,7 +8,7 @@ const classes = (key, row) =>
   + (row.beta1 !== 'confirmed' ? ' pine-unconfirmed' : '')
 
 const row2marker = (row) => L.marker(
-  [ row.x - 1024, row.y + 1024 ],
+  [ row.z - 1024, row.x + 1024 ],
   {
     icon: L.divIcon(L.extend(
       {},
@@ -63,7 +63,7 @@ const tooltip = (row) =>
   (row.amount && ! isNaN(Number(row.amount)) ? row.amount + 'x ' : '')
     + item2name(row.type)(row.item)
     + (row.description ? ': ' + row.description : '')
-    + '<br/>(' + row.y + ', ' + row.x + ')'
+    + '<br/>(' + row.x + ', ' + row.z + ')'
     + (row.area ? ' in ' + row.area : '')
 
 const obj2marker = (row) => {
