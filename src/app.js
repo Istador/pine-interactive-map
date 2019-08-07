@@ -50,4 +50,6 @@
     .then(() => layerControl.init().addTo(map))
     // invalidate size (no animation)
     .then(() => map.invalidateSize(false))
+    // auto zoom
+    .then(() => map.fitBounds(bounds, { animate: false }))
 })()
