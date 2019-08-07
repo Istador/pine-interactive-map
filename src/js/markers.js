@@ -24,15 +24,23 @@ const row2marker = (row) => L.marker(
   }
 )
 
+const showProp = (prop) => ! [ 'seen', 'hasUniqueID' ].includes(prop)
+
+const showCompleteButton = (row) => (
+     storage().can()
+  && row.hasUniqueID
+  && [ 'unique', 'item', 'npc', 'entrance' ].includes(row.type)
+)
+
 const popup = (row, marker) => {
   const div   = L.DomUtil.create('div', classes('popup', row))
   //title
   const title = L.DomUtil.create('h4', '', div)
   title.innerHTML = type2name(row.type) + ' - ' + item2name(row.type)(row.item)
-  // add all properties to table
+  // add all properties to the table
   const tbody = L.DomUtil.create('tbody', '', L.DomUtil.create('table', '', div))
   // TODO: images and/or videos
-  Object.keys(row).filter(x => x !== 'seen').forEach((k) => {
+  Object.keys(row).filter(showProp).forEach((k) => {
     const v = row[k]
     const tr = L.DomUtil.create('tr', '', tbody)
     if (row.ID) { tr.setAttribute('data-ID', row.ID) }
@@ -41,8 +49,8 @@ const popup = (row, marker) => {
     const td = L.DomUtil.create('td', '', tr)
     td.innerHTML = v
   })
-  // TODO: disable mark completed feature for POI with IDs that aren't unique
-  if (row.ID && storage().can() && [ 'unique', 'item', 'npc', 'entrance' ].includes(row.type)) {
+  // button to mark poi as completed / not-completed
+  if (showCompleteButton(row)) {
     const toggle = L.DomUtil.create('button', '', div)
     toggle.setAttribute('type', 'button')
     toggle.setAttribute('title', (row.seen ? 'Mark not completed' : 'Mark completed'))
@@ -66,9 +74,16 @@ const tooltip = (row) =>
     + '<br/>(' + row.x + ', ' + row.z + ')'
     + (row.area ? ' in ' + row.area : '')
 
+// detect uniqueness of IDs
+const uniqueIDs = {}
+const registerRow = (row) => {
+  if (! row.ID) { return }
+  uniqueIDs[row.ID] = ! (row.ID in uniqueIDs)
+}
+
 const obj2marker = (row) => {
-  // TODO: do not count the POI as seen, if it's ID is non-unique
-  row.seen = (row.ID && storage().get('pine-poi-seen-' + row.ID))
+  row.hasUniqueID = (row.ID && uniqueIDs[row.ID])
+  row.seen = (row.hasUniqueID && storage().get('pine-poi-seen-' + row.ID))
   const marker = row2marker(row)
     .bindPopup(() => popup(row, marker))
     .bindTooltip(() => tooltip(row), { direction: 'top' })
@@ -76,5 +91,6 @@ const obj2marker = (row) => {
 }
 
 module.exports = {
+  registerRow,
   obj2marker,
 }

@@ -14,8 +14,8 @@ const defaultLayers = [
 const layers = 'pine-selected-layers'
 const map    = 'pine-selected-map'
 
-const get  = (key, def) => storage().can() && storage().has(key) ? storage().get(key) : def
-const save = (key) => (val) => storage().can() && storage().set(key, val)
+const get  = (key, def) => storage().has(key) ? storage().get(key) : def
+const save = (key) => (val) => storage().set(key, val)
 
 module.exports = {
   map        : get(map, defaultMap),

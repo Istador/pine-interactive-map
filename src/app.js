@@ -4,7 +4,7 @@
   const { overlays, addMarker, layerControl } = require('./js/overlays')
   const { map: selectedMap } = require('./js/selection')
   const { datasource } = require('./js/datasource')
-  const { obj2marker } = require('./js/markers')
+  const { registerRow, obj2marker } = require('./js/markers')
 
   // initialize the map
   const map = L.map('map', {
@@ -44,8 +44,12 @@
 
   // get data from google docs spreadsheet
   datasource()
-    // add markers to map
-    .then(rows => rows.forEach(row => addMarker(row.type, row.item, obj2marker(row))))
+    .then(rows => {
+      // register all markers before adding them to check the uniqueness of the IDs
+      rows.forEach(registerRow)
+      // add markers to map
+      rows.forEach(row => addMarker(row.type, row.item, obj2marker(row)))
+    })
     // control panel to allow the user to change the map and to select / deselect specific layers
     .then(() => layerControl.init().addTo(map))
     // invalidate size (no animation)
