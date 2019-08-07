@@ -5,6 +5,7 @@ const { type2name, item2name } = require('./names')
 const classes = (key, row) =>
   `pine-${key} pine-${key}-${row.type} pine-${key}-${row.type}-${row.item}`
   + (row.seen ? ' pine-poi-seen' : '')
+  + (row.beta1 !== 'confirmed' ? ' pine-unconfirmed' : '')
 
 const row2marker = (row) => L.marker(
   [ row.x - 1024, row.y + 1024 ],
@@ -34,7 +35,7 @@ const popup = (row, marker) => {
   Object.keys(row).filter(x => x !== 'seen').forEach((k) => {
     const v = row[k]
     const tr = L.DomUtil.create('tr', '', tbody)
-    if(row.ID) { tr.setAttribute('data-ID', row.ID) }
+    if (row.ID) { tr.setAttribute('data-ID', row.ID) }
     const th = L.DomUtil.create('th', '', tr)
     th.innerHTML = k
     const td = L.DomUtil.create('td', '', tr)
