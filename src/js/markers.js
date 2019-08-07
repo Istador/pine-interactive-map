@@ -62,7 +62,7 @@ const popup = (row, marker) => {
 const tooltip = (row) =>
   (row.amount && ! isNaN(Number(row.amount)) ? row.amount + 'x ' : '')
     + item2name(row.type)(row.item)
-    + (row.description ? ': ' + row.description : '')
+    + (row.title ? ': ' + row.title : '')
     + '<br/>(' + row.x + ', ' + row.z + ')'
     + (row.area ? ' in ' + row.area : '')
 
