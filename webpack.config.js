@@ -145,5 +145,14 @@ module.exports = {
           padding: 4,
         },
     }),
+    new webpack.WatchIgnorePlugin([
+      path.join(__dirname, 'node_modules'),
+      path.join(__dirname, 'build'),
+      path.join(__dirname, 'index.html'),
+    ]),
   ],
+  watchOptions: {
+    aggregateTimeout: 500,
+    poll: 1000,
+  },
 }

@@ -4,7 +4,8 @@
   "description": "Interactive Map for the video game Pine, that is currently in development.",
   "main": "src/app.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch --progress"
   },
   "repository": {
     "type": "git",
