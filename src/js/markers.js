@@ -1,6 +1,7 @@
 const { storage } = require('./util')
 const { icons } = require('./icons')
 const { type2name, item2name } = require('./names')
+const { translate } = require('./i18n')
 
 const classes = (key, row) =>
   `pine-${key} pine-${key}-${row.type} pine-${key}-${row.type}-${row.item}`
@@ -32,6 +33,11 @@ const showCompleteButton = (row) => (
   && [ 'unique', 'item', 'npc', 'entrance' ].includes(row.type)
 )
 
+const updateToggle = (toggle, row) => {
+  toggle.setAttribute('title', translate('ui', row.seen ? 'unmark_seen' : 'mark_seen'))
+  toggle.innerHTML = '<span>' + (row.seen ? '&#x21ba;' : '&#x2713;') + '</span>'
+}
+
 const popup = (row, marker) => {
   const div   = L.DomUtil.create('div', classes('popup', row))
   //title
@@ -45,7 +51,7 @@ const popup = (row, marker) => {
     const tr = L.DomUtil.create('tr', '', tbody)
     if (row.ID) { tr.setAttribute('data-ID', row.ID) }
     const th = L.DomUtil.create('th', '', tr)
-    th.innerHTML = k
+    th.innerHTML = translate('properties', k) || k
     const td = L.DomUtil.create('td', '', tr)
     td.innerHTML = v
   })
@@ -53,13 +59,11 @@ const popup = (row, marker) => {
   if (showCompleteButton(row)) {
     const toggle = L.DomUtil.create('button', '', div)
     toggle.setAttribute('type', 'button')
-    toggle.setAttribute('title', (row.seen ? 'Mark not completed' : 'Mark completed'))
-    toggle.innerHTML = '<span>' + (row.seen ? '&#x21ba;' : '&#x2713;') + '</span>'
+    updateToggle(toggle, row)
     L.DomEvent.on(toggle, 'click', () => {
       row.seen = ! row.seen
       storage().set('pine-poi-seen-' + row.ID, row.seen)
-      toggle.setAttribute('title', (row.seen ? 'Mark not completed' : 'Mark completed'))
-      toggle.innerHTML = '<span>' + (row.seen ? '&#x21ba;' : '&#x2713;') + '</span>'
+      updateToggle(toggle, row)
       div.classList[row.seen ? 'add' : 'remove']('pine-poi-seen')
       marker._icon.classList[row.seen ? 'add' : 'remove']('pine-poi-seen')
     })

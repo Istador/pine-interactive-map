@@ -1,0 +1,29 @@
+@mixin scaled($sprite, $scale: 0.5) {
+  $w: nth($sprite, 7) * $scale;
+  $h: nth($sprite, 8) * $scale;
+  background-size: $w $h;
+
+  $x: nth($sprite, 3) * $scale;
+  $y: nth($sprite, 4) * $scale;
+
+  // mask settings to allow tinting only the opaque pixels
+  -webkit-mask-image: url(nth($sprite,  9));
+          mask-image: url(nth($sprite,  9));
+  -webkit-mask-size: $w $h;
+          mask-size: $w $h;
+  -webkit-mask-position: $x $y;
+          mask-position: $x $y;
+
+  @include sprite((
+    nth($sprite,  1) * $scale,
+    nth($sprite,  2) * $scale,
+    $x,
+    $y,
+    nth($sprite,  5) * $scale,
+    nth($sprite,  6) * $scale,
+    $w,
+    $h,
+    nth($sprite,  9),
+    nth($sprite, 10),
+  ));
+}

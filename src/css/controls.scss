@@ -1,3 +1,5 @@
+@import '~langs.scss';
+
 #map {
   // popup
   div.leaflet-popup {
@@ -27,6 +29,31 @@
 
   // controls
   div.leaflet-control {
+    // language
+    &.leaflet-languageselector-control {
+      .leaflet-languageselector-langdiv {
+        font-size: 0;
+      }
+      @mixin selected() { filter: saturate(0.5); opacity: 0.5; cursor: default; }
+      #languageselector_en { @include scaled($pine-lang-en, 0.8); }
+      #languageselector_de { @include scaled($pine-lang-de, 0.8); }
+      #languageselector_fr { @include scaled($pine-lang-fr, 0.8); }
+      #languageselector_it { @include scaled($pine-lang-it, 0.8); }
+      #languageselector_es { @include scaled($pine-lang-es, 0.8); }
+      #languageselector_pg { @include scaled($pine-lang-pg, 0.8); }
+      #languageselector_du { @include scaled($pine-lang-du, 0.8); }
+      #languageselector_ru { @include scaled($pine-lang-ru, 0.8); }
+      #languageselector_zh { @include scaled($pine-lang-zh, 0.8); }
+      &[data-selected="en"] { #languageselector_en { @include selected() } }
+      &[data-selected="de"] { #languageselector_de { @include selected() } }
+      &[data-selected="fr"] { #languageselector_fr { @include selected() } }
+      &[data-selected="it"] { #languageselector_it { @include selected() } }
+      &[data-selected="es"] { #languageselector_es { @include selected() } }
+      &[data-selected="pg"] { #languageselector_pg { @include selected() } }
+      &[data-selected="du"] { #languageselector_du { @include selected() } }
+      &[data-selected="ru"] { #languageselector_ru { @include selected() } }
+      &[data-selected="zh"] { #languageselector_zh { @include selected() } }
+    }
     // mouse coordinates
     &.pine-mouse-coordinates {
       cursor: default;

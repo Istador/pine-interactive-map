@@ -23,6 +23,8 @@ module.exports = {
       './node_modules/leaflet-panel-layers/dist/leaflet-panel-layers.src.css',
       './node_modules/leaflet-fullscreen/dist/Leaflet.fullscreen.js',
       './node_modules/leaflet-fullscreen/dist/leaflet.fullscreen.css',
+      './node_modules/leaflet-languageselector/leaflet-languageselector.js',
+      './node_modules/leaflet-languageselector/leaflet-languageselector.css',
     ],
     app: [
       './src/app.js',
@@ -61,7 +63,7 @@ module.exports = {
       },
       {
         test: /\.png$/,
-        exclude: /icons\.[a-z0-9]+\.png/,
+        exclude: /(icons|langs)\.[a-z0-9]+\.png/,
         use: [{
           loader: 'file-loader',
           options: {
@@ -72,7 +74,7 @@ module.exports = {
         }],
       },
       {
-        test: /icons\.[a-z0-9]+\.png$/,
+        test: /(icons|langs)\.[a-z0-9]+\.png$/,
         use: [{
           loader: 'file-loader',
           options: {
@@ -140,6 +142,26 @@ module.exports = {
         apiOptions: {
           cssImageRef: "~icons.[contenthash].png",
           generateSpriteName: (p) => `pine-icon-${path.parse(p).name}`,
+        },
+        spritesmithOptions: {
+          padding: 4,
+        },
+    }),
+    new SpritesmithPlugin({
+        src: {
+          cwd: path.join(__dirname, 'img/lang'),
+          glob: '*.png',
+        },
+        target: {
+          image: path.resolve(__dirname, 'build/img/langs.[contenthash].png'),
+          css: [[
+            path.resolve(__dirname, 'build/img/langs.scss'),
+            { spritesheetName: 'pine-langs' },
+          ]],
+        },
+        apiOptions: {
+          cssImageRef: "~langs.[contenthash].png",
+          generateSpriteName: (p) => `pine-lang-${path.parse(p).name}`,
         },
         spritesmithOptions: {
           padding: 4,

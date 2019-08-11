@@ -1,10 +1,11 @@
 (() => {
   require('./js/coordinates')
   const { bounds, maxBounds, baseLayers, water } = require('./js/layers')
-  const { overlays, addMarker, layerControl } = require('./js/overlays')
+  const { overlays, addMarker, initLayerControl } = require('./js/overlays')
   const { map: selectedMap } = require('./js/selection')
   const { datasource } = require('./js/datasource')
   const { registerRow, obj2marker } = require('./js/markers')
+  const { translate, langComponent, langControl } = require('./js/i18n')
 
   // initialize the map
   const map = L.map('map', {
@@ -16,6 +17,7 @@
     zoomSnap           : 0.25,
     wheelPxPerZoomLevel: 120,
     maxBoundsViscosity : 1.0,
+    zoomControl        : false,
     attributionControl : false,
     continuousWorld    : true,
     noWrap             : true,
@@ -29,15 +31,28 @@
 
   // auto zoom
   map.fitBounds(bounds, { animate: false })
+  langComponent(map, () => L.control.zoom({
+    zoomInTitle  : translate('ui', 'zoom_in'),
+    zoomOutTitle : translate('ui', 'zoom_out'),
+  }))
 
   // attributions
-  L.control.attribution({ prefix: `<a href="https://github.com/Istador/pine-interactive-map" target="_blank">Github</a>` })
+  langComponent(map, () => L.control.attribution({ prefix: `<a href="https://github.com/Istador/pine-interactive-map" target="_blank">Github</a>` })
     .addAttribution('&copy; <a href="https://twirlbound.com/" target="_blank">Twirlbound</a>')
-    .addAttribution(`<a href="${__SOURCE__}" target="_blank">Data source</a>`)
-    .addTo(map)
+    .addAttribution(`<a href="${__SOURCE__}" target="_blank">${translate('ui', 'datasource')}</a>`)
+  )
 
   // fullscreen button
-  map.addControl(new L.Control.Fullscreen({ position: 'topleft' }))
+  langComponent(map, () => new L.Control.Fullscreen({
+    position: 'topleft',
+    title: {
+      'false' : translate('ui', 'fullscreen_on'),
+      'true'  : translate('ui', 'fullscreen_off'),
+    }
+  }))
+
+  // language selector
+  langControl().addTo(map)
 
   // show mouse coordinates
   L.control.coordinates({ position: 'bottomleft' }).addTo(map)
@@ -51,7 +66,7 @@
       rows.forEach(row => addMarker(row.type, row.item, obj2marker(row)))
     })
     // control panel to allow the user to change the map and to select / deselect specific layers
-    .then(() => layerControl.init().addTo(map))
+    .then(() => initLayerControl(map))
     // invalidate size (no animation)
     .then(() => map.invalidateSize(false))
     // auto zoom
