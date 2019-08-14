@@ -6,6 +6,9 @@
     h4, table {
       margin: 1em 0;
     }
+    table th, table td {
+      vertical-align: top;
+    }
     // buttons
     button {
       height: 27px;
