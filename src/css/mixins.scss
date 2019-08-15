@@ -1,10 +1,13 @@
-@mixin scaled($sprite, $scale: 0.5) {
-  $w: nth($sprite, 7) * $scale;
-  $h: nth($sprite, 8) * $scale;
+@mixin scaled($sprite, $scale: 0.5, $scalex : 1.0, $scaley: 1.0) {
+  $sx: $scale * $scalex;
+  $sy: $scale * $scaley;
+
+  $w: nth($sprite, 7) * $sx;
+  $h: nth($sprite, 8) * $sy;
   background-size: $w $h;
 
-  $x: nth($sprite, 3) * $scale;
-  $y: nth($sprite, 4) * $scale;
+  $x: nth($sprite, 3) * $sx;
+  $y: nth($sprite, 4) * $sy;
 
   // mask settings to allow tinting only the opaque pixels
   -webkit-mask-image: url(nth($sprite,  9));
@@ -15,12 +18,12 @@
           mask-position: $x $y;
 
   @include sprite((
-    nth($sprite,  1) * $scale,
-    nth($sprite,  2) * $scale,
+    nth($sprite,  1) * $sx,
+    nth($sprite,  2) * $sy,
     $x,
     $y,
-    nth($sprite,  5) * $scale,
-    nth($sprite,  6) * $scale,
+    nth($sprite,  5) * $sx,
+    nth($sprite,  6) * $sy,
     $w,
     $h,
     nth($sprite,  9),

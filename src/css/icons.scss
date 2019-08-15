@@ -22,8 +22,113 @@
     background: rgba(255, 0, 0, 0.4);
   }
 
-  // item, quest, vault
-  &.pine-marker-item
+  // tint
+  @mixin tint($n) {
+    @for $i from 0 to $n {
+      &.pine-marker-tint.pine-marker-tint-#{$i}:not(.pine-unconfirmed) {
+        filter: saturate(0.8) hue-rotate(($i/$n)*360deg);
+      }
+    }
+  }
+
+  // entrance
+  &.pine-marker-entrance {
+    // cave
+    &.pine-marker-entrance-cave {
+      @include scaled($pine-icon-mohlenhill);
+      &:not(.pine-unconfirmed) {
+        filter: saturate(0) brightness(1.5);
+      }
+    }
+    // mohlenhill
+    &.pine-marker-entrance-mohlenhill {
+      @include scaled($pine-icon-mohlenhill);
+    }
+  }
+
+  // food
+  &.pine-marker-food {
+    // default
+    @include scaled($pine-icon-food);
+    @include tint(16);
+  }
+
+  // item
+  &.pine-marker-item {
+    @include scaled($pine-icon-equip, 0.6);
+  }
+
+  // material
+  &.pine-marker-material {
+    // default
+    @include scaled($pine-icon-material);
+    @include tint(11);
+
+    // beagalite
+    &.pine-marker-material-beagalite {
+      @include scaled($pine-icon-beagalite);
+    }
+    // dullrock
+    &.pine-marker-material-dullrock {
+      @include scaled($pine-icon-beagalite);
+      &:not(.pine-unconfirmed) {
+        filter: hue-rotate(-20deg) brightness(1.2) saturate(0.25);
+      }
+    }
+    // gravelmoss
+    &.pine-marker-material-gravelmoss {
+      @include scaled($pine-icon-gravelmoss);
+    }
+    // leaniron
+    &.pine-marker-material-leaniron {
+      @include scaled($pine-icon-beagalite);
+      &:not(.pine-unconfirmed) {
+        filter: hue-rotate(-20deg) brightness(2.6) saturate(0.25);
+      }
+    }
+    // lunarodos
+    &.pine-marker-material-lunarodos {
+      @include scaled($pine-icon-lunarodos);
+    }
+    // sandstone
+    &.pine-marker-material-sandstone {
+      @include scaled($pine-icon-beagalite);
+      &:not(.pine-unconfirmed) {
+        filter: hue-rotate(90deg) brightness(2);
+      }
+    }
+    // spystal
+    &.pine-marker-material-spystal {
+      @include scaled($pine-icon-beagalite, 0.5, 0.7);
+      &:not(.pine-unconfirmed) {
+        filter: hue-rotate(-60deg) brightness(3);
+      }
+    }
+    // toothstone
+    &.pine-marker-material-toothstone {
+      @include scaled($pine-icon-beagalite);
+      &:not(.pine-unconfirmed) {
+        filter: hue-rotate(-20deg) brightness(4.0) saturate(0.25);
+      }
+    }
+  }
+
+  // mechanic
+  &.pine-marker-mechanic {
+    // default
+    @include scaled($pine-icon-mechanic);
+    @include tint(5);
+  }
+
+  // nest
+  &.pine-marker-nest {
+    // default
+    @include scaled($pine-icon-nest);
+    @include tint(4);
+  }
+
+  // quest
+  &.pine-marker-item-quest
   , &.pine-marker-npc-quest
   , &.pine-marker-entrance-quest
   , &.pine-marker-entrance-vault
@@ -46,6 +151,10 @@
     , &.pine-marker-unique-idea
     {
       @include scaled($pine-icon-chest);
+    }
+    // journal / book
+    &.pine-marker-unique-journal {
+      @include scaled($pine-icon-book);
     }
   }
 }

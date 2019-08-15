@@ -3,8 +3,48 @@ const { icons } = require('./icons')
 const { type2name, item2name } = require('./names')
 const { translate } = require('./i18n')
 
+const tints = {
+  food: {
+    map: {},
+    n: 16,
+    i: 0,
+  },
+  material: {
+    map: {},
+    n: 11,
+    i: 6,
+  },
+  mechanic: {
+    map: {},
+    n: 5,
+    i: 0,
+  },
+  nest: {
+    map: {},
+    n: 4,
+    i: 6,
+  },
+}
+
+const tint = (type, item) => (
+  type in tints && ! (type in icons && item in icons[type])
+  ? ' pine-marker-tint pine-marker-tint-' + (
+    item in tints[type].map
+    ? tints[type].map[item]
+    : tints[type].map[item] = ((tints[type].i++) % tints[type].n)
+  )
+  : ''
+)
+
+const row2icon = (row) => (
+  row.type in icons
+  ? icons[row.type][row.item] || icons[row.type].default || icons.default
+  : icons.default
+)
+
 const classes = (key, row) =>
   `pine-${key} pine-${key}-${row.type} pine-${key}-${row.type}-${row.item}`
+  + tint(row.type, row.item)
   + (row.seen ? ' pine-poi-seen' : '')
   + (row.beta1 !== 'confirmed' ? ' pine-unconfirmed' : '')
 
@@ -13,11 +53,7 @@ const row2marker = (row) => L.marker(
   {
     icon: L.divIcon(L.extend(
       {},
-      (
-        row.type in icons
-        ? icons[row.type][row.item] || icons[row.type].default || icons.default
-        : icons.default
-      ),
+      row2icon(row),
       {
         className: classes('marker', row)
       },
@@ -88,13 +124,26 @@ const registerRow = (row) => {
 const obj2marker = (row) => {
   row.hasUniqueID = (row.ID && uniqueIDs[row.ID])
   row.seen = (row.hasUniqueID && storage().get('pine-poi-seen-' + row.ID))
+  const icon = row2icon(row)
   const marker = row2marker(row)
     .bindPopup(() => popup(row, marker))
-    .bindTooltip(() => tooltip(row), { direction: 'top' })
+    .bindTooltip(
+      () => tooltip(row),
+      {
+        direction: 'top',
+        // workaround for https://github.com/Leaflet/Leaflet/issues/6764
+        offset: (
+          icon.tooltipAnchor[0]
+          ? [ icon.tooltipAnchor[0], 0 ]
+          : [0, 0]
+        )
+      }
+    )
   return marker
 }
 
 module.exports = {
   registerRow,
   obj2marker,
+  tint,
 }

@@ -68,9 +68,9 @@ module.exports = {
     },
     mechanic: {
       '.'            : 'Mechanical',
-      arrowtarget    : 'Hit Trigger',
       door           : 'Door',
       electrotrigger : 'Electrical Trigger',
+      hittrigger     : 'Hit Trigger',
       lever          : 'Lever',
       pinsocket      : 'Pin Socket',
     },

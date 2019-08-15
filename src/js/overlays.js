@@ -1,5 +1,6 @@
 const { lazy } = require('./util')
 const { baseLayers } = require('./layers')
+const { tint } = require('./markers')
 const { type2name, item2name } = require('./names')
 const { layers, saveLayers, saveMap } = require('./selection')
 const { translate, langComponent } = require('./i18n')
@@ -52,7 +53,7 @@ const initLayerControl = (map) => {
             {
               layer : layer,
               name  : itemName + ' (' + layer.getLayers().length + ')',
-              icon  : `<i class="pine-marker pine-marker-${type} pine-marker-${type}-${item}"> </i>`,
+              icon  : `<i class="pine-marker pine-marker-${type} pine-marker-${type}-${item}${tint(type, item)}"> </i>`,
             },
             true, // isOverlay and not baseLayer
             typeName, // group name
