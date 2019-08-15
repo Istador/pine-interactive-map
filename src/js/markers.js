@@ -11,7 +11,7 @@ const tints = {
   },
   material: {
     map: {},
-    n: 11,
+    n: 10,
     i: 6,
   },
   mechanic: {

@@ -62,7 +62,7 @@
   &.pine-marker-material {
     // default
     @include scaled($pine-icon-material);
-    @include tint(11);
+    @include tint(10);
 
     // beagalite
     &.pine-marker-material-beagalite {
@@ -73,6 +73,13 @@
       @include scaled($pine-icon-beagalite);
       &:not(.pine-unconfirmed) {
         filter: hue-rotate(-20deg) brightness(1.2) saturate(0.25);
+      }
+    }
+    // dryclay
+    &.pine-marker-material-dryclay {
+      @include scaled($pine-icon-gravelmoss);
+      &:not(.pine-unconfirmed) {
+        filter: hue-rotate(80deg) brightness(2.0) saturate(0.10);
       }
     }
     // gravelmoss

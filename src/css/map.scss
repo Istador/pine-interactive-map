@@ -4,6 +4,8 @@ body {
 
 #map {
   height: 100vh;
+  background-color: #fff;
+
   // layers
   div.leaflet-map-pane {
     // L.tileLayer (3D)

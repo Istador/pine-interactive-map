@@ -54,6 +54,12 @@ module.exports = {
         tooltipAnchor : [ 1.5, -6.75 ],
       },
       beagalite: stone,
+      dryclay: {
+        iconSize      : null,
+        iconAnchor    : [ 7,  8 ],
+        popupAnchor   : [ 4, -8 ],
+        tooltipAnchor : [ 4, -8 ],
+      },
       dullrock: stone,
       gravelmoss: {
         iconSize      : null,
