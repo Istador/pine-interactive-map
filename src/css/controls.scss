@@ -1,4 +1,5 @@
 @import '~langs.scss';
+@import '~styles.scss';
 
 #map {
   // popup
@@ -51,6 +52,24 @@
         }
       }
     }
+    // style
+    &.pine-style {
+      background-color: white;
+      & > div {
+        display: inline-block;
+        box-sizing: border-box;
+        cursor: pointer;
+        padding: 4px;
+        width: 26px;
+        height: 26px;
+        &:not(:last-of-type) {
+          border-right: 1px solid #ccc;
+        }
+        & > span {
+          display: inline-block;
+        }
+      }
+    }
     // mouse coordinates
     &.pine-mouse-coordinates {
       cursor: default;
@@ -89,5 +108,16 @@
         }
       }
     }
+  }
+}
+
+// style
+@each $sprite in $pine-styles-sprites {
+  $dynamic : str-slice(nth($sprite, 10), 12);
+  $pos     : str-index($dynamic, "-");
+  $key     : str-slice($dynamic, 1, $pos - 1);
+  $state   : str-slice($dynamic, $pos + 1);
+  #map[data-#{$key}=#{$state}] div.pine-style > div.pine-style-#{$key} > span {
+    @include scaled($sprite, 18/32);
   }
 }

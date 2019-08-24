@@ -13,6 +13,27 @@ require('dotenv').config()
 
 const github = process.env.IMGMODE === 'github'
 
+const spritesmith = (dir, key, name) => new SpritesmithPlugin({
+  src: {
+    cwd: path.join(__dirname, 'img/' + dir),
+    glob: '*.png',
+  },
+  target: {
+    image: path.resolve(__dirname, 'build/img/' + key + '.[contenthash].png'),
+    css: [[
+      path.resolve(__dirname, 'build/img/' + key + '.scss'),
+      { spritesheetName: 'pine-' + key },
+    ]],
+  },
+  apiOptions: {
+    cssImageRef: '~' + key + '.[contenthash].png',
+    generateSpriteName: (p) => `pine-${name}-${path.parse(p).name}`,
+  },
+  spritesmithOptions: {
+    padding: 4,
+  },
+})
+
 module.exports = {
   entry : {
     vendor: [
@@ -63,7 +84,7 @@ module.exports = {
       },
       {
         test: /\.png$/,
-        exclude: /(icons|langs)\.[a-z0-9]+\.png/,
+        exclude: /(icons|langs|styles)\.[a-z0-9]+\.png/,
         use: [{
           loader: 'file-loader',
           options: {
@@ -74,7 +95,7 @@ module.exports = {
         }],
       },
       {
-        test: /(icons|langs)\.[a-z0-9]+\.png$/,
+        test: /(icons|langs|styles)\.[a-z0-9]+\.png$/,
         use: [{
           loader: 'file-loader',
           options: {
@@ -127,46 +148,9 @@ module.exports = {
     new MiniCssExtractPlugin({
         filename: '[name].[contenthash].min.css',
     }),
-    new SpritesmithPlugin({
-        src: {
-          cwd: path.join(__dirname, 'img/icons'),
-          glob: '*.png',
-        },
-        target: {
-          image: path.resolve(__dirname, 'build/img/icons.[contenthash].png'),
-          css: [[
-            path.resolve(__dirname, 'build/img/icons.scss'),
-            { spritesheetName: 'pine-icons' },
-          ]],
-        },
-        apiOptions: {
-          cssImageRef: "~icons.[contenthash].png",
-          generateSpriteName: (p) => `pine-icon-${path.parse(p).name}`,
-        },
-        spritesmithOptions: {
-          padding: 4,
-        },
-    }),
-    new SpritesmithPlugin({
-        src: {
-          cwd: path.join(__dirname, 'img/lang'),
-          glob: '*.png',
-        },
-        target: {
-          image: path.resolve(__dirname, 'build/img/langs.[contenthash].png'),
-          css: [[
-            path.resolve(__dirname, 'build/img/langs.scss'),
-            { spritesheetName: 'pine-langs' },
-          ]],
-        },
-        apiOptions: {
-          cssImageRef: "~langs.[contenthash].png",
-          generateSpriteName: (p) => `pine-lang-${path.parse(p).name}`,
-        },
-        spritesmithOptions: {
-          padding: 4,
-        },
-    }),
+    spritesmith('icons',  'icons',  'icon'),
+    spritesmith('lang',   'langs',  'lang'),
+    spritesmith('styles', 'styles', 'style'),
     new webpack.WatchIgnorePlugin([
       path.join(__dirname, 'node_modules'),
       path.join(__dirname, 'build'),

@@ -8,6 +8,20 @@ module.exports = {
     datasource     : 'Datenquelle',
     mark_seen      : 'Als erledigt markieren',
     unmark_seen    : 'Als unerledigt markieren',
+    styleTitle: {
+      seen: {
+        show: 'Erledigte Marker werden normal angezeigt',
+        fade: 'Erledigte Marker werden schwächer angezeigt',
+        hide: 'Erledigte Marker werden nicht angezeigt',
+        only: 'Es werden nur erledigte Marker angezeigt',
+      },
+      unconfirmed: {
+        show: 'Unbestätigte Marker werden normal angezeigt',
+        red:  'Unbestätigte Marker werden rot eingefärbt',
+        hide: 'Unbestätigte Marker werden nicht angezeigt',
+        only: 'Es werden nur unbestätigte Marker angezeigt',
+      },
+    },
   },
   properties: {
     type        : 'Kategorie',

@@ -10,6 +10,20 @@ module.exports = {
     unmark_seen    : 'Mark not completed',
     '2D'           : '2D',
     '3D'           : '3D',
+    styleTitle: {
+      seen: {
+        show: 'Completed markers are shown normally',
+        fade: 'Completed markers are faded out',
+        hide: 'Completed markers are hidden',
+        only: 'Only completed markers are shown',
+      },
+      unconfirmed: {
+        show: 'Unconfirmed markers are shown normally',
+        red:  'Unconfirmed markers are tinted red',
+        hide: 'Unconfirmed markers are hidden',
+        only: 'Only unconfirmed markers are shown',
+      },
+    },
   },
   names: {
     entrance: {

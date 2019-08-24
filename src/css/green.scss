@@ -89,6 +89,14 @@ $green5: rgb( 72,  99,  68); $green5_transp: rgba( 72,  99,  68, 0.700);
         filter: $black2lightwhite;
       }
     }
+    // style
+    &.pine-style {
+      background-color: $green5_transp;
+      border-color: transparent;
+      & > div {
+        border-color: $lightwhite_transp;
+      }
+    }
     // language
     &.leaflet-languageselector-control {
       background-color: $green5_transp;

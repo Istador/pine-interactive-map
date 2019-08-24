@@ -1,31 +1,60 @@
 @import '~icons.scss';
 
+div.leaflet-marker-pane > div.pine-marker {
+  // seen
+  &.pine-poi-seen {
+    #map[data-seen="fade"] & {
+      opacity: 0.5;
+    }
+    #map[data-seen="hide"] & {
+      display: none;
+    }
+  }
+  // unseen
+  &:not(.pine-poi-seen) {
+    #map[data-seen="only"] & {
+      display: none;
+    }
+  }
+
+  // unconfirmed
+  &.pine-unconfirmed {
+    #map[data-unconfirmed="red"] &
+    , #map[data-unconfirmed="only"] & {
+      filter: hue-rotate(0deg) !important;
+    }
+    #map[data-unconfirmed="red"] &:before
+    , #map[data-unconfirmed="only"] &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 0, 0, 0.4);
+    }
+    #map[data-unconfirmed="hide"] & {
+      display: none;
+    }
+  }
+  // confirmed
+  &:not(.pine-unconfirmed) {
+    #map[data-unconfirmed="only"] & {
+      display: none;
+    }
+  }
+}
+
 #map div.leaflet-marker-pane > div.pine-marker
 , #map i.leaflet-panel-layers-icon > i.pine-marker
 {
   @include scaled($pine-icon-default);
 
-  // seen
-  &.pine-poi-seen {
-    opacity: 0.5;
-  }
-
-  // unconfirmed
-  &.pine-unconfirmed:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 0, 0, 0.4);
-  }
-
   // tint
   @mixin tint($n) {
     @for $i from 0 to $n {
-      &.pine-marker-tint.pine-marker-tint-#{$i}:not(.pine-unconfirmed) {
+      &.pine-marker-tint.pine-marker-tint-#{$i} {
         filter: saturate(0.8) hue-rotate(($i/$n)*360deg);
       }
     }
@@ -36,9 +65,7 @@
     // cave
     &.pine-marker-entrance-cave {
       @include scaled($pine-icon-mohlenhill);
-      &:not(.pine-unconfirmed) {
-        filter: saturate(0) brightness(1.5);
-      }
+      filter: saturate(0) brightness(1.5);
     }
     // mohlenhill
     &.pine-marker-entrance-mohlenhill {
@@ -71,16 +98,12 @@
     // dullrock
     &.pine-marker-material-dullrock {
       @include scaled($pine-icon-beagalite);
-      &:not(.pine-unconfirmed) {
-        filter: hue-rotate(-20deg) brightness(1.2) saturate(0.25);
-      }
+      filter: hue-rotate(-20deg) brightness(1.2) saturate(0.25);
     }
     // dryclay
     &.pine-marker-material-dryclay {
       @include scaled($pine-icon-gravelmoss);
-      &:not(.pine-unconfirmed) {
-        filter: hue-rotate(80deg) brightness(2.0) saturate(0.10);
-      }
+      filter: hue-rotate(80deg) brightness(2.0) saturate(0.10);
     }
     // gravelmoss
     &.pine-marker-material-gravelmoss {
@@ -89,9 +112,7 @@
     // leaniron
     &.pine-marker-material-leaniron {
       @include scaled($pine-icon-beagalite);
-      &:not(.pine-unconfirmed) {
-        filter: hue-rotate(-20deg) brightness(2.6) saturate(0.25);
-      }
+      filter: hue-rotate(-20deg) brightness(2.6) saturate(0.25);
     }
     // lunarodos
     &.pine-marker-material-lunarodos {
@@ -100,23 +121,17 @@
     // sandstone
     &.pine-marker-material-sandstone {
       @include scaled($pine-icon-beagalite);
-      &:not(.pine-unconfirmed) {
-        filter: hue-rotate(90deg) brightness(2);
-      }
+      filter: hue-rotate(90deg) brightness(2);
     }
     // spystal
     &.pine-marker-material-spystal {
       @include scaled($pine-icon-beagalite, 0.5, 0.7);
-      &:not(.pine-unconfirmed) {
-        filter: hue-rotate(-60deg) brightness(3);
-      }
+      filter: hue-rotate(-60deg) brightness(3);
     }
     // toothstone
     &.pine-marker-material-toothstone {
       @include scaled($pine-icon-beagalite);
-      &:not(.pine-unconfirmed) {
-        filter: hue-rotate(-20deg) brightness(4.0) saturate(0.25);
-      }
+      filter: hue-rotate(-20deg) brightness(4.0) saturate(0.25);
     }
   }
 

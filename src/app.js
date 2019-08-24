@@ -1,5 +1,6 @@
 (() => {
   require('./js/coordinates')
+  require('./js/style')
   const { bounds, maxBounds, baseLayers, water } = require('./js/layers')
   const { overlays, addMarker, initLayerControl } = require('./js/overlays')
   const { map: selectedMap } = require('./js/selection')
@@ -56,6 +57,9 @@
 
   // show mouse coordinates
   L.control.coordinates({ position: 'bottomleft' }).addTo(map)
+
+  // control how to style completed / unconfirmed markers
+  langComponent(map, () => L.control.style({ position: 'bottomleft' }))
 
   // get data from google docs spreadsheet
   datasource()
