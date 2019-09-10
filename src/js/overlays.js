@@ -57,6 +57,7 @@ const initLayerControl = (map) => {
             },
             true, // isOverlay and not baseLayer
             typeName, // group name
+            // TODO: do not use the defaultOverlays, but the currently selected ones (might change during runtime, this code is reexecuted on language change)
             ! defaultOverlays.some(def => def[0] === type) // collapse groups that have no layers selected
           )
         )

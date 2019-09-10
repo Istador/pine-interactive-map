@@ -11,4 +11,5 @@ const item2name = (type) => (item) => retrieve(type, item, item)
 module.exports = {
   type2name,
   item2name,
+  capitalize,
 }

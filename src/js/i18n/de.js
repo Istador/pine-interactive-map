@@ -5,7 +5,7 @@ module.exports = {
     zoom_out       : 'Herauszoomen',
     fullscreen_on  : 'Vollbild',
     fullscreen_off : 'Vollbild beenden',
-    datasource     : 'Datenquelle',
+    datasource     : 'Beitragen',
     mark_seen      : 'Als erledigt markieren',
     unmark_seen    : 'Als unerledigt markieren',
     styleTitle: {

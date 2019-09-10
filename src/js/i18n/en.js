@@ -5,7 +5,7 @@ module.exports = {
     zoom_out       : 'Zoom out',
     fullscreen_on  : 'View Fullscreen',
     fullscreen_off : 'Exit Fullscreen',
-    datasource     : 'Data source',
+    datasource     : 'Contribute',
     mark_seen      : 'Mark completed',
     unmark_seen    : 'Mark not completed',
     '2D'           : '2D',

@@ -61,7 +61,7 @@ const row2marker = (row) => L.marker(
   }
 )
 
-const showProp = (prop) => ! [ 'seen', 'hasUniqueID' ].includes(prop)
+const showProp = (prop) => ! [ 'seen', 'hasUniqueID' ].includes(prop) && ! /_html$/.test(prop)
 
 const showCompleteButton = (row) => (
      storage().can()
@@ -83,13 +83,12 @@ const popup = (row, marker) => {
   const tbody = L.DomUtil.create('tbody', '', L.DomUtil.create('table', '', div))
   // TODO: images and/or videos
   Object.keys(row).filter(showProp).forEach((k) => {
-    const v = row[k]
     const tr = L.DomUtil.create('tr', '', tbody)
     if (row.ID) { tr.setAttribute('data-ID', row.ID) }
     const th = L.DomUtil.create('th', '', tr)
     th.innerHTML = translate('properties', k) || k
     const td = L.DomUtil.create('td', '', tr)
-    td.innerHTML = v
+    td.innerHTML = row[k + '_html'] || row[k]
   })
   // button to mark poi as completed / not-completed
   if (showCompleteButton(row)) {

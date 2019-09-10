@@ -38,6 +38,9 @@ module.exports = {
   entry : {
     vendor: [
       './src/axios.js',
+      './src/wtf_wikipedia.js',
+    ],
+    leaflet: [
       './node_modules/leaflet/dist/leaflet.js',
       './node_modules/leaflet/dist/leaflet.css',
       './node_modules/leaflet-panel-layers/dist/leaflet-panel-layers.src.js',
@@ -119,9 +122,11 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      __SOURCE__ : JSON.stringify(process.env.SOURCE),
-      __JSON__   : JSON.stringify(process.env.JSON),
-      __TILES__  : JSON.stringify(
+      __WIKI__     : JSON.stringify(process.env.WIKI),
+      __DATAMODE__ : JSON.stringify(process.env.DATAMODE),
+      __SOURCE__   : JSON.stringify(process.env.SOURCE),
+      __JSON__     : JSON.stringify(process.env.JSON),
+      __TILES__    : JSON.stringify(
         github
         ? 'https://raw.githubusercontent.com/Istador/pine-interactive-map/tiles/{z}/{x}/{y}.png'
         : 'tiles/{z}/{x}/{y}.png'

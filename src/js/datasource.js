@@ -1,11 +1,14 @@
 const escapeHtml = (str) => str.replace(/[&<>'"]/g, x => '&#' + x.charCodeAt(0) + ';')
 
-module.exports = {
-  datasource: () => axios
-    // get spreadsheet as json
-    .get(`${__JSON__}`)
-    // convert cells into objects
-    .then(({data: { feed: { entry: entries } }}) => {
+const { capitalize } = require('./names')
+
+const text2number = (text) => {
+  const num = Number(text.replace(',', '.'))
+  return ( isNaN(num) ? text : num )
+}
+
+const transform = {
+  spreadsheet: ({ data: { feed: { entry: entries } } }) => {
       const keys = {}
       const objs = {}
       let moreKeys = true
@@ -21,8 +24,7 @@ module.exports = {
         }
         else {
           moreKeys = false
-          const num = Number(cont.replace(',', '.'))
-          const val = ( isNaN(num) ? cont : num )
+          const val = text2number(cont)
           objs[cell] = val
           const row = cell.replace(/[A-Z]/g, '')
           const col = cell.replace(/[0-9]/g, '')
@@ -31,7 +33,34 @@ module.exports = {
         }
       }
       return Object.values(objs)
-    })
+    },
+    wiki: async ({ data: { parse: { wikitext: { '*': text } } } }) => {
+      const table = window.wtf(text).tables(0).data
+      const out = []
+      for (const i in table) {
+        const row = table[i]
+        const obj = {}
+        for (const key in row) {
+          const sentence = row[key]
+          const text = sentence.data.text.trim()
+          if (! text) { continue }
+          obj[key] = text2number(text)
+          if (sentence.data.links || sentence.data.fmt) {
+            obj[key + '_html'] = sentence.html({formatting: true}).replace(' href="./', ` target="_blank" href="${__WIKI__}`)
+          }
+        }
+        out.push(obj)
+      }
+      return out
+    },
+}
+
+module.exports = {
+  datasource: () => window.axios
+    // get spreadsheet as json
+    .get(`${__JSON__}`)
+    // convert cells into objects
+    .then(transform[__DATAMODE__])
     // only rows that have coordinates
     .then(objs => objs.filter(row =>
          typeof row.x === 'number'
