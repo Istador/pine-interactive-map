@@ -1,6 +1,6 @@
 {
   "name": "pine-interactive-map",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Interactive Map for the video game Pine, that is currently in development.",
   "main": "src/app.js",
   "scripts": {
@@ -47,7 +47,7 @@
     "preload-webpack-plugin": "^3.0.0-beta.4",
     "sass-loader": "^7.3.1",
     "script-ext-html-webpack-plugin": "^2.1.4",
-    "webpack": "^4.39.3",
+    "webpack": "^4.40.2",
     "webpack-cli": "^3.3.8",
     "webpack-spritesmith": "^1.0.2",
     "wtf_wikipedia": "^7.7.1"

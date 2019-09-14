@@ -1,3 +1,5 @@
+const { versions } = require('./versions')
+
 // bounding box of the coordinate system used by the game
 const gameBounds = [
   [ -1024, -1024 ],
@@ -14,17 +16,18 @@ const maxBounds = [
 ]
 
 // pine maps
-const baseLayers = {
-  '3D': L.tileLayer(`${__TILES__}`, {
+
+const baseLayers = {}
+versions.forEach(v => {
+  baseLayers[v] = L.tileLayer(`${__TILES__}`, {
     minNativeZoom : 0,
     maxNativeZoom : 4,
     tileSize      : 256,
     noWrap        : true,
     bounds        : bounds,
-    version       : 'Beta_2',
-  }),
-  '2D': L.imageOverlay(`${__2D_MAP__}`, bounds, {}),
-}
+    version       : v,
+  })
+})
 
 // water background
 const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')

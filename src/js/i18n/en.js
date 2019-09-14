@@ -8,8 +8,6 @@ module.exports = {
     datasource     : 'Contribute',
     mark_seen      : 'Mark completed',
     unmark_seen    : 'Mark not completed',
-    '2D'           : '2D',
-    '3D'           : '3D',
     styleTitle: {
       seen: {
         show: 'Completed markers are shown normally',

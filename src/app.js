@@ -3,7 +3,7 @@
   require('./js/style')
   const { bounds, maxBounds, baseLayers, water } = require('./js/layers')
   const { overlays, addMarker, initLayerControl } = require('./js/overlays')
-  const { map: selectedMap } = require('./js/selection')
+  const { version } = require('./js/selection')
   const { datasource } = require('./js/datasource')
   const { registerRow, obj2marker } = require('./js/markers')
   const { translate, langComponent, langControl } = require('./js/i18n')
@@ -25,7 +25,7 @@
     maxBounds,
     layers: [
       water,
-      baseLayers[selectedMap],
+      baseLayers[version()],
       ...overlays
     ],
   })

@@ -11,8 +11,6 @@ const SpritesmithPlugin = require('webpack-spritesmith')
 
 require('dotenv').config()
 
-const github = process.env.IMGMODE === 'github'
-
 const spritesmith = (dir, key, name) => new SpritesmithPlugin({
   src: {
     cwd: path.join(__dirname, 'img/' + dir),
@@ -123,18 +121,14 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       __WIKI__     : JSON.stringify(process.env.WIKI),
+      __VERSIONS__ : JSON.stringify(process.env.VERSIONS),
       __DATAMODE__ : JSON.stringify(process.env.DATAMODE),
       __SOURCE__   : JSON.stringify(process.env.SOURCE),
       __JSON__     : JSON.stringify(process.env.JSON),
       __TILES__    : JSON.stringify(
-        github
+        process.env.IMGMODE === 'github'
         ? 'https://raw.githubusercontent.com/Istador/pine-interactive-map/tiles/{version}/{z}/{x}/{y}.png'
         : 'tiles/{version}/{z}/{x}/{y}.png'
-      ),
-      __2D_MAP__ : JSON.stringify(
-        github
-        ? 'https://raw.githubusercontent.com/Istador/pine-interactive-map/img/map/sharp.png'
-        : 'img/map/sharp.png'
       ),
     }),
     new HtmlWebpackPlugin({

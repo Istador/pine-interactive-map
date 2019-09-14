@@ -46,6 +46,7 @@ const i18n = (() => {
     }
     _listeners.push(add)
     add()
+    return add
   }
 
   onLangChange(() => document.title = translate('ui', 'title'))

@@ -141,8 +141,13 @@ const obj2marker = (row) => {
   return marker
 }
 
+const resetMarkers = () => {
+  Object.keys(uniqueIDs).forEach(k => delete uniqueIDs[k])
+}
+
 module.exports = {
   registerRow,
   obj2marker,
   tint,
+  resetMarkers,
 }

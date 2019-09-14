@@ -1,6 +1,7 @@
 const escapeHtml = (str) => str.replace(/[&<>'"]/g, x => '&#' + x.charCodeAt(0) + ';')
 
 const { capitalize } = require('./names')
+const { version } = require('./selection')
 
 const text2number = (text) => {
   const num = Number(text.replace(',', '.'))
@@ -58,7 +59,7 @@ const transform = {
 module.exports = {
   datasource: () => window.axios
     // get spreadsheet as json
-    .get(`${__JSON__}`)
+    .get(`${__JSON__}`.replace('${VERSION}', version()))
     // convert cells into objects
     .then(transform[__DATAMODE__])
     // only rows that have coordinates

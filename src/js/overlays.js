@@ -2,11 +2,12 @@ const { lazy } = require('./util')
 const { baseLayers } = require('./layers')
 const { tint } = require('./markers')
 const { type2name, item2name } = require('./names')
-const { layers, saveLayers, saveMap } = require('./selection')
+const { layers, saveLayers, version, saveVersion } = require('./selection')
 const { translate, langComponent } = require('./i18n')
+const { versions, changeVersion } = require('./versions')
 
 const overlays = {}
-const defaultOverlays = layers.map(x => x.split('.'))
+const currentLayers = () => layers().map(x => x.split('.'))
 
 const addOverlay = (type, item) => {
   if (!(type in overlays)) {
@@ -22,22 +23,20 @@ const addMarker = (type, item, marker) => {
   marker.addTo(overlays[type][item])
 }
 
-// TODO: ability to hide all completed poi
-// TODO: ability to show only completed poi
-
 // map key to name, sort by name
 const mapsort = (obj, map, then) =>
   Object.keys(obj)
     .sort((a, b) => map(a).localeCompare(map(b)))
     .forEach(k => then(k, map(k), obj[k]))
 
+let layerControlReset
 const initLayerControl = (map) => {
-  langComponent(map, () => {
+  layerControlReset = langComponent(map, () => {
     const layerControl = new L.Control.PanelLayers(
-      [
-        { name: translate('ui', '3D'), layer: baseLayers['3D'] },
-        { name: translate('ui', '2D'), layer: baseLayers['2D'] },
-      ],
+      versions.map(v => ({
+        name  : v.replace('_', ' '),
+        layer : baseLayers[v],
+      })),
       {},
       {
         title: translate('ui', 'title'),
@@ -57,8 +56,7 @@ const initLayerControl = (map) => {
             },
             true, // isOverlay and not baseLayer
             typeName, // group name
-            // TODO: do not use the defaultOverlays, but the currently selected ones (might change during runtime, this code is reexecuted on language change)
-            ! defaultOverlays.some(def => def[0] === type) // collapse groups that have no layers selected
+            ! currentLayers().some(def => def[0] === type) // collapse groups that have no layers selected
           )
         )
     )
@@ -74,7 +72,11 @@ const initLayerControl = (map) => {
         }
       }
       saveLayers(selectedLayers)
-      saveMap(layerControl._map.hasLayer(baseLayers['3D']) ? '3D' : '2D')
+      const selectedVersion = versions.reduce((out, v) => layerControl._map.hasLayer(baseLayers[v]) ? v : out)
+      if (version() !== selectedVersion) {
+        saveVersion(selectedVersion)
+        changeVersion(map)
+      }
     })
 
     return layerControl
@@ -82,13 +84,40 @@ const initLayerControl = (map) => {
 }
 
 // add all selected layers to overlays, so that they can be added to the map before they are created dynamically
-defaultOverlays.forEach(([type, item]) => addOverlay(type, item))
+currentLayers().forEach(([type, item]) => addOverlay(type, item))
 
 // flattened Array of all selected layers
 const overlaysArray = Object.values(overlays).map(x => Object.values(x)).reduce((a, x) => [...a, ...x], [])
+
+// remove all existing layers from the map
+const resetLayers = (map) => {
+  // remove from map
+  for (type in overlays) {
+    for (item in overlays[type]) {
+      map.removeLayer(overlays[type][item])
+    }
+  }
+  // remove from cached data structure
+  Object.keys(overlays).forEach(key => {
+    delete overlays[key]
+  })
+  // reinit the component to show it being empty
+  layerControlReset()
+}
+
+const reinitLayers = (map) => {
+  // readd the selected layers to the map
+  currentLayers().forEach(([type, item]) => {
+    map.addLayer(overlays[type][item])
+  })
+  // reinit the component
+  layerControlReset()
+}
 
 module.exports = {
   overlays: overlaysArray,
   addMarker,
   initLayerControl,
+  resetLayers,
+  reinitLayers,
 }
