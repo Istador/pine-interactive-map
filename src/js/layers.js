@@ -21,6 +21,7 @@ const baseLayers = {
     tileSize      : 256,
     noWrap        : true,
     bounds        : bounds,
+    version       : 'Beta_2',
   }),
   '2D': L.imageOverlay(`${__2D_MAP__}`, bounds, {}),
 }

@@ -128,8 +128,8 @@ module.exports = {
       __JSON__     : JSON.stringify(process.env.JSON),
       __TILES__    : JSON.stringify(
         github
-        ? 'https://raw.githubusercontent.com/Istador/pine-interactive-map/tiles/{z}/{x}/{y}.png'
-        : 'tiles/{z}/{x}/{y}.png'
+        ? 'https://raw.githubusercontent.com/Istador/pine-interactive-map/tiles/{version}/{z}/{x}/{y}.png'
+        : 'tiles/{version}/{z}/{x}/{y}.png'
       ),
       __2D_MAP__ : JSON.stringify(
         github
