@@ -262,18 +262,18 @@ function gameobject {
   local pos=$(position "$transf" "$asset")
   local n=''
   local item_id="${TYPE2ITEMID[$item]}"
-  local type='unknown'
+  local type='Unknown'
   local area=''
 
   # determine Type
   if [[ "$item" == 'Amphiscis_Orb' ]] || [[ "$item" == 'KeyGraphite' ]] || [[ "$item" == 'Idea' ]] || [[ "$item" == 'Chest' ]] ; then
-    type='unique'
+    type='Unique'
   elif [[ "$item" = 'Alpafant' ]] || [[ "$item" = 'Bleeker' ]] || [[ "$item" = 'Puffle' ]] || [[ "$item" = 'Waddletooth' ]] ; then
-    type='spawn'
+    type='Spawn'
   elif [[ "$file" =~ ^MaterialCluster_ ]] ; then
-    type='material'
+    type='Material'
   elif [[ "$file" =~ ^FoodCluster_ ]] ; then
-    type='food'
+    type='Food'
   fi
 
   # extract Area from asset filename
@@ -365,7 +365,7 @@ function gameobject {
   fi
 
   # Material- or Food-Cluster
-  if [[ "$type" == 'material' ]] || [[ "$type" == 'food' ]] ; then
+  if [[ "$type" == 'Material' ]] || [[ "$type" == 'Food' ]] ; then
     n=0
     # for (c <- transf.childs().toFile() ; monof <- c.gameobject().toFile().findMono().toFile())
     while read monof ; do
