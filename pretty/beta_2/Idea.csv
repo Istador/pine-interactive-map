@@ -1,0 +1,40 @@
+id,type,item,item_id,amount,x,y,z,area,state
+new,unique,Idea,284,,-802.858,63.2856,-483.055,,added
+16,unique,Idea,131,,-774.005,105.44,-162.855,,needs check / item_id
+new,unique,Idea,210,,-674.123,148.752,449.877,,added
+17,unique,Idea,,,-637,75,-710,,removed
+new,unique,Idea,202,,-636.473,196.137,280.527,,added
+18,unique,Idea,126,,-556.528,39.2788,783.98,,moved / item_id
+new,unique,Idea,276,,-531.493,59.58,592.63,,added
+new,unique,Idea,200,,-463.685,79.7058,-469.388,,added
+new,unique,Idea,388,,-463.436,79.7538,-469.22,,added
+19,unique,Idea,297,,-462.023,78.9668,-495.333,,item_id
+new,unique,Idea,299,,-461.932,78.2198,-495.221,,added
+20,unique,Idea,297,,-458.005,84.7228,-470.38,,needs check / moved / item_id
+21,unique,Idea,138,,-397.857,155.886,273.067,,moved / item_id
+new,unique,Idea,367,,-366.947,78.4038,-126.84,,added
+new,unique,Idea,213,,-274.823,120.23,456.827,,added
+new,unique,Idea,205,,-222.663,63.1568,-293.593,,added
+302,unique,Idea,132,,-218.658,89.9704,139.791,,moved / item_id
+new,unique,Idea,275,,-187.05,25.9742,-840.146,,added
+new,unique,Idea,274,,-135.343,76.1268,-190.263,,added
+new,unique,Idea,125,,-111.945,52.5762,-507.832,,added
+new,unique,Idea,217,,-62.9533,37.472,332.787,CouncilCave,added
+new,unique,Idea,368,,-60.074,37.287,326.865,CouncilCave,added
+22,unique,Idea,348,,83.8442,71.8242,-75.2045,,item_id
+23,unique,Idea,346,,87.5952,71.8942,-74.9505,,moved / item_id
+24,unique,Idea,139,,116.922,80.9528,-199.715,,moved / item_id
+new,unique,Idea,211,,163.645,69.3568,326.626,,added
+new,unique,Idea,212,,276.777,33.0056,744.81,,added
+new,unique,Idea,204,,314.208,87.1738,49.4423,,added
+new,unique,Idea,274,,389.982,108.637,-239.494,,added
+new,unique,Idea,282,,426.039,197.923,836.507,NewHome,added
+new,unique,Idea,283,,428.374,197.109,835.552,NewHome,added
+317,unique,Idea,141,,467.77,56.106,441.32,AncientStables,area / item_id
+new,unique,Idea,276,,484.717,31.9436,166.157,,added
+new,unique,Idea,203,,619.17,32.2868,-486.903,,added
+25,unique,Idea,132,,622.23,40.427,-598.338,,needs check / moved / item_id
+26,unique,Idea,368,,671.59,44.6589,418.589,,needs check / moved / item_id
+new,unique,Idea,125,,721.14,70.8318,84.1213,,added
+new,unique,Idea,279,,723.02,81.4002,184.449,,added
+new,unique,Idea,124,,808.833,-2.547,-155.268,GobbledewTomb,added

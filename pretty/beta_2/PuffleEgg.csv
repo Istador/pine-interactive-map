@@ -1,0 +1,9 @@
+id,type,item,item_id,amount,x,y,z,area,state
+684,food,PuffleEgg,13,2,-660.064,114.203,-150.85,,confirmed
+687,food,PuffleEgg,13,3,-618.292,115.87,-323.182,,needs check / amount
+686,food,PuffleEgg,13,3,-426.35,73.15,-439.07,,needs check / amount
+402,food,PuffleEgg,13,3,-278.171,118.66,428.274,,amount
+681,food,PuffleEgg,13,2,-160.48,66.41,98.83,,needs check
+685,food,PuffleEgg,13,3,-125.23,71.82,-433.39,,needs check / amount
+682,food,PuffleEgg,13,2,25.0332,63.5112,-140.449,,needs check
+683,food,PuffleEgg,13,2,64.6984,35.0888,516.34,,needs check

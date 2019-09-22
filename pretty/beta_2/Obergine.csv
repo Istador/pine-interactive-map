@@ -1,0 +1,15 @@
+id,type,item,item_id,amount,x,y,z,area,state
+6,food,Obergine,68,3,-7.49,37.51,590.97,,amount
+186,food,Obergine,68,2,22.31,28.98,761.41,,moved / amount
+259,food,Obergine,68,1,74.5007,31.9471,746.952,,amount
+675,food,Obergine,68,1,117.024,36.0808,303.507,,needs check / amount
+261,food,Obergine,68,2,189.081,34.7615,569.341,,amount
+678,food,Obergine,68,2,193.536,34.7615,516.614,,needs check / amount
+676,food,Obergine,68,1,234.387,34.5663,321.869,,needs check / amount
+677,food,Obergine,68,1,271.48,41.05,145.69,,needs check / amount
+680,food,Obergine,68,3,302.191,35.4311,385.826,,needs check / amount
+679,food,Obergine,68,4,302.49,34.28,260.47,,removed
+174,food,Obergine,68,2,394.772,33.7152,585.815,,amount
+172,food,Obergine,68,1,536.072,30.2172,591.323,,amount
+268,food,Obergine,68,2,571.254,40.0575,425.132,,amount
+267,food,Obergine,68,2,581.047,35.6783,513.403,,amount
