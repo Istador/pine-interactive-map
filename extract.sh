@@ -286,7 +286,7 @@ function gameobject {
     n=0
     # for (c <- transf.childs().toFile() ; child <- c.gameobject().toFile())
     while read child ; do
-      if [[ `grep 'm_Name": "KeyGraphite_Pickup"' "$child" | wc -l` -gt 0 ]] ; then
+      if [[ `grep 'm_Name": "KeyGraphite_Pickup' "$child" | wc -l` -gt 0 ]] ; then
         while read monof ; do
           local m=$(stackAmount "$monof")
           if [[ "$m" != '' ]] ; then
