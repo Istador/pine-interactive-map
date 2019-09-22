@@ -1,0 +1,7 @@
+type,item,item_id,amount,x,y,z,area
+material,DouglasCone,76,2,-231.243,59.616,-352.406,
+material,DouglasCone,76,3,-209.95,63.96,-158.18,
+material,DouglasCone,76,2,-200.37,71.92,-299.63,
+material,DouglasCone,76,2,-168.004,63.857,-141.965,
+material,DouglasCone,76,2,-140.994,65.385,18.693,
+material,DouglasCone,76,2,114.02,64.21,-232.91,
