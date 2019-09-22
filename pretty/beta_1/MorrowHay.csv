@@ -1,0 +1,13 @@
+id,type,item,item_id,amount,x,y,z,area,state
+422,material,MorrowHay,77,4,-627.04,61.45,-595.93,,needs check
+423,material,MorrowHay,77,4,-496.07,53.93,701.61,,confirmed
+193,material,MorrowHay,77,4,-478.21,109.14,-117.50,,confirmed
+195,material,MorrowHay,77,6,-436.69,61.38,-406.41,,confirmed
+424,material,MorrowHay,77,6,-432.83,64.58,-185.29,,needs check
+425,material,MorrowHay,77,2,-336.54,75.35,-276.49,,needs check
+426,material,MorrowHay,77,4,-290.30,61.11,-627.44,,needs check
+190,material,MorrowHay,77,6,-261.84,53.49,720.67,,confirmed
+427,material,MorrowHay,77,4,-49.16,62.97,-99.26,,needs check
+428,material,MorrowHay,77,4,45.15,65.02,-27.60,,needs check
+429,material,MorrowHay,77,4,52.87,59.75,265.21,,needs check
+430,material,MorrowHay,77,2,123.98,63.97,-21.21,,needs check

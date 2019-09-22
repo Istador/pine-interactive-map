@@ -1,0 +1,12 @@
+id,type,item,item_id,amount,x,y,z,area,state
+658,food,Fatplant,61,4,175.49,59.98,-61.36,,needs check
+659,food,Fatplant,61,4,317.64,48.28,-111.60,,needs check
+660,food,Fatplant,61,4,440.70,80.26,80.62,,needs check
+654,food,Fatplant,61,2,477.82,59.94,-67.37,,needs check
+655,food,Fatplant,61,2,498.04,75.98,297.74,,needs check
+223,food,Fatplant,61,6,551.42,30.32,-562.77,,confirmed
+656,food,Fatplant,61,2,579.89,49.40,-197.98,,needs check
+661,food,Fatplant,61,4,620.90,35.37,-321.57,,needs check
+240,food,Fatplant,61,4,679.93,28.53,-436.37,,confirmed
+657,food,Fatplant,61,2,733.67,31.88,-286.24,,needs check
+662,food,Fatplant,61,4,755.34,78.52,166.29,,needs check

@@ -1,0 +1,7 @@
+id,type,item,item_id,amount,x,y,z,area,state
+431,material,Beagalite,72,1,-717.48,90.31,-62.80,,confirmed
+432,material,Beagalite,72,1,-552.92,100.97,-270.70,,needs check
+433,material,Beagalite,72,2,-439.69,165.28,506.61,,confirmed
+434,material,Beagalite,72,1,-124.91,99.06,169.48,,needs check
+435,material,Beagalite,72,1,22.12,64.69,-178.38,,needs check
+168,material,Beagalite,72,1,495.92,34.94,494.14,,confirmed

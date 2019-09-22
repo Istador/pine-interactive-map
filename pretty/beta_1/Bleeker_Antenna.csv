@@ -1,0 +1,11 @@
+id,type,item,item_id,amount,x,y,z,area,state
+609,material,Bleeker_Antenna,188,4,-735.93,88.16,-140.42,,confirmed
+607,material,Bleeker_Antenna,188,4,-441.02,92.38,-90.73,,needs check
+603,material,Bleeker_Antenna,188,2,-379.51,52.27,805.29,,confirmed
+304,material,Bleeker_Antenna,188,4,-54.15,65.06,53.92,,confirmed
+610,material,Bleeker_Antenna,188,6,140.85,37.97,654.80,,confirmed
+602,material,Bleeker_Antenna,188,2,186.00,36.33,335.43,,needs check
+605,material,Bleeker_Antenna,188,4,328.20,85.32,69.66,,needs check
+606,material,Bleeker_Antenna,188,4,420.03,32.06,649.89,,confirmed
+604,material,Bleeker_Antenna,188,2,598.16,42.17,448.18,,confirmed
+608,material,Bleeker_Antenna,188,4,603.84,32.94,-242.36,,needs check

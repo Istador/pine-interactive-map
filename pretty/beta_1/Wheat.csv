@@ -1,0 +1,16 @@
+id,type,item,item_id,amount,x,y,z,area,state
+766,food,Wheat,11,4,-806.38,87.19,-191.92,,confirmed
+765,food,Wheat,11,4,-764.25,80.02,-458.52,,confirmed
+764,food,Wheat,11,4,-726.73,62.44,-529.08,,needs check
+769,food,Wheat,11,8,-713.25,59.75,-597.23,,needs check
+763,food,Wheat,11,4,-607.55,58.51,-716.87,,needs check
+762,food,Wheat,11,4,-606.75,60.98,-655.65,,needs check
+760,food,Wheat,11,4,-533.59,58.92,-678.39,,needs check
+767,food,Wheat,11,6,-514.00,79.43,-199.51,,needs check
+759,food,Wheat,11,4,-483.41,56.01,-683.10,,needs check
+758,food,Wheat,11,4,-453.30,56.51,-771.08,,needs check
+757,food,Wheat,11,4,-404.64,64.83,-238.98,,needs check
+768,food,Wheat,11,8,-396.83,65.19,-283.00,,needs check
+756,food,Wheat,11,4,-268.73,71.80,-688.94,,needs check
+755,food,Wheat,11,4,-261.57,63.39,68.85,,needs check
+761,food,Wheat,11,4,-57.88,60.62,-43.66,,needs check

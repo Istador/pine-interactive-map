@@ -1,0 +1,10 @@
+id,type,item,item_id,amount,x,y,z,area,state
+380,unique,Chest,,,-531,59,593,,confirmed
+8,unique,Chest,,,-373,80,-126,,confirmed
+9,unique,Chest,,,-225,65,-297,,confirmed
+10,unique,Chest,,,-186,29,-836,,confirmed
+11,unique,Chest,,,-135,80,-187,,confirmed
+12,unique,Chest,,,15,40,484,,confirmed
+13,unique,Chest,,,327,90,42,,needs check
+14,unique,Chest,,,508,30,651,,confirmed
+15,unique,Chest,,,578,35,-453,,needs check

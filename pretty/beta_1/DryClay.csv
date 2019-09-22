@@ -1,0 +1,18 @@
+id,type,item,item_id,amount,x,y,z,area,state
+516,material,DryClay,78,2,-98.47,25.76,-546.45,,needs check
+517,material,DryClay,78,2,252.90,66.81,-191.72,,needs check
+518,material,DryClay,78,4,317.61,52.18,-327.46,,needs check
+519,material,DryClay,78,4,351.49,65.60,-189.62,,needs check
+253,material,DryClay,78,4,373.74,80.13,0.06,,confirmed
+520,material,DryClay,78,2,376.12,50.45,-96.06,,needs check
+521,material,DryClay,78,4,493.53,33.98,-367.85,,needs check
+522,material,DryClay,78,4,539.33,51.46,-159.39,,needs check
+523,material,DryClay,78,4,559.54,54.84,-54.10,,needs check
+245,material,DryClay,78,4,567.95,33.99,-336.34,,confirmed
+524,material,DryClay,78,4,578.03,82.14,93.83,,needs check
+525,material,DryClay,78,2,586.56,27.83,-625.58,,needs check
+226,material,DryClay,78,4,633.46,27.50,-723.65,,confirmed
+526,material,DryClay,78,4,663.54,75.26,41.20,,needs check
+527,material,DryClay,78,4,669.26,33.35,-292.69,,needs check
+528,material,DryClay,78,4,718.28,28.02,-491.45,,needs check
+160,material,DryClay,78,2,723.94,78.38,138.87,,confirmed

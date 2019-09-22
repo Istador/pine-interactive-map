@@ -1,0 +1,22 @@
+id,type,item,item_id,amount,x,y,z,area,state
+394,food,DuneRice,59,4,-718.84,25.95,622.78,,confirmed
+644,food,DuneRice,59,4,-559.72,28.23,-802.04,,needs check
+639,food,DuneRice,59,4,-198.49,25.99,-588.60,,needs check
+638,food,DuneRice,59,4,158.35,67.05,-100.16,,needs check
+640,food,DuneRice,59,4,243.64,64.78,-214.69,,needs check
+641,food,DuneRice,59,4,254.85,49.81,-24.95,,needs check
+252,food,DuneRice,59,2,369.22,83.53,42.14,,confirmed
+635,food,DuneRice,59,2,410.52,82.77,65.82,,needs check
+221,food,DuneRice,59,6,425.30,29.28,-483.89,,confirmed
+642,food,DuneRice,59,4,444.98,77.74,238.10,,needs check
+643,food,DuneRice,59,4,524.65,49.52,-139.59,,needs check
+645,food,DuneRice,59,4,568.41,46.59,-91.51,,needs check
+636,food,DuneRice,59,2,579.04,33.39,-258.11,,needs check
+637,food,DuneRice,59,2,605.66,34.79,-276.18,,needs check
+650,food,DuneRice,59,6,606.06,82.72,17.17,,needs check
+646,food,DuneRice,59,4,691.60,31.38,-589.58,,needs check
+647,food,DuneRice,59,4,700.03,77.21,154.33,,needs check
+648,food,DuneRice,59,4,710.01,26.76,-522.67,,needs check
+649,food,DuneRice,59,4,713.84,33.75,-796.20,,needs check
+235,food,DuneRice,59,4,730.28,29.48,-566.10,,confirmed
+651,food,DuneRice,59,6,763.61,26.24,-348.63,,needs check

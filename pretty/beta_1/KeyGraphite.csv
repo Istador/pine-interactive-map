@@ -1,0 +1,119 @@
+id,type,item,item_id,amount,x,y,z,area,state
+82,unique,KeyGraphite,187,2,-838.13,25.88,547.50,,confirmed
+83,unique,KeyGraphite,187,1,-836.84,61.19,-70.97,,confirmed
+335,unique,KeyGraphite,187,1,-800.29,68.40,-571.84,,needs check
+336,unique,KeyGraphite,187,1,-770.29,105.15,-236.83,,needs check
+84,unique,KeyGraphite,187,2,-737.79,25.96,-877.16,,confirmed
+85,unique,KeyGraphite,187,2,-735.61,126.44,-3.83,,confirmed
+337,unique,KeyGraphite,187,2,-730.48,103.24,163.02,,confirmed
+338,unique,KeyGraphite,187,1,-723.30,26.50,783.82,,confirmed
+339,unique,KeyGraphite,187,2,-722.52,118.01,-332.24,,needs check
+86,unique,KeyGraphite,187,2,-707.48,41.66,575.22,,confirmed
+340,unique,KeyGraphite,187,2,-696.70,134.48,474.22,,confirmed
+341,unique,KeyGraphite,187,2,-687.70,108.45,-163.57,,needs check
+87,unique,KeyGraphite,187,2,-686.20,97.97,-711.23,,confirmed
+342,unique,KeyGraphite,187,2,-677.06,173.63,340.61,,confirmed
+343,unique,KeyGraphite,187,2,-643.15,95.04,554.89,,confirmed
+344,unique,KeyGraphite,187,1,-641.36,60.27,-521.66,,needs check
+345,unique,KeyGraphite,187,2,-635.45,120.55,-354.31,,needs check
+88,unique,KeyGraphite,187,2,-596.63,221.75,315.48,,confirmed
+89,unique,KeyGraphite,187,2,-578.99,96.78,-434.62,,confirmed
+90,unique,KeyGraphite,187,1,-529.82,101.51,-160.12,,confirmed
+91,unique,KeyGraphite,187,2,-510.55,131.23,138.97,,confirmed
+347,unique,KeyGraphite,187,2,-509.41,32.29,-799.82,,needs check
+92,unique,KeyGraphite,187,2,-476.70,197.04,384.28,,confirmed
+93,unique,KeyGraphite,187,2,-457.27,67.34,-573.07,,confirmed
+346,unique,KeyGraphite,187,2,-454.84,67.62,-573.10,,confirmed
+95,unique,KeyGraphite,187,2,-451.53,62.90,-449.20,,confirmed
+94,unique,KeyGraphite,187,2,-447.32,75.91,-144.37,,confirmed
+96,unique,KeyGraphite,187,1,-428.06,118.90,625.77,,confirmed
+97,unique,KeyGraphite,187,1,-427.64,83.86,7.27,,confirmed
+348,unique,KeyGraphite,187,2,-421.88,120.33,112.68,,confirmed
+99,unique,KeyGraphite,187,2,-402.00,156.32,223.73,,confirmed
+349,unique,KeyGraphite,187,2,-383.03,51.31,827.64,,confirmed
+350,unique,KeyGraphite,187,1,-380.98,71.26,691.60,,confirmed
+100,unique,KeyGraphite,187,2,-367.56,99.32,-645.83,,confirmed
+351,unique,KeyGraphite,187,2,-363.54,64.67,-241.79,,needs check
+101,unique,KeyGraphite,187,1,-349.88,63.61,46.93,,confirmed
+102,unique,KeyGraphite,187,1,-341.65,139.54,491.90,,confirmed
+103,unique,KeyGraphite,187,2,-338.01,103.87,-513.39,,confirmed
+352,unique,KeyGraphite,187,1,-304.50,60.77,-113.35,,needs check
+104,unique,KeyGraphite,187,2,-295.07,85.70,-675.11,,confirmed
+105,unique,KeyGraphite,187,2,-294.97,26.03,810.26,,confirmed
+106,unique,KeyGraphite,187,2,-285.96,77.34,109.25,,confirmed
+107,unique,KeyGraphite,187,1,-266.41,82.71,263.77,,confirmed
+353,unique,KeyGraphite,187,1,-258.16,74.80,-782.31,,needs check
+354,unique,KeyGraphite,187,1,-237.43,115.83,409.55,,confirmed
+108,unique,KeyGraphite,187,2,-225.73,74.81,-211.20,,confirmed
+213,unique,KeyGraphite,187,2,-213.26,72.43,-117.57,,confirmed
+109,unique,KeyGraphite,187,2,-212.07,95.92,614.18,,confirmed
+110,unique,KeyGraphite,187,1,-190.71,36.86,-503.84,,confirmed
+111,unique,KeyGraphite,187,1,-187.57,56.55,-434.58,,confirmed
+112,unique,KeyGraphite,187,2,-181.66,63.90,21.84,,confirmed
+114,unique,KeyGraphite,187,2,-160.96,66.41,601.41,,confirmed
+113,unique,KeyGraphite,187,2,-158.86,66.31,-230.31,,confirmed
+355,unique,KeyGraphite,187,2,-134.17,67.20,663.29,,confirmed
+115,unique,KeyGraphite,187,2,-131.40,116.55,473.16,,confirmed
+116,unique,KeyGraphite,187,2,-125.54,44.30,-546.02,,confirmed
+117,unique,KeyGraphite,187,1,-115.28,131.86,255.74,,confirmed
+356,unique,KeyGraphite,187,2,-102.41,102.02,457.57,,confirmed
+357,unique,KeyGraphite,187,2,-100.53,90.14,552.48,,confirmed
+185,unique,KeyGraphite,187,1,-83.18,45.52,741.15,,confirmed
+358,unique,KeyGraphite,187,2,-61.55,62.59,-493.54,,needs check
+359,unique,KeyGraphite,187,1,-60.11,93.76,292.49,,confirmed
+118,unique,KeyGraphite,187,2,-48.18,58.43,-245.97,,confirmed
+119,unique,KeyGraphite,187,2,-34.30,73.87,-131.75,,confirmed
+121,unique,KeyGraphite,187,2,-30.38,50.64,-420.15,,confirmed
+120,unique,KeyGraphite,187,1,-28.74,86.36,89.23,,confirmed
+188,unique,KeyGraphite,187,2,-22.54,27.14,911.18,,confirmed
+122,unique,KeyGraphite,187,1,-14.84,76.83,425.76,,confirmed
+124,unique,KeyGraphite,187,2,-11.25,72.55,334.31,,confirmed
+123,unique,KeyGraphite,187,1,-7.86,77.96,249.55,,confirmed
+125,unique,KeyGraphite,187,2,9.93,26.13,-539.99,,confirmed
+126,unique,KeyGraphite,187,2,42.21,52.33,369.74,,confirmed
+127,unique,KeyGraphite,187,1,51.99,30.81,719.74,,confirmed
+128,unique,KeyGraphite,187,2,88.38,75.57,-365.26,,confirmed
+360,unique,KeyGraphite,187,2,94.55,60.41,-89.12,,confirmed
+129,unique,KeyGraphite,187,2,105.39,55.84,240.60,,confirmed
+159,unique,KeyGraphite,187,1,114.21,34.28,565.14,,confirmed
+130,unique,KeyGraphite,187,2,119.61,66.93,36.20,,confirmed
+131,unique,KeyGraphite,187,2,142.67,36.99,222.96,,confirmed
+361,unique,KeyGraphite,187,2,145.75,68.41,-165.08,,confirmed
+132,unique,KeyGraphite,187,1,160.82,38.14,328.70,,confirmed
+133,unique,KeyGraphite,187,1,182.29,51.27,-26.82,,confirmed
+176,unique,KeyGraphite,187,2,183.99,25.19,797.98,,confirmed
+134,unique,KeyGraphite,187,2,231.67,34.02,400.18,,confirmed
+135,unique,KeyGraphite,187,1,255.83,25.16,584.85,,confirmed
+136,unique,KeyGraphite,187,2,267.05,40.49,-380.78,,confirmed
+249,unique,KeyGraphite,187,2,307.08,95.66,-207.46,,confirmed
+137,unique,KeyGraphite,187,2,333.64,32.34,862.46,,confirmed
+362,unique,KeyGraphite,187,1,365.73,60.48,-83.67,,confirmed
+138,unique,KeyGraphite,187,1,366.03,26.99,950.54,,confirmed
+139,unique,KeyGraphite,187,1,411.82,43.56,403.45,,confirmed
+140,unique,KeyGraphite,187,2,422.06,38.13,136.19,,confirmed
+141,unique,KeyGraphite,187,2,422.63,81.43,27.71,,confirmed
+143,unique,KeyGraphite,187,1,434.82,43.89,846.20,,confirmed
+144,unique,KeyGraphite,187,1,473.80,30.45,-570.84,,confirmed
+145,unique,KeyGraphite,187,1,475.72,34.59,547.26,,confirmed
+146,unique,KeyGraphite,187,2,489.98,26.05,774.64,,confirmed
+243,unique,KeyGraphite,187,2,548.29,59.22,-354.00,,confirmed
+363,unique,KeyGraphite,187,2,548.61,45.19,-430.35,,needs check
+147,unique,KeyGraphite,187,2,559.91,73.27,324.98,,confirmed
+364,unique,KeyGraphite,187,2,612.25,42.35,-485.09,,needs check
+148,unique,KeyGraphite,187,2,616.19,28.02,889.07,,confirmed
+366,unique,KeyGraphite,187,2,620.63,91.55,39.79,,needs check
+365,unique,KeyGraphite,187,2,621.27,95.49,147.30,,needs check
+149,unique,KeyGraphite,187,2,641.01,55.68,-182.64,,confirmed
+367,unique,KeyGraphite,187,2,643.55,47.91,-292.64,,confirmed
+150,unique,KeyGraphite,187,2,648.42,50.31,294.61,,confirmed
+232,unique,KeyGraphite,187,2,657.42,49.35,-730.77,,confirmed
+151,unique,KeyGraphite,187,1,657.43,36.25,471.91,,confirmed
+152,unique,KeyGraphite,187,1,666.65,25.53,533.87,,confirmed
+153,unique,KeyGraphite,187,2,686.21,84.09,309.82,,confirmed
+233,unique,KeyGraphite,187,2,709.65,27.52,-880.61,,confirmed
+326,unique,KeyGraphite,187,2,733.93,46.20,-314.22,,confirmed
+230,unique,KeyGraphite,187,2,793.41,49.00,-845.18,,confirmed
+154,unique,KeyGraphite,187,1,803.34,25.99,-153.43,,confirmed
+161,unique,KeyGraphite,187,1,808.88,50.10,180.12,,confirmed
+155,unique,KeyGraphite,187,2,821.07,32.34,382.60,,confirmed
+156,unique,KeyGraphite,187,2,829.66,32.34,-383.13,,confirmed

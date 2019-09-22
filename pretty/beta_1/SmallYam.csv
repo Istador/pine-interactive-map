@@ -1,0 +1,6 @@
+id,type,item,item_id,amount,x,y,z,area,state
+754,food,SmallYam,9,6,-273.12,60.69,-571.70,,needs check
+752,food,SmallYam,9,4,-232.91,65.19,-253.92,,needs check
+206,food,SmallYam,9,4,-198.09,59.93,-369.95,,confirmed
+753,food,SmallYam,9,6,-162.96,62.66,-91.64,,needs check
+751,food,SmallYam,9,4,114.84,67.59,-274.78,,needs check

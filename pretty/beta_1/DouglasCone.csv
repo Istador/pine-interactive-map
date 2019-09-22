@@ -1,0 +1,5 @@
+id,type,item,item_id,amount,x,y,z,area,state
+205,material,DouglasCone,76,4,-231.24,59.62,-352.41,,confirmed
+420,material,DouglasCone,76,6,-209.95,63.96,-158.18,,needs check
+421,material,DouglasCone,76,4,-201.23,71.49,-300.91,,needs check
+300,material,DouglasCone,76,4,-168.00,63.86,-141.97,,confirmed

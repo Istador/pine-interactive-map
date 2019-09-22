@@ -1,0 +1,15 @@
+id,type,item,item_id,amount,x,y,z,area,state
+392,food,AvianPepper,69,4,-788.73,25.73,605.81,,confirmed
+600,food,AvianPepper,69,4,-639.59,25.94,-816.16,,needs check
+585,food,AvianPepper,69,2,-558.04,27.89,-802.50,,needs check
+584,food,AvianPepper,69,2,-183.26,26.54,-531.27,,needs check
+586,food,AvianPepper,69,4,213.06,63.71,-148.55,,needs check
+587,food,AvianPepper,69,4,248.49,53.97,13.92,,needs check
+219,food,AvianPepper,69,2,390.17,27.33,-416.35,,confirmed
+254,food,AvianPepper,69,2,402.57,80.38,0.34,,confirmed
+588,food,AvianPepper,69,4,410.93,49.78,-148.00,,needs check
+589,food,AvianPepper,69,4,504.12,76.82,214.58,,needs check
+247,food,AvianPepper,69,2,525.34,33.99,-249.89,,confirmed
+246,food,AvianPepper,69,4,536.49,30.20,-311.68,,confirmed
+590,food,AvianPepper,69,4,568.04,80.07,126.56,,needs check
+601,food,AvianPepper,69,4,663.28,31.37,-350.58,,needs check

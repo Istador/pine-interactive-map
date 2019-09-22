@@ -1,0 +1,14 @@
+id,type,item,item_id,amount,x,y,z,area,state
+621,material,Bone,22,2,-736.02,88.18,-142.50,,confirmed
+620,material,Bone,22,2,-726.01,61.47,-639.10,,needs check
+615,material,Bone,22,2,-441.63,92.45,-90.51,,needs check
+614,material,Bone,22,2,-380.85,52.33,806.39,,confirmed
+611,material,Bone,22,2,-193.30,77.38,-222.26,,needs check
+622,material,Bone,22,4,185.70,36.44,333.84,,needs check
+623,material,Bone,22,4,274.02,61.62,-242.85,,needs check
+612,material,Bone,22,2,329.75,85.26,71.40,,needs check
+613,material,Bone,22,2,365.38,74.01,178.99,,needs check
+616,material,Bone,22,2,441.69,34.48,521.37,,confirmed
+617,material,Bone,22,2,448.75,29.00,-453.05,,needs check
+618,material,Bone,22,2,596.68,42.17,446.65,,confirmed
+619,material,Bone,22,2,615.03,33.72,-246.57,,needs check

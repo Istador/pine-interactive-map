@@ -1,0 +1,16 @@
+id,type,item,item_id,amount,x,y,z,area,state
+181,material,Toothstone,55,6,9.19,39.42,508.20,,confirmed
+556,material,Toothstone,55,2,141.83,36.46,430.65,,needs check
+557,material,Toothstone,55,2,152.55,36.38,259.88,,needs check
+558,material,Toothstone,55,2,183.31,34.19,382.57,,needs check
+263,material,Toothstone,55,4,213.34,34.75,566.20,,confirmed
+256,material,Toothstone,55,2,217.59,37.98,185.58,,confirmed
+559,material,Toothstone,55,4,236.38,38.10,416.27,,needs check
+264,material,Toothstone,55,6,248.27,40.99,526.15,,confirmed
+560,material,Toothstone,55,2,276.20,37.27,259.45,,needs check
+561,material,Toothstone,55,2,279.22,35.76,187.93,,needs check
+562,material,Toothstone,55,2,304.94,35.44,645.00,,confirmed
+563,material,Toothstone,55,2,323.31,37.54,565.78,,confirmed
+564,material,Toothstone,55,2,376.64,36.80,539.53,,confirmed
+169,material,Toothstone,55,4,451.71,35.18,495.33,,confirmed
+164,material,Toothstone,55,2,620.59,41.04,453.64,,confirmed

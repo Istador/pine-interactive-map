@@ -1,0 +1,14 @@
+id,type,item,item_id,amount,x,y,z,area,state
+445,material,Sandstone,34,4,-183.88,25.29,-561.61,,needs check
+446,material,Sandstone,34,2,220.63,50.41,-84.88,,needs check
+447,material,Sandstone,34,2,290.66,54.72,-36.12,,needs check
+448,material,Sandstone,34,4,433.90,60.92,-55.49,,needs check
+449,material,Sandstone,34,2,457.01,77.29,268.14,,needs check
+450,material,Sandstone,34,4,465.97,53.26,-156.99,,needs check
+451,material,Sandstone,34,4,544.21,29.82,-403.10,,needs check
+244,material,Sandstone,34,4,582.01,34.06,-321.71,,confirmed
+239,material,Sandstone,34,4,625.56,30.31,-464.93,,confirmed
+452,material,Sandstone,34,2,633.09,54.58,-220.67,,needs check
+236,material,Sandstone,34,2,640.86,30.24,-516.30,,confirmed
+453,material,Sandstone,34,4,653.29,77.77,159.86,,needs check
+162,material,Sandstone,34,4,829.32,55.57,291.89,,confirmed
