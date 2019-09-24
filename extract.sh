@@ -336,33 +336,34 @@ function gameobject {
   fi
 
   # Idea & Chests
-  if [[ "$item" == 'Idea' ]] || [[ "$item" == 'Chest' ]] ; then
-    # for (monof <- file.findMonos().toFile())
-    while read monof ; do
-      if [[ "$item" == 'Idea' ]] ; then
-        local sid=$(stackID "$monof")
-        if [[ "$sid" != '' ]] ; then
-          item_id=$sid
-          break
-        fi
-        local sp=($(singlePickup "$monof" "$asset"))
-        if [[ "$sp" != '' ]] ; then
-          item_id=${sp[0]}
-          break
-        fi
-      else
-        local tid=$(triggerID "$monof")
-        if [[ "$tid" != '' ]] ; then
-          item_id=$tid
-          break
-        fi
-      fi
-    done < <(monos "$file" | mono2file "$asset")
-
-    if [[ "$item_id" == '' ]] ; then
-      return
-    fi
-  fi
+  ###   TODO: filter out Ideas that are inside of chests
+  ###   TODO: fix ID finding - seem to contain duplicate IDs
+  #if [[ "$item" == 'Idea' ]] || [[ "$item" == 'Chest' ]] ; then
+  #  # for (monof <- file.findMonos().toFile())
+  #  while read monof ; do
+  #    if [[ "$item" == 'Idea' ]] ; then
+  #      local sid=$(stackID "$monof")
+  #      if [[ "$sid" != '' ]] ; then
+  #        item_id=$sid
+  #        break
+  #      fi
+  #      local sp=($(singlePickup "$monof" "$asset"))
+  #      if [[ "$sp" != '' ]] ; then
+  #        item_id=${sp[0]}
+  #        break
+  #      fi
+  #    else
+  #      local tid=$(triggerID "$monof")
+  #      if [[ "$tid" != '' ]] ; then
+  #        item_id=$tid
+  #        break
+  #      fi
+  #    fi
+  #  done < <(monos "$file" | mono2file "$asset")
+  #  if [[ "$item_id" == '' ]] ; then
+  #    return
+  #  fi
+  #fi
 
   # Material- or Food-Cluster
   if [[ "$type" == 'Material' ]] || [[ "$type" == 'Food' ]] ; then
