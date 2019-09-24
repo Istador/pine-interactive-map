@@ -9,6 +9,6 @@ id,type,item,item_id,amount,x,y,z,area,state
 22,unique,Idea,,,80,73,-76,,confirmed
 23,unique,Idea,,,84,73,-80,,confirmed
 24,unique,Idea,,,120,84,-205,,confirmed
-317,unique,Idea,,,466,59,440,,confirmed
+317,unique,Idea,,,466,59,440,AncientStables,confirmed
 25,unique,Idea,,,622,33,-601,,needs check
 26,unique,Idea,,,670.0,48.1,422.3,,needs check

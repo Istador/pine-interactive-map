@@ -451,7 +451,7 @@ echo -en "\033[2K\r[99.99% ($n / $n)$elapsed] sorting..."
 
 # sort files at the end
 for file in "${ITEMS_FOUND[@]}" ; do
-  sort -g -t',' -k5 -k7 -k6 -o "$file" "$file"
+  LC_ALL=C  sort -g -t',' -k5 -k7 -k6 -o "$file" "$file"
 done
 
 # calculate time
