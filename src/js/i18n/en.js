@@ -50,7 +50,7 @@ module.exports = {
       telkinchives    : 'Telkin Chives',
       tingflower      : 'Tingflower',
       waddletoothloin : 'Waddletooth Loin',
-      wheat           : 'Commonwheat',
+      commonwheat     : 'Commonwheat',
     },
     item: {
       '.'   : 'Item',
@@ -86,8 +86,8 @@ module.exports = {
       lever          : 'Lever',
       pinsocket      : 'Pin Socket',
     },
-    nest: {
-      '.'         : 'Nest',
+    spawn: {
+      '.'         : 'Spawn',
       alpafant    : 'Alpafant',
       bleeker     : 'Bleeker',
       puffle      : 'Puffle',
@@ -100,12 +100,13 @@ module.exports = {
       quest    : 'Quest',
     },
     unique: {
-      '.'         : 'Unique',
-      chest       : 'Chest',
-      emblem      : 'Amphiscis Emblem',
-      idea        : 'Idea',
-      journal     : 'Journal / Book',
-      keygraphite : 'Key Graphite',
+      '.'          : 'Unique',
+      amphiscisorb : 'Amphiscis Orb',
+      chest        : 'Chest',
+      emblem       : 'Amphiscis Emblem',
+      idea         : 'Idea',
+      journal      : 'Journal / Book',
+      keygraphite  : 'Key Graphite',
     },
   },
 }

@@ -19,7 +19,7 @@ const tints = {
     n: 5,
     i: 0,
   },
-  nest: {
+  spawn: {
     map: {},
     n: 4,
     i: 6,

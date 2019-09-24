@@ -52,8 +52,8 @@ module.exports = {
       door  : 'Tür',
       lever : 'Hebel',
     },
-    nest: {
-      '.' : 'Nest',
+    spawn: {
+      '.' : 'Kreaturen',
     },
     npc: {
       '.'      : 'NPC',

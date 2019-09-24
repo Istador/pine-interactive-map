@@ -142,8 +142,8 @@ div.leaflet-marker-pane > div.pine-marker {
     @include tint(5);
   }
 
-  // nest
-  &.pine-marker-nest {
+  // spawn
+  &.pine-marker-spawn {
     // default
     @include scaled($pine-icon-nest);
     @include tint(4);
@@ -160,6 +160,10 @@ div.leaflet-marker-pane > div.pine-marker {
 
   // unique
   &.pine-marker-unique {
+    // amphiscisorb
+    &.pine-marker-unique-amphiscisorb {
+      @include scaled($pine-icon-emblem);
+    }
     // emblem
     &.pine-marker-unique-emblem {
       @include scaled($pine-icon-emblem);

@@ -8,8 +8,9 @@ const defaultLayers = [
   'item.equip',
   'item.quest',
   'npc.quest',
-  'unique.emblem',
+  'unique.amphiscisorb',
   'unique.chest',
+  'unique.emblem',
   'unique.idea',
 ]
 

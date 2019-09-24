@@ -91,7 +91,7 @@ module.exports = {
         tooltipAnchor : [ 0, -8 ],
       },
     },
-    nest: {
+    spawn: {
       default: {
         iconSize      : null,
         iconAnchor    : [ 8,  8 ],
@@ -103,6 +103,12 @@ module.exports = {
       quest,
     },
     unique: {
+      amphiscisorb: {
+        iconSize      : null,
+        iconAnchor    : [ 8,  10 ],
+        popupAnchor   : [ 0, -10 ],
+        tooltipAnchor : [ 0, -10 ],
+      },
       chest: {
         iconSize      : null,
         iconAnchor    : [ 8,  5.5 ],

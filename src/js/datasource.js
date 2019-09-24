@@ -45,9 +45,18 @@ const transform = {
           const sentence = row[key]
           const text = sentence.data.text.trim()
           if (! text) { continue }
-          obj[key] = text2number(text)
+          const val = text2number(text)
+
+          obj[key] = (
+            key === 'type' || key === 'item'
+            ? val.replace(/[\_\- ]/g, '').toLowerCase()
+            : val
+          )
           if (sentence.data.links || sentence.data.fmt) {
             obj[key + '_html'] = sentence.html({formatting: true}).replace(' href="./', ` target="_blank" href="${__WIKI__}`)
+          }
+          else if (key === 'type' || key === 'item') {
+            obj[key + '_html'] = val
           }
         }
         out.push(obj)
