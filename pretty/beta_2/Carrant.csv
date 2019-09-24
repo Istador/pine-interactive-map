@@ -4,8 +4,8 @@ id,type,item,item_id,amount,x,y,z,area,state
 630,food,Carrant,8,2,-276.564,70.6214,235.812,,needs check
 204,food,Carrant,8,2,-236.77,59.04,-330.25,,confirmed
 625,food,Carrant,8,1,-234.43,64.68,-256.48,,needs check
-634,food,Carrant,8,3,-193.11,67.39,-468.44,,needs check
-624,food,Carrant,8,1,-144.47,68.21,-449.35,,needs check
+634,food,Carrant,8,3,-193.11,67.39,-468.44,,confirmed
+624,food,Carrant,8,1,-144.47,68.21,-449.35,,confirmed
 627,food,Carrant,8,2,-103.16,62.9895,-81.3869,,needs check
 632,food,Carrant,8,2,-70.4986,64.7709,3.22668,,needs check
 629,food,Carrant,8,2,-23.9987,60.5643,-184.286,,needs check

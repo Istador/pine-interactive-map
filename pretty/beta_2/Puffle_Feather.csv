@@ -1,7 +1,7 @@
 id,type,item,item_id,amount,x,y,z,area,state
 781,material,Puffle_Feather,24,3,-660.282,113.978,-149.559,,confirmed
 780,material,Puffle_Feather,24,2,-617.22,115.72,-323.33,,needs check
-779,material,Puffle_Feather,24,2,-426.14,73.24,-438.69,,needs check
+779,material,Puffle_Feather,24,2,-426.14,73.24,-438.69,,confirmed
 778,material,Puffle_Feather,24,2,-161.66,66.01,91.8,,needs check
 776,material,Puffle_Feather,24,2,-125.531,71.544,-429.67,,needs check
 777,material,Puffle_Feather,24,2,-14.7527,69.6278,290.309,,needs check

@@ -3,7 +3,7 @@ id,type,item,item_id,amount,x,y,z,area,state
 569,material,Alpafant_Leather,25,1,-724.44,61.53,-637.04,,needs check
 572,material,Alpafant_Leather,25,2,-578.624,94.9465,-190.128,,needs check
 568,material,Alpafant_Leather,25,1,-463.878,65.5626,-205.558,,needs check
-574,material,Alpafant_Leather,25,3,-379.07,108.347,-549.586,,needs check
+574,material,Alpafant_Leather,25,3,-379.07,108.347,-549.586,,confirmed
 570,material,Alpafant_Leather,25,2,-364.55,75.27,-207.82,,needs check
 210,material,Alpafant_Leather,25,2,-191.5,77.31,-217.38,,confirmed
 211,material,Alpafant_Leather,25,2,-116.351,60.9939,-133.233,,confirmed

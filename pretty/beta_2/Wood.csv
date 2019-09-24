@@ -8,7 +8,7 @@ id,type,item,item_id,amount,x,y,z,area,state
 384,material,Wood,14,2,-589.08,60.72,626.48,,confirmed
 497,material,Wood,14,2,-512.53,62.91,-497.13,,needs check
 411,material,Wood,14,4,-504.94,99.83,103.01,,confirmed
-496,material,Wood,14,4,-484.709,55.9725,-732.874,,needs check
+496,material,Wood,14,4,-484.709,55.9725,-732.874,,confirmed
 495,material,Wood,14,2,-452.06,59.52,-638.05,,needs check
 494,material,Wood,14,4,-435.67,64.81,-260,,needs check
 200,material,Wood,14,6,-391.44,76.68,-398.78,,confirmed
@@ -31,7 +31,7 @@ id,type,item,item_id,amount,x,y,z,area,state
 209,material,Wood,14,4,-150.169,59.0953,-240.929,,confirmed
 485,material,Wood,14,2,-149.985,61.681,-138.816,,needs check
 212,material,Wood,14,2,-147.011,63.9126,-59.9828,,confirmed
-484,material,Wood,14,6,-140.67,67.94,-461.64,,needs check
+484,material,Wood,14,6,-140.67,67.94,-461.64,,confirmed
 500,material,Wood,14,4,-71.0043,60.9911,-169.666,,needs check
 483,material,Wood,14,4,-11.249,63.1501,-210.606,,needs check
 180,material,Wood,14,2,22.94,35.41,568.09,,confirmed

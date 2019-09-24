@@ -7,10 +7,10 @@ id,type,item,item_id,amount,x,y,z,area,state
 762,food,Wheat,11,2,-606.753,60.9787,-655.649,,needs check
 760,food,Wheat,11,2,-533.586,58.9218,-678.39,,needs check
 767,food,Wheat,11,3,-513.997,79.4319,-199.512,,needs check
-759,food,Wheat,11,2,-483.41,56.01,-683.1,,needs check
-758,food,Wheat,11,2,-453.295,56.5118,-771.079,,needs check
+759,food,Wheat,11,2,-483.41,56.01,-683.1,,confirmed
+758,food,Wheat,11,2,-453.295,56.5118,-771.079,,confirmed
 757,food,Wheat,11,2,-404.636,64.832,-238.981,,needs check
 768,food,Wheat,11,4,-396.83,65.19,-283,,needs check
-756,food,Wheat,11,2,-268.734,71.7952,-688.937,,needs check
+756,food,Wheat,11,2,-268.734,71.7952,-688.937,,confirmed
 755,food,Wheat,11,2,-261.57,63.39,68.85,,needs check
 761,food,Wheat,11,2,-57.88,60.62,-43.66,,needs check
