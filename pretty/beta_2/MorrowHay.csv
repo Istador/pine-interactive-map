@@ -1,13 +1,13 @@
 id,type,item,item_id,amount,x,y,z,area,state
-422,material,MorrowHay,77,2,-627.039,61.449,-595.925,,needs check / amount
-423,material,MorrowHay,77,2,-496.07,53.93,701.61,,amount
-193,material,MorrowHay,77,2,-478.21,109.14,-117.5,,amount
-195,material,MorrowHay,77,3,-436.69,61.38,-406.41,,amount
-424,material,MorrowHay,77,3,-432.83,64.58,-185.29,,needs check / amount
-425,material,MorrowHay,77,1,-336.54,75.35,-276.49,,needs check / amount
-426,material,MorrowHay,77,2,-290.303,61.1053,-627.436,,needs check / amount
-190,material,MorrowHay,77,3,-261.84,51.5806,720.67,,amount
-427,material,MorrowHay,77,2,-49.1572,62.9726,-99.2644,,needs check / amount
-428,material,MorrowHay,77,2,45.1512,65.0195,-27.5979,,needs check / amount
-429,material,MorrowHay,77,2,52.8651,59.7492,265.205,,needs check / amount
-430,material,MorrowHay,77,1,123.977,63.9748,-21.2138,,needs check / amount
+422,material,MorrowHay,77,2,-627.039,61.449,-595.925,,needs check
+423,material,MorrowHay,77,2,-496.07,53.93,701.61,,confirmed
+193,material,MorrowHay,77,2,-478.21,109.14,-117.5,,confirmed
+195,material,MorrowHay,77,3,-436.69,61.38,-406.41,,confirmed
+424,material,MorrowHay,77,3,-432.83,64.58,-185.29,,needs check
+425,material,MorrowHay,77,1,-336.54,75.35,-276.49,,needs check
+426,material,MorrowHay,77,2,-290.303,61.1053,-627.436,,needs check
+190,material,MorrowHay,77,3,-261.84,51.5806,720.67,,confirmed
+427,material,MorrowHay,77,2,-49.1572,62.9726,-99.2644,,needs check
+428,material,MorrowHay,77,2,45.1512,65.0195,-27.5979,,needs check
+429,material,MorrowHay,77,2,52.8651,59.7492,265.205,,needs check
+430,material,MorrowHay,77,1,123.977,63.9748,-21.2138,,needs check

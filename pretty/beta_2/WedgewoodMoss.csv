@@ -1,9 +1,9 @@
 id,type,item,item_id,amount,x,y,z,area,state
-3,material,WedgewoodMoss,75,3,-225.789,65.453,-172.637,,amount
-new,material,WedgewoodMoss,75,3,-219.35,64.34,75.27,,added
-new,material,WedgewoodMoss,75,3,-179.036,89.384,128.694,,added
-5,material,WedgewoodMoss,75,2,-162.04,58.35,-364.49,,amount
-4,material,WedgewoodMoss,75,2,-160.743,57.554,-267.482,,amount
-new,material,WedgewoodMoss,75,3,-5.126,60.294,-249.316,,added
-new,material,WedgewoodMoss,75,3,107.19,82.2,-376.53,,added
-new,material,WedgewoodMoss,75,3,169.12,59.54,193.09,,added
+3,material,WedgewoodMoss,75,3,-225.789,65.453,-172.637,,confirmed
+883,material,WedgewoodMoss,75,3,-219.35,64.34,75.27,,needs check
+884,material,WedgewoodMoss,75,3,-179.036,89.384,128.694,,needs check
+5,material,WedgewoodMoss,75,2,-162.04,58.35,-364.49,,confirmed
+4,material,WedgewoodMoss,75,2,-160.743,57.554,-267.482,,confirmed
+885,material,WedgewoodMoss,75,3,-5.126,60.294,-249.316,,needs check
+886,material,WedgewoodMoss,75,3,107.19,82.2,-376.53,,needs check
+887,material,WedgewoodMoss,75,3,169.12,59.54,193.09,,needs check

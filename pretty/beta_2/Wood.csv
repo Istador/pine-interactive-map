@@ -36,7 +36,7 @@ id,type,item,item_id,amount,x,y,z,area,state
 483,material,Wood,14,4,-11.249,63.1501,-210.606,,needs check
 180,material,Wood,14,2,22.94,35.41,568.09,,confirmed
 510,material,Wood,14,4,54.6531,61.2874,232.409,,needs check
-new,material,Wood,14,4,81.92,71.68,-323.15,,added
+988,material,Wood,14,4,81.92,71.68,-323.15,,needs check
 515,material,Wood,14,6,94.94,35.22,463.05,,needs check
 503,material,Wood,14,2,137.046,60.3174,170.891,,needs check
 504,material,Wood,14,4,144.996,73.2093,-216.433,,needs check

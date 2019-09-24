@@ -1,17 +1,16 @@
 id,type,item,item_id,amount,x,y,z,area,state
-468,material,Iron,16,4,-797.24,75.30,-371.03,,removed
-469,material,Iron,16,3,-784.89,84.86,-6.74,,amount
-470,material,Iron,16,2,-735.26,110.59,-312.42,,amount
-471,material,Iron,16,1,-710.59,117.23,10.08,,amount
-472,material,Iron,16,1,-696.82,118.47,10.33,,amount
-399,material,Iron,16,3,-665.32,167.19,419.14,,amount
-473,material,Iron,16,2,-630.53,105.58,-104.81,,amount
-475,material,Iron,16,2,-547.81,158.43,184.49,,amount
-476,material,Iron,16,1,-504.98,53.08,724.56,,amount
-477,material,Iron,16,2,-428.47,139.76,536.45,,amount
-478,material,Iron,16,1,-411.21,93.07,660.28,,moved / amount
-479,material,Iron,16,1,-313.95,113.44,440.82,,amount
-480,material,Iron,16,2,-200.88,89.67,576.97,,amount
-481,material,Iron,16,2,-198.91,55.42,688.25,,amount
-183,material,Iron,16,2,-33.68,57.78,474.14,,amount
-482,material,Iron,16,2,9.48,65.43,257.93,,needs check / amount
+469,material,Iron,16,3,-784.89,84.86,-6.74,,confirmed
+470,material,Iron,16,2,-735.26,110.59,-312.42,,confirmed
+471,material,Iron,16,1,-710.59,117.23,10.08,,confirmed
+472,material,Iron,16,1,-696.82,118.47,10.33,,confirmed
+399,material,Iron,16,3,-665.32,167.19,419.14,,confirmed
+473,material,Iron,16,2,-630.53,105.58,-104.81,,confirmed
+475,material,Iron,16,2,-547.81,158.43,184.49,,confirmed
+476,material,Iron,16,1,-504.98,53.08,724.56,,confirmed
+477,material,Iron,16,2,-428.47,139.76,536.45,,confirmed
+478,material,Iron,16,1,-411.21,93.07,660.28,,needs check
+479,material,Iron,16,1,-313.95,113.44,440.82,,confirmed
+480,material,Iron,16,2,-200.88,89.67,576.97,,confirmed
+481,material,Iron,16,2,-198.91,55.42,688.25,,confirmed
+183,material,Iron,16,2,-33.68,57.78,474.14,,confirmed
+482,material,Iron,16,2,9.48,65.43,257.93,,needs check

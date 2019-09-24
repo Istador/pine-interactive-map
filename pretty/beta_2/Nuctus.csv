@@ -1,14 +1,14 @@
 id,type,item,item_id,amount,x,y,z,area,state
-670,food,Nuctus,60,2,283.734,50.6262,-142.47,,needs check / amount
-250,food,Nuctus,60,1,294.412,66.9897,-169.941,,amount
-218,food,Nuctus,60,2,324.104,51.9711,-347.627,,amount
-671,food,Nuctus,60,2,404.247,48.239,-115.357,,needs check / amount
-672,food,Nuctus,60,2,486.76,80.4818,110.603,,needs check / amount
-673,food,Nuctus,60,2,507.25,75.03,200.36,,needs check / amount
-668,food,Nuctus,60,1,585.472,33.1597,-235.139,,needs check / amount
-227,food,Nuctus,60,4,632.454,26.2911,-749.188,,amount
-225,food,Nuctus,60,2,644.4,28.8,-575.94,,amount
-669,food,Nuctus,60,1,650.602,33.1611,-276.064,,needs check / amount
-237,food,Nuctus,60,1,656.187,31.2702,-509.424,,amount
-674,food,Nuctus,60,2,660.28,28.8483,-666.177,,needs check / amount
-229,food,Nuctus,60,2,701.469,28.8,-678.362,,amount
+670,food,Nuctus,60,2,283.734,50.6262,-142.47,,needs check
+250,food,Nuctus,60,1,294.412,66.9897,-169.941,,confirmed
+218,food,Nuctus,60,2,324.104,51.9711,-347.627,,confirmed
+671,food,Nuctus,60,2,404.247,48.239,-115.357,,needs check
+672,food,Nuctus,60,2,486.76,80.4818,110.603,,needs check
+673,food,Nuctus,60,2,507.25,75.03,200.36,,needs check
+668,food,Nuctus,60,1,585.472,33.1597,-235.139,,needs check
+227,food,Nuctus,60,4,632.454,26.2911,-749.188,,confirmed
+225,food,Nuctus,60,2,644.4,28.8,-575.94,,confirmed
+669,food,Nuctus,60,1,650.602,33.1611,-276.064,,needs check
+237,food,Nuctus,60,1,656.187,31.2702,-509.424,,confirmed
+674,food,Nuctus,60,2,660.28,28.8483,-666.177,,needs check
+229,food,Nuctus,60,2,701.469,28.8,-678.362,,confirmed

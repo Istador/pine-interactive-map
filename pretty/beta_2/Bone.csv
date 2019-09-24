@@ -1,14 +1,14 @@
 id,type,item,item_id,amount,x,y,z,area,state
-621,material,Bone,22,1,-736.02,88.1754,-142.5,,amount
-620,material,Bone,22,1,-726.01,61.47,-639.1,,needs check / amount
-615,material,Bone,22,1,-441.63,92.45,-90.51,,needs check / amount
-614,material,Bone,22,1,-380.85,52.33,806.39,,amount
-611,material,Bone,22,1,-193.3,77.38,-222.26,,needs check / amount
-622,material,Bone,22,2,185.701,36.4361,333.837,,needs check / amount
-623,material,Bone,22,2,274.018,61.6182,-242.854,,needs check / amount
-612,material,Bone,22,1,329.746,85.2594,71.4044,,needs check / amount
-613,material,Bone,22,1,365.384,74.0114,178.995,,needs check / amount
-616,material,Bone,22,1,441.692,34.4812,521.373,,amount
-617,material,Bone,22,1,448.754,29.0044,-453.047,,needs check / amount
-618,material,Bone,22,1,596.68,42.1678,446.649,,amount
-619,material,Bone,22,1,615.033,33.7221,-246.565,,needs check / amount
+621,material,Bone,22,1,-736.02,88.1754,-142.5,,confirmed
+620,material,Bone,22,1,-726.01,61.47,-639.1,,needs check
+615,material,Bone,22,1,-441.63,92.45,-90.51,,needs check
+614,material,Bone,22,1,-380.85,52.33,806.39,,confirmed
+611,material,Bone,22,1,-193.3,77.38,-222.26,,needs check
+622,material,Bone,22,2,185.701,36.4361,333.837,,needs check
+623,material,Bone,22,2,274.018,61.6182,-242.854,,needs check
+612,material,Bone,22,1,329.746,85.2594,71.4044,,needs check
+613,material,Bone,22,1,365.384,74.0114,178.995,,needs check
+616,material,Bone,22,1,441.692,34.4812,521.373,,confirmed
+617,material,Bone,22,1,448.754,29.0044,-453.047,,needs check
+618,material,Bone,22,1,596.68,42.1678,446.649,,confirmed
+619,material,Bone,22,1,615.033,33.7221,-246.565,,needs check

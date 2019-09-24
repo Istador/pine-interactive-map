@@ -1,4 +1,4 @@
 id,type,item,item_id,amount,x,y,z,area,state
-7,food,EdenFruit,35,1,-322.8,46.62,-786.77,,amount
-7,food,EdenFruit,35,2,-317.78,46.39,-793.28,,amount
-7,food,EdenFruit,35,2,-307.12,46.87,-790.05,,amount
+7,food,EdenFruit,35,1,-322.8,46.62,-786.77,,confirmed
+7,food,EdenFruit,35,2,-317.78,46.39,-793.28,,confirmed
+7,food,EdenFruit,35,2,-307.12,46.87,-790.05,,confirmed

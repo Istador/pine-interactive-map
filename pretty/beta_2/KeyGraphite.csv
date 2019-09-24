@@ -16,15 +16,14 @@ id,type,item,item_id,amount,x,y,z,area,state
 343,unique,KeyGraphite,187,2,-644.93,95.84,554.84,,confirmed
 344,unique,KeyGraphite,187,1,-641.94,60.51,-518.88,,needs check
 345,unique,KeyGraphite,187,2,-633.13,119.76,-351.33,,needs check
-new,unique,KeyGraphite,187,2,-626.82,192.74,280.01,,added
+989,unique,KeyGraphite,187,2,-626.82,192.74,280.01,,needs check
 88,unique,KeyGraphite,187,2,-597.11,222.47,319.57,,confirmed
 89,unique,KeyGraphite,187,2,-578.77,96.99,-432.43,,confirmed
 90,unique,KeyGraphite,187,1,-528.92,101.53,-160.28,,confirmed
 347,unique,KeyGraphite,187,2,-510.91,32.42,-798.41,,needs check
 91,unique,KeyGraphite,187,2,-510.37,131.25,138.46,,confirmed
 92,unique,KeyGraphite,187,2,-478.73,197.5,383.88,,confirmed
-93,unique,KeyGraphite,187,8,-455.991,69.0655,-573.733,,amount
-346,unique,KeyGraphite,187,2,-454.84,67.62,-573.10,,removed
+93,unique,KeyGraphite,187,8,-455.991,69.0655,-573.733,,confirmed
 95,unique,KeyGraphite,187,2,-452.061,62.8955,-448.893,,confirmed
 94,unique,KeyGraphite,187,2,-448.01,76.1,-143.58,,confirmed
 96,unique,KeyGraphite,187,1,-432.17,118.43,625.98,,confirmed
@@ -47,9 +46,9 @@ new,unique,KeyGraphite,187,2,-626.82,192.74,280.01,,added
 354,unique,KeyGraphite,187,1,-237.23,115.11,411.21,,confirmed
 108,unique,KeyGraphite,187,2,-227.116,74.593,-212.77,,confirmed
 213,unique,KeyGraphite,187,2,-213.75,72.74,-118.91,,confirmed
-110,unique,KeyGraphite,187,1,-211.861,36.6955,-506.743,,moved
+110,unique,KeyGraphite,187,1,-211.861,36.6955,-506.743,,needs check
 109,unique,KeyGraphite,187,2,-211.52,96.05,614.33,,confirmed
-new,unique,KeyGraphite,187,2,-198,138.44,318.43,,added
+990,unique,KeyGraphite,187,2,-198,138.44,318.43,,needs check
 111,unique,KeyGraphite,187,1,-187.41,56.56,-433.49,,confirmed
 112,unique,KeyGraphite,187,2,-179.05,64.37,21.35,,confirmed
 114,unique,KeyGraphite,187,2,-160.12,66.28,599.37,,confirmed
@@ -64,15 +63,15 @@ new,unique,KeyGraphite,187,2,-198,138.44,318.43,,added
 359,unique,KeyGraphite,187,1,-61.36,93.79,292.8,,confirmed
 358,unique,KeyGraphite,187,2,-60.3,62.64,-496.03,,needs check
 118,unique,KeyGraphite,187,2,-47.3,59.02,-247.16,,confirmed
-119,unique,KeyGraphite,187,2,-46.8611,78.3755,-147.823,,moved
-121,unique,KeyGraphite,187,2,-34.3611,51.4555,-414.673,,moved
+119,unique,KeyGraphite,187,2,-46.8611,78.3755,-147.823,,needs check
+121,unique,KeyGraphite,187,2,-34.3611,51.4555,-414.673,,needs check
 120,unique,KeyGraphite,187,1,-30.059,85.826,88.859,,confirmed
 188,unique,KeyGraphite,187,2,-22.9,27.24,909.81,,confirmed
 122,unique,KeyGraphite,187,1,-13.61,76.77,426.17,,confirmed
 124,unique,KeyGraphite,187,2,-11.46,72.74,335.54,,confirmed
 123,unique,KeyGraphite,187,1,-8.42001,77.98,247.95,,confirmed
 125,unique,KeyGraphite,187,2,7.34,27.06,-538.09,,confirmed
-new,unique,KeyGraphite,187,1,17.16,75.94,-93.07,,added
+991,unique,KeyGraphite,187,1,17.16,75.94,-93.07,,needs check
 126,unique,KeyGraphite,187,2,44.96,51.43,369.18,,confirmed
 127,unique,KeyGraphite,187,1,48.99,30.45,719.64,,confirmed
 128,unique,KeyGraphite,187,2,85.95,75.914,-365.15,,confirmed
@@ -84,7 +83,7 @@ new,unique,KeyGraphite,187,1,17.16,75.94,-93.07,,added
 361,unique,KeyGraphite,187,2,146.04,68.12,-164.96,,confirmed
 132,unique,KeyGraphite,187,1,163.867,38.363,329.255,,confirmed
 176,unique,KeyGraphite,187,2,184.32,25.23,796.55,,confirmed
-133,unique,KeyGraphite,187,1,218.789,53.1355,5.33685,,moved
+133,unique,KeyGraphite,187,1,218.789,53.1355,5.33685,,needs check
 134,unique,KeyGraphite,187,2,232.2,34,400.08,,confirmed
 135,unique,KeyGraphite,187,1,256.536,25.073,584.325,,confirmed
 136,unique,KeyGraphite,187,2,266.96,40.44,-380.64,,confirmed
@@ -92,9 +91,9 @@ new,unique,KeyGraphite,187,1,17.16,75.94,-93.07,,added
 137,unique,KeyGraphite,187,2,335.19,32.91,862.69,,confirmed
 138,unique,KeyGraphite,187,1,366.04,27.34,949.8,,confirmed
 362,unique,KeyGraphite,187,1,366.16,60.15,-83.83,,confirmed
-139,unique,KeyGraphite,187,1,397.139,34.7855,427.337,,moved
+139,unique,KeyGraphite,187,1,397.139,34.7855,427.337,,needs check
 140,unique,KeyGraphite,187,2,420.84,38.12,135.95,,confirmed
-141,unique,KeyGraphite,187,2,426.43,82.88,31.33,,moved
+141,unique,KeyGraphite,187,2,426.43,82.88,31.33,,needs check
 143,unique,KeyGraphite,187,1,436.059,43.867,845.731,,confirmed
 144,unique,KeyGraphite,187,1,473.62,30.17,-571.8,,confirmed
 145,unique,KeyGraphite,187,1,475.64,34.59,547.12,,confirmed
@@ -119,5 +118,5 @@ new,unique,KeyGraphite,187,1,17.16,75.94,-93.07,,added
 154,unique,KeyGraphite,187,1,803.96,26.03,-154.72,,confirmed
 161,unique,KeyGraphite,187,1,807.07,50.75,179.37,,confirmed
 155,unique,KeyGraphite,187,2,819.5,32.48,380.73,,confirmed
-156,unique,KeyGraphite,187,2,828.91,27.68,-380.08,,moved
-new,unique,KeyGraphite,187,2,904.59,30.93,846.12,,added
+156,unique,KeyGraphite,187,2,828.91,27.68,-380.08,,needs check
+992,unique,KeyGraphite,187,2,904.59,30.93,846.12,,needs check

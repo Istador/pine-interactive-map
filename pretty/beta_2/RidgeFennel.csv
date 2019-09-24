@@ -1,29 +1,29 @@
 id,type,item,item_id,amount,x,y,z,area,state
-713,food,RidgeFennel,70,2,-842.64,76.5183,-181.28,,amount
-697,food,RidgeFennel,70,1,-772.37,78.281,-106.459,,amount
-712,food,RidgeFennel,70,2,-768.76,106.89,-305.77,,amount
-715,food,RidgeFennel,70,3,-757.967,104.522,-376.08,,amount
-711,food,RidgeFennel,70,2,-741.92,110.1,48.73,,amount
-696,food,RidgeFennel,70,1,-693.595,117.21,-24.079,,amount
-389,food,RidgeFennel,70,2,-679.103,51.7027,598.611,,amount
-397,food,RidgeFennel,70,1,-637.591,166.998,436.747,,amount
-709,food,RidgeFennel,70,2,-597.873,163.211,223.411,,amount
-386,food,RidgeFennel,70,2,-591.774,57.6152,596.048,,amount
-708,food,RidgeFennel,70,2,-505.644,52.5574,768.532,,amount
-395,food,RidgeFennel,70,1,-499.587,83.9882,593.934,,amount
-707,food,RidgeFennel,70,2,-461.415,163.323,475.246,,amount
-706,food,RidgeFennel,70,2,-430.56,92.18,-24.18,,needs check / amount
-705,food,RidgeFennel,70,2,-425.219,90.5715,76.3512,,needs check / amount
-409,food,RidgeFennel,70,2,-383.35,148.08,288.46,,amount
-703,food,RidgeFennel,70,2,-351.89,91.8,-706.12,,needs check / amount
-702,food,RidgeFennel,70,2,-344.171,126.691,532.548,,amount
-701,food,RidgeFennel,70,2,-322.18,53.02,758.25,,amount
-407,food,RidgeFennel,70,2,-207.06,111.98,489.31,,amount
-700,food,RidgeFennel,70,2,-192.136,90.0673,546.961,,amount
-698,food,RidgeFennel,70,2,-111.71,99.25,145.36,,needs check / amount
-406,food,RidgeFennel,70,2,-100.22,91.4,494.74,,amount
-714,food,RidgeFennel,70,3,-73.2588,77.3683,486.338,,needs check / amount
-704,food,RidgeFennel,70,2,-41.8988,98.0779,250.647,,needs check / amount
-699,food,RidgeFennel,70,2,-16.0302,99.3345,157.026,,needs check / amount
-695,food,RidgeFennel,70,1,6.03822,71.7989,372.103,,needs check / amount
-710,food,RidgeFennel,70,2,63.4303,55.3651,311.168,,needs check / amount
+713,food,RidgeFennel,70,2,-842.64,76.5183,-181.28,,confirmed
+697,food,RidgeFennel,70,1,-772.37,78.281,-106.459,,confirmed
+712,food,RidgeFennel,70,2,-768.76,106.89,-305.77,,confirmed
+715,food,RidgeFennel,70,3,-757.967,104.522,-376.08,,confirmed
+711,food,RidgeFennel,70,2,-741.92,110.1,48.73,,confirmed
+696,food,RidgeFennel,70,1,-693.595,117.21,-24.079,,confirmed
+389,food,RidgeFennel,70,2,-679.103,51.7027,598.611,,confirmed
+397,food,RidgeFennel,70,1,-637.591,166.998,436.747,,confirmed
+709,food,RidgeFennel,70,2,-597.873,163.211,223.411,,confirmed
+386,food,RidgeFennel,70,2,-591.774,57.6152,596.048,,confirmed
+708,food,RidgeFennel,70,2,-505.644,52.5574,768.532,,confirmed
+395,food,RidgeFennel,70,1,-499.587,83.9882,593.934,,confirmed
+707,food,RidgeFennel,70,2,-461.415,163.323,475.246,,confirmed
+706,food,RidgeFennel,70,2,-430.56,92.18,-24.18,,needs check
+705,food,RidgeFennel,70,2,-425.219,90.5715,76.3512,,needs check
+409,food,RidgeFennel,70,2,-383.35,148.08,288.46,,confirmed
+703,food,RidgeFennel,70,2,-351.89,91.8,-706.12,,needs check
+702,food,RidgeFennel,70,2,-344.171,126.691,532.548,,confirmed
+701,food,RidgeFennel,70,2,-322.18,53.02,758.25,,confirmed
+407,food,RidgeFennel,70,2,-207.06,111.98,489.31,,confirmed
+700,food,RidgeFennel,70,2,-192.136,90.0673,546.961,,confirmed
+698,food,RidgeFennel,70,2,-111.71,99.25,145.36,,needs check
+406,food,RidgeFennel,70,2,-100.22,91.4,494.74,,confirmed
+714,food,RidgeFennel,70,3,-73.2588,77.3683,486.338,,needs check
+704,food,RidgeFennel,70,2,-41.8988,98.0779,250.647,,needs check
+699,food,RidgeFennel,70,2,-16.0302,99.3345,157.026,,needs check
+695,food,RidgeFennel,70,1,6.03822,71.7989,372.103,,needs check
+710,food,RidgeFennel,70,2,63.4303,55.3651,311.168,,needs check

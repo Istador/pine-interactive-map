@@ -1,11 +1,10 @@
 id,type,item,item_id,amount,x,y,z,area,state
-new,material,Lunarodos,57,1,-218.94,25.91,803.23,,added
-179,material,Lunarodos,57,3,39.1569,33.6809,617,,amount
-414,material,Lunarodos,57,2,86.1443,36.9928,371.069,,needs check / amount
-416,material,Lunarodos,57,2,201.625,35.0181,649.664,,amount
-417,material,Lunarodos,57,6,212.33,38.13,443.61,,removed
-415,material,Lunarodos,57,3,212.332,38.1272,443.608,,needs check / moved / amount
-418,material,Lunarodos,57,1,233.975,37.803,243.859,,needs check / amount
-419,material,Lunarodos,57,2,234.517,34.1507,325.368,,needs check / amount
-new,material,Lunarodos,57,2,354.29,35.57,452.99,,added
-new,material,Lunarodos,57,2,753.03,34.17,385.61,,added
+981,material,Lunarodos,57,1,-218.94,25.91,803.23,,needs check
+179,material,Lunarodos,57,3,39.1569,33.6809,617,,confirmed
+414,material,Lunarodos,57,2,86.1443,36.9928,371.069,,needs check
+416,material,Lunarodos,57,2,201.625,35.0181,649.664,,confirmed
+417,material,Lunarodos,57,3,212.332,38.1272,443.608,,needs check
+418,material,Lunarodos,57,1,233.975,37.803,243.859,,needs check
+419,material,Lunarodos,57,2,234.517,34.1507,325.368,,needs check
+982,material,Lunarodos,57,2,354.29,35.57,452.99,,needs check
+983,material,Lunarodos,57,2,753.03,34.17,385.61,,needs check

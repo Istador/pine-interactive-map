@@ -1,19 +1,19 @@
 id,type,item,item_id,amount,x,y,z,area,state
-747,food,Tingflower,10,2,-840.768,64.1725,-315.505,,amount
-736,food,Tingflower,10,1,-764.08,80.1,-459.44,,amount
-746,food,Tingflower,10,2,-754.56,61.55,-556.15,,needs check / amount
-197,food,Tingflower,10,1,-703.776,109.225,-369.449,,amount
-745,food,Tingflower,10,2,-634.52,64.83,-661.06,,needs check / amount
-744,food,Tingflower,10,2,-564.42,99.87,-242.34,,needs check / amount
-750,food,Tingflower,10,3,-538.875,58.599,-721.677,,needs check / amount
-743,food,Tingflower,10,2,-514.88,58.63,-652.31,,needs check / amount
-742,food,Tingflower,10,2,-475.67,59.8,-430.09,,needs check / amount
-741,food,Tingflower,10,2,-457.36,64.48,-237.76,,needs check / amount
-199,food,Tingflower,10,2,-437.05,61.38,-407.3,,amount
-740,food,Tingflower,10,2,-427.61,60.82,-370.34,,needs check / amount
-749,food,Tingflower,10,3,-418.18,78.7,-605.78,,needs check / amount
-748,food,Tingflower,10,3,-381.518,66.147,-166.011,,needs check / amount
-739,food,Tingflower,10,2,-252.153,60.9863,-644.696,,needs check / amount
-738,food,Tingflower,10,2,-145.42,68.28,-449.74,,needs check / amount
-737,food,Tingflower,10,2,-123.598,63.6377,589.114,,amount
-735,food,Tingflower,10,1,-72.58,64.82,4.48,,needs check / amount
+747,food,Tingflower,10,2,-840.768,64.1725,-315.505,,confirmed
+736,food,Tingflower,10,1,-764.08,80.1,-459.44,,confirmed
+746,food,Tingflower,10,2,-754.56,61.55,-556.15,,needs check
+197,food,Tingflower,10,1,-703.776,109.225,-369.449,,confirmed
+745,food,Tingflower,10,2,-634.52,64.83,-661.06,,needs check
+744,food,Tingflower,10,2,-564.42,99.87,-242.34,,needs check
+750,food,Tingflower,10,3,-538.875,58.599,-721.677,,needs check
+743,food,Tingflower,10,2,-514.88,58.63,-652.31,,needs check
+742,food,Tingflower,10,2,-475.67,59.8,-430.09,,needs check
+741,food,Tingflower,10,2,-457.36,64.48,-237.76,,needs check
+199,food,Tingflower,10,2,-437.05,61.38,-407.3,,confirmed
+740,food,Tingflower,10,2,-427.61,60.82,-370.34,,needs check
+749,food,Tingflower,10,3,-418.18,78.7,-605.78,,needs check
+748,food,Tingflower,10,3,-381.518,66.147,-166.011,,needs check
+739,food,Tingflower,10,2,-252.153,60.9863,-644.696,,needs check
+738,food,Tingflower,10,2,-145.42,68.28,-449.74,,needs check
+737,food,Tingflower,10,2,-123.598,63.6377,589.114,,confirmed
+735,food,Tingflower,10,1,-72.58,64.82,4.48,,needs check

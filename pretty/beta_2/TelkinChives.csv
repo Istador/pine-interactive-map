@@ -1,25 +1,25 @@
 id,type,item,item_id,amount,x,y,z,area,state
-722,food,TelkinChives,71,1,-810.266,86.7068,-192.048,,amount
-734,food,TelkinChives,71,3,-783.99,97.55,-283.27,,amount
-732,food,TelkinChives,71,2,-781.59,76.91,-416.85,,amount
-721,food,TelkinChives,71,1,-765.08,79.47,-110.5,,amount
-720,food,TelkinChives,71,1,-702.637,116.367,172.88,,amount
-719,food,TelkinChives,71,1,-696.152,91.132,-77.964,,amount
-718,food,TelkinChives,71,1,-595.96,162.441,221.6,,amount
-731,food,TelkinChives,71,2,-575.84,53.23,729.19,,amount
-730,food,TelkinChives,71,2,-537.93,155.69,161.67,,amount
-396,food,TelkinChives,71,1,-500.07,84.3465,593.004,,amount
-728,food,TelkinChives,71,2,-492.645,59.2798,652.579,,amount
-412,food,TelkinChives,71,2,-478.637,102.433,11.2672,,amount
-727,food,TelkinChives,71,2,-452.009,131.264,142.083,,amount
-410,food,TelkinChives,71,2,-435.258,142.056,178.646,,amount
-726,food,TelkinChives,71,2,-402.829,139.783,515.835,,amount
-725,food,TelkinChives,71,2,-333.4,54.96,724.95,,amount
-724,food,TelkinChives,71,2,-292.122,106.863,467.735,,amount
-723,food,TelkinChives,71,2,-239.57,91.84,506.98,,amount
-404,food,TelkinChives,71,2,-147.72,70.98,544.16,,amount
-405,food,TelkinChives,71,2,-74.5515,76.2418,519.091,,amount
-729,food,TelkinChives,71,2,-50.1898,47.38,582.362,,amount
-717,food,TelkinChives,71,1,-43.9628,98.0907,258.224,,needs check / amount
-716,food,TelkinChives,71,1,11.0018,55.0728,430.936,,needs check / amount
-733,food,TelkinChives,71,3,33.2222,62.1198,276.367,,needs check / amount
+722,food,TelkinChives,71,1,-810.266,86.7068,-192.048,,confirmed
+734,food,TelkinChives,71,3,-783.99,97.55,-283.27,,confirmed
+732,food,TelkinChives,71,2,-781.59,76.91,-416.85,,confirmed
+721,food,TelkinChives,71,1,-765.08,79.47,-110.5,,confirmed
+720,food,TelkinChives,71,1,-702.637,116.367,172.88,,confirmed
+719,food,TelkinChives,71,1,-696.152,91.132,-77.964,,confirmed
+718,food,TelkinChives,71,1,-595.96,162.441,221.6,,confirmed
+731,food,TelkinChives,71,2,-575.84,53.23,729.19,,confirmed
+730,food,TelkinChives,71,2,-537.93,155.69,161.67,,confirmed
+396,food,TelkinChives,71,1,-500.07,84.3465,593.004,,confirmed
+728,food,TelkinChives,71,2,-492.645,59.2798,652.579,,confirmed
+412,food,TelkinChives,71,2,-478.637,102.433,11.2672,,confirmed
+727,food,TelkinChives,71,2,-452.009,131.264,142.083,,confirmed
+410,food,TelkinChives,71,2,-435.258,142.056,178.646,,confirmed
+726,food,TelkinChives,71,2,-402.829,139.783,515.835,,confirmed
+725,food,TelkinChives,71,2,-333.4,54.96,724.95,,confirmed
+724,food,TelkinChives,71,2,-292.122,106.863,467.735,,confirmed
+723,food,TelkinChives,71,2,-239.57,91.84,506.98,,confirmed
+404,food,TelkinChives,71,2,-147.72,70.98,544.16,,confirmed
+405,food,TelkinChives,71,2,-74.5515,76.2418,519.091,,confirmed
+729,food,TelkinChives,71,2,-50.1898,47.38,582.362,,confirmed
+717,food,TelkinChives,71,1,-43.9628,98.0907,258.224,,needs check
+716,food,TelkinChives,71,1,11.0018,55.0728,430.936,,needs check
+733,food,TelkinChives,71,3,33.2222,62.1198,276.367,,needs check

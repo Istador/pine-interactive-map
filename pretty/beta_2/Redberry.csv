@@ -1,11 +1,11 @@
 id,type,item,item_id,amount,x,y,z,area,state
-388,food,Redberry,0,1,-615.04,56.176,586.804,,amount
-688,food,Redberry,0,1,-505.761,56.7509,681.073,,amount
-694,food,Redberry,0,3,-279.34,61.26,-324.99,,needs check / amount
-202,food,Redberry,0,1,-266.7,61.42,-336.38,,amount
-693,food,Redberry,0,2,-260.408,63.5864,-260.01,,needs check / amount
-691,food,Redberry,0,2,-147.68,64.82,52.84,,needs check / amount
-208,food,Redberry,0,3,-140.46,57.05,-245.06,,amount
-690,food,Redberry,0,2,-119.514,63.2239,-78.9448,,needs check / amount
-692,food,Redberry,0,2,19.6972,63.0173,346.526,,needs check / amount
-689,food,Redberry,0,1,81.0233,64.5514,-256.427,,needs check / amount
+388,food,Redberry,0,1,-615.04,56.176,586.804,,confirmed
+688,food,Redberry,0,1,-505.761,56.7509,681.073,,confirmed
+694,food,Redberry,0,3,-279.34,61.26,-324.99,,needs check
+202,food,Redberry,0,1,-266.7,61.42,-336.38,,confirmed
+693,food,Redberry,0,2,-260.408,63.5864,-260.01,,needs check
+691,food,Redberry,0,2,-147.68,64.82,52.84,,needs check
+208,food,Redberry,0,3,-140.46,57.05,-245.06,,confirmed
+690,food,Redberry,0,2,-119.514,63.2239,-78.9448,,needs check
+692,food,Redberry,0,2,19.6972,63.0173,346.526,,needs check
+689,food,Redberry,0,1,81.0233,64.5514,-256.427,,needs check

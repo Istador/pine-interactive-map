@@ -23,7 +23,7 @@ id,type,item,item_id,amount,x,y,z,area,state
 303,material,Dullrock,19,4,-13.35,62.89,14.59,,confirmed
 546,material,Dullrock,19,2,75.2467,68.9564,-193.458,,needs check
 547,material,Dullrock,19,4,119.41,34.58,488.49,,needs check
-new,material,Dullrock,19,2,138.92,67.69,-279.12,,added
+980,material,Dullrock,19,2,138.92,67.69,-279.12,,needs check
 548,material,Dullrock,19,4,249.95,39.52,433.73,,needs check
 251,material,Dullrock,19,2,285.1,63.08,26.84,,confirmed
 549,material,Dullrock,19,2,308.58,37.13,363.02,,needs check

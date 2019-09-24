@@ -1,14 +1,14 @@
 id,type,item,item_id,amount,x,y,z,area,state
-573,material,Alpafant_Leather,25,2,-773.14,85.69,-54.61,,amount
-569,material,Alpafant_Leather,25,1,-724.44,61.53,-637.04,,needs check / amount
-572,material,Alpafant_Leather,25,2,-578.624,94.9465,-190.128,,needs check / amount
-568,material,Alpafant_Leather,25,1,-463.878,65.5626,-205.558,,needs check / amount
-574,material,Alpafant_Leather,25,3,-379.07,108.347,-549.586,,needs check / amount
-570,material,Alpafant_Leather,25,2,-364.55,75.27,-207.82,,needs check / amount
-210,material,Alpafant_Leather,25,2,-191.5,77.31,-217.38,,amount
-211,material,Alpafant_Leather,25,2,-116.351,60.9939,-133.233,,amount
-184,material,Alpafant_Leather,25,2,-29.5536,49.3839,687.109,,amount
-565,material,Alpafant_Leather,25,1,364.05,73.89,179.3,,needs check / amount
-566,material,Alpafant_Leather,25,1,443.48,34.42,522.56,,amount
-567,material,Alpafant_Leather,25,1,447.06,29.12,-451.26,,needs check / amount
-571,material,Alpafant_Leather,25,2,498.804,52.4431,-165.352,,needs check / amount
+573,material,Alpafant_Leather,25,2,-773.14,85.69,-54.61,,confirmed
+569,material,Alpafant_Leather,25,1,-724.44,61.53,-637.04,,needs check
+572,material,Alpafant_Leather,25,2,-578.624,94.9465,-190.128,,needs check
+568,material,Alpafant_Leather,25,1,-463.878,65.5626,-205.558,,needs check
+574,material,Alpafant_Leather,25,3,-379.07,108.347,-549.586,,needs check
+570,material,Alpafant_Leather,25,2,-364.55,75.27,-207.82,,needs check
+210,material,Alpafant_Leather,25,2,-191.5,77.31,-217.38,,confirmed
+211,material,Alpafant_Leather,25,2,-116.351,60.9939,-133.233,,confirmed
+184,material,Alpafant_Leather,25,2,-29.5536,49.3839,687.109,,confirmed
+565,material,Alpafant_Leather,25,1,364.05,73.89,179.3,,needs check
+566,material,Alpafant_Leather,25,1,443.48,34.42,522.56,,confirmed
+567,material,Alpafant_Leather,25,1,447.06,29.12,-451.26,,needs check
+571,material,Alpafant_Leather,25,2,498.804,52.4431,-165.352,,needs check
