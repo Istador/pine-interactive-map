@@ -8,6 +8,7 @@ const { versions, changeVersion } = require('./versions')
 
 const overlays = {}
 const currentLayers = () => layers().map(x => x.split('.'))
+const onlyExistingLayers = ([type, item]) => type in overlays && item in overlays[type]
 
 const addOverlay = (type, item) => {
   if (!(type in overlays)) {
@@ -45,6 +46,16 @@ const initLayerControl = (map) => {
       }
     )
 
+    // remove empty layer groups
+    for (type in overlays) {
+      for (item in overlays[type]) {
+        if (overlays[type][item].getLayers().length === 0) {
+          map.removeLayer(overlays[type][item])
+          delete overlays[type][item]
+        }
+      }
+    }
+
     // sort the overlays by name
     mapsort(overlays, type2name, (type, typeName, items) =>
         mapsort(items, item2name(type), (item, itemName, layer) =>
@@ -56,7 +67,7 @@ const initLayerControl = (map) => {
             },
             true, // isOverlay and not baseLayer
             typeName, // group name
-            ! currentLayers().some(def => def[0] === type) // collapse groups that have no layers selected
+            ! currentLayers().filter(onlyExistingLayers).some(def => def[0] === type) // collapse groups that have no layers selected
           )
         )
     )
@@ -107,9 +118,11 @@ const resetLayers = (map) => {
 
 const reinitLayers = (map) => {
   // readd the selected layers to the map
-  currentLayers().forEach(([type, item]) => {
-    map.addLayer(overlays[type][item])
-  })
+  currentLayers()
+    .filter(onlyExistingLayers)
+    .forEach(([type, item]) => {
+      map.addLayer(overlays[type][item])
+    })
   // reinit the component
   layerControlReset()
 }
