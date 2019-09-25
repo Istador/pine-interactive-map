@@ -30,9 +30,9 @@ while read file ; do
       -e 's/\| Bone \|/| [[Crassbone]] |/g'                          \
       -e 's/\| DouglasCone \|/| [[Grandcone]] |/g'                   \
       -e 's/\| DuneRice \|/| [[Dunerice]] |/g'                       \
-      -e 's/\| food \|/| [[Category:Food|Food]] |/g'                 \
+      -e 's/\| food \|/| [[Food]] |/g'                               \
       -e 's/\| Iron \|/| [[Lean-Iron]] |/g'                          \
-      -e 's/\| material \|/| [[Category:Material|Material]] |/g'     \
+      -e 's/\| material \|/| [[Material]] |/g'                       \
       -e 's/\| Pearl \|/| [[Slick Pearl]] |/g'                       \
       -e 's/\| Redberry \|/| [[Roseberry]] |/g'                      \
       -e 's/\| SmallYam \|/| [[Meageryam]] |/g'                      \
