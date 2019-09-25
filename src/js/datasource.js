@@ -58,6 +58,11 @@ const transform = {
           else if (key === 'type' || key === 'item') {
             obj[key + '_html'] = val
           }
+
+          // round coords
+          if (['x', 'y', 'z'].includes(key)) {
+            obj[key] = Math.round(obj[key] * 100) / 100
+          }
         }
         out.push(obj)
       }
