@@ -47,9 +47,9 @@ const initLayerControl = (map) => {
     )
 
     // remove empty layer groups
-    for (type in overlays) {
-      for (item in overlays[type]) {
-        if (overlays[type][item].getLayers().length === 0) {
+    for (const type in overlays) {
+      for (const item in overlays[type]) {
+        if (overlays[type][item] && overlays[type][item].getLayers().length === 0) {
           map.removeLayer(overlays[type][item])
           delete overlays[type][item]
         }
@@ -75,9 +75,9 @@ const initLayerControl = (map) => {
     // listen to changes to the selected layers => save
     L.DomEvent.on(layerControl, 'panel:selected panel:unselected', () => {
       const selectedLayers = []
-      for (type in overlays) {
-        for (item in overlays[type]) {
-          if (layerControl._map.hasLayer(overlays[type][item])) {
+      for (const type in overlays) {
+        for (const item in overlays[type]) {
+          if (overlays[type][item] && layerControl._map.hasLayer(overlays[type][item])) {
             selectedLayers.push(type + '.' + item)
           }
         }
@@ -103,9 +103,11 @@ const overlaysArray = Object.values(overlays).map(x => Object.values(x)).reduce(
 // remove all existing layers from the map
 const resetLayers = (map) => {
   // remove from map
-  for (type in overlays) {
-    for (item in overlays[type]) {
-      map.removeLayer(overlays[type][item])
+  for (const type in overlays) {
+    for (const item in overlays[type]) {
+      if (overlays[type][item]) {
+        map.removeLayer(overlays[type][item])
+      }
     }
   }
   // remove from cached data structure
