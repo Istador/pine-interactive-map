@@ -1,10 +1,10 @@
 const lazy = (func) => {
-  let cache = () => {
-    const val = func()
-    cache = () => val
-    return val
+  let res
+  let init = false
+  return () => {
+    if (! init) { init = true ; res = func() }
+    return res
   }
-  return cache
 }
 
 const storage = lazy(() => {
