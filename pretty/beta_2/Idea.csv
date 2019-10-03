@@ -1,5 +1,5 @@
 id,type,item,item_id,amount,x,y,z,area,state
-16,unique,Idea,131,,-774.005,105.44,-162.855,,needs check
+16,unique,Idea,131,,-774.005,105.44,-162.855,,confirmed
 18,unique,Idea,126,,-556.528,39.2788,783.98,,needs check
 1007,unique,Idea,200,,-463.685,79.7058,-469.388,,needs check
 1008,unique,Idea,388,,-463.436,79.7538,-469.22,,needs check
@@ -17,7 +17,7 @@ id,type,item,item_id,amount,x,y,z,area,state
 1022,unique,Idea,282,,426.039,197.923,836.507,NewHome,confirmed
 1023,unique,Idea,283,,428.374,197.109,835.552,NewHome,confirmed
 317,unique,Idea,141,,467.77,56.106,441.32,AncientStables,needs check
-25,unique,Idea,132,,622.23,40.427,-598.338,,needs check
+25,unique,Idea,132,,622.23,40.427,-598.338,,confirmed
 26,unique,Idea,368,,671.59,44.6589,418.589,,needs check
 1026,unique,Idea,125,,721.14,70.8318,84.1213,,confirmed
 1028,unique,Idea,124,,808.833,-2.547,-155.268,GobbledewTomb,confirmed

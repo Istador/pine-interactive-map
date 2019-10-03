@@ -12,7 +12,7 @@ id,type,item,item_id,amount,x,y,z,area,state
 37,unique,Amphiscis_Orb,296,,-576.107,60.7552,602.558,,confirmed
 38,unique,Amphiscis_Orb,296,,-568.332,103.39,-125.467,,confirmed
 40,unique,Amphiscis_Orb,296,,-520.58,141.942,138.2,,confirmed
-41,unique,Amphiscis_Orb,296,,-515.538,69.2622,-375.101,,needs check
+41,unique,Amphiscis_Orb,296,,-515.538,69.2622,-375.101,,confirmed
 39,unique,Amphiscis_Orb,296,,-514.544,243.322,301.504,,needs check
 42,unique,Amphiscis_Orb,296,,-506.057,102.55,15.8678,,confirmed
 43,unique,Amphiscis_Orb,296,,-495.307,55.9942,-707.102,,confirmed
@@ -49,7 +49,7 @@ id,type,item,item_id,amount,x,y,z,area,state
 67,unique,Amphiscis_Orb,296,,258.19,38.96,270.34,,confirmed
 68,unique,Amphiscis_Orb,296,,302.489,28.4722,579.512,,confirmed
 69,unique,Amphiscis_Orb,296,,385.24,74.82,218.15,,confirmed
-248,unique,Amphiscis_Orb,296,,393.026,107.326,-263.466,,needs check
+248,unique,Amphiscis_Orb,296,,393.026,107.326,-263.466,,confirmed
 976,unique,Amphiscis_Orb,296,,414.026,221.171,835.315,NewHome,confirmed
 70,unique,Amphiscis_Orb,296,,415.712,32.5002,669.899,,confirmed
 71,unique,Amphiscis_Orb,296,,482.54,37.3,161.1,,confirmed

@@ -5,12 +5,12 @@ id,type,item,item_id,amount,x,y,z,area,state
 380,unique,Chest,276,,-531.52,58.76,592.6,,needs check
 8,unique,Chest,367,,-366.974,77.5838,-126.867,,confirmed
 996,unique,Chest,213,,-274.85,119.41,456.8,,confirmed
-9,unique,Chest,205,,-222.69,62.3368,-293.62,,needs check
+9,unique,Chest,205,,-222.69,62.3368,-293.62,,confirmed
 10,unique,Chest,275,,-187.077,25.1542,-840.173,,confirmed
-11,unique,Chest,274,,-135.37,75.3068,-190.29,,needs check
+11,unique,Chest,274,,-135.37,75.3068,-190.29,,confirmed
 997,unique,Chest,211,,163.618,68.5368,326.599,,confirmed
 998,unique,Chest,212,,276.75,32.1856,744.78,,needs check
-13,unique,Chest,204,,314.181,86.3538,49.4153,,needs check
+13,unique,Chest,204,,314.181,86.3538,49.4153,,confirmed
 999,unique,Chest,274,,389.955,107.817,-239.521,,confirmed
 1000,unique,Chest,276,,484.69,31.1236,166.13,,needs check
 14,unique,Chest,,,508,30,651,,confirmed
