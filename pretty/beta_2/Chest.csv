@@ -1,7 +1,7 @@
 id,type,item,item_id,amount,x,y,z,area,state
 993,unique,Chest,284,,-802.885,62.4656,-483.082,,confirmed
-994,unique,Chest,210,,-674.151,147.932,449.85,,needs check
-995,unique,Chest,202,,-636.5,195.317,280.5,,needs check
+994,unique,Chest,210,,-674.151,147.932,449.85,,confirmed
+995,unique,Chest,202,,-636.5,195.317,280.5,,confirmed
 380,unique,Chest,276,,-531.52,58.76,592.6,,needs check
 8,unique,Chest,367,,-366.974,77.5838,-126.867,,confirmed
 996,unique,Chest,213,,-274.85,119.41,456.8,,confirmed
