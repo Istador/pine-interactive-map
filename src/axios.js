@@ -1,1 +1,1 @@
-window.axios = require('axios')
+window.axios = require('../build/axios')

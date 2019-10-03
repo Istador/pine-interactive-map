@@ -8,6 +8,18 @@ const text2number = (text) => {
   return ( isNaN(num) ? text : num )
 }
 
+const fetch = {
+  spreadsheet: () => window.axios.get(`${__JSON__}`.replace('${VERSION}', version())),
+  wiki: () => window.wtf.fetch(
+    'Interactive Map/' + version(),
+    'pine',
+    {
+      wikiUrl: __JSON__,
+      follow_redirects: true,
+    },
+  ),
+}
+
 const transform = {
   spreadsheet: ({ data: { feed: { entry: entries } } }) => {
       const keys = {}
@@ -35,8 +47,8 @@ const transform = {
       }
       return Object.values(objs)
     },
-    wiki: async ({ data: { parse: { wikitext: { '*': text } } } }) => {
-      const table = window.wtf(text).tables(0).data
+    wiki: async (document) => {
+      const table = document.tables(0).data
       const out = []
       for (const i in table) {
         const row = table[i]
@@ -71,9 +83,9 @@ const transform = {
 }
 
 module.exports = {
-  datasource: () => window.axios
+  datasource: () =>
     // get spreadsheet as json
-    .get(`${__JSON__}`.replace('${VERSION}', version()))
+    fetch[__DATAMODE__]()
     // convert cells into objects
     .then(transform[__DATAMODE__])
     // only rows that have coordinates

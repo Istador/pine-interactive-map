@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const fs = require('fs')
 const path = require('path')
 const dotenv  = require('dotenv')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -10,6 +11,9 @@ const PreloadWebpackPlugin = require('preload-webpack-plugin')
 const SpritesmithPlugin = require('webpack-spritesmith')
 
 require('dotenv').config()
+
+fs.copyFileSync('./node_modules/axios/dist/axios.js', './build/axios.js')
+fs.copyFileSync('./node_modules/wtf_wikipedia/builds/wtf_wikipedia.js', './build/wtf_wikipedia.js')
 
 const spritesmith = (dir, key, name) => new SpritesmithPlugin({
   src: {
@@ -34,10 +38,11 @@ const spritesmith = (dir, key, name) => new SpritesmithPlugin({
 
 module.exports = {
   entry : {
-    vendor: [
-      './src/axios.js',
-      './src/wtf_wikipedia.js',
-    ],
+    fetch: [(
+      process.env.DATAMODE === 'wiki'
+      ? './src/wtf_wikipedia.js'
+      : './src/axios.js'
+    )],
     leaflet: [
       './node_modules/leaflet/dist/leaflet.js',
       './node_modules/leaflet/dist/leaflet.css',

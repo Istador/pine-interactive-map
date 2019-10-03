@@ -1,1 +1,1 @@
-window.wtf = require('wtf_wikipedia').default
+window.wtf = require('../build/wtf_wikipedia')
