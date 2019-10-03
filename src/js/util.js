@@ -8,21 +8,24 @@ const lazy = (func) => {
 }
 
 const storage = lazy(() => {
-  const dummy = {
-    can: () => false,
-    has: () => false,
-    get: () => undefined,
-    set: () => false,
+  const dummy = () => {
+    const memory = {}
+    return {
+      can: () => false,
+      has: (key) => key in memory && memory[key] !== null,
+      get: (key) => memory[key],
+      set: (key, val) => memory[key] = val,
+    }
   }
   // test localStorage to work
   try {
-    if (! window || ! window.localStorage) { return dummy }
+    if (! window || ! window.localStorage) { return dummy() }
     const store = window.localStorage
     const test = Math.random().toString()
     store.setItem('store_test', test)
-    if (store.getItem('store_test') !== test) { return dummy }
+    if (store.getItem('store_test') !== test) { return dummy() }
     store.removeItem('store_test')
-    if (store.getItem('store_test') !==  null) { return dummy }
+    if (store.getItem('store_test') !== null) { return dummy() }
     // it does work
     return {
       can: () => true,
@@ -31,7 +34,7 @@ const storage = lazy(() => {
       set: (key, val) => store.setItem(key, JSON.stringify(val)),
     }
   }
-  catch (err) { return dummy }
+  catch (err) { return dummy() }
 })
 
 module.exports = {
