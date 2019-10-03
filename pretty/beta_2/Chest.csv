@@ -13,6 +13,6 @@ id,type,item,item_id,amount,x,y,z,area,state
 13,unique,Chest,204,,314.181,86.3538,49.4153,,confirmed
 999,unique,Chest,274,,389.955,107.817,-239.521,,confirmed
 1000,unique,Chest,276,,484.69,31.1236,166.13,,needs check
-14,unique,Chest,,,508,30,651,,confirmed
+14,unique,Chest,,,508,30,651,,needs check
 1001,unique,Chest,203,,619.14,31.4668,-486.93,,confirmed
 1002,unique,Chest,279,,722.99,80.5802,184.422,,needs check
