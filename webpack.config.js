@@ -1,14 +1,16 @@
 const webpack = require('webpack')
-const fs = require('fs')
-const path = require('path')
+const fs      = require('fs')
+const path    = require('path')
 const dotenv  = require('dotenv')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const MiniCssExtractPlugin       = require('mini-css-extract-plugin')
+const TerserPlugin               = require('terser-webpack-plugin')
+const OptimizeCSSAssetsPlugin    = require('optimize-css-assets-webpack-plugin')
+const HtmlWebpackPlugin          = require('html-webpack-plugin')
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
-const PreloadWebpackPlugin = require('preload-webpack-plugin')
-const SpritesmithPlugin = require('webpack-spritesmith')
+const PreloadWebpackPlugin       = require('preload-webpack-plugin')
+const SpritesmithPlugin          = require('webpack-spritesmith')
+const BabelTransformUnicodeRegex = require('./src/babel-transform-unicode-regex')
 
 require('dotenv').config()
 
@@ -73,6 +75,32 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.js$/i,
+        exclude: /[\\/]node_modules[\\/](?!(wtf_wikipedia|regexpu\-core|unicode\-match\-property\-(value\-)?ecmascript)[\\/])/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            sourceType: 'unambiguous',
+            presets: [[
+              '@babel/preset-env',
+              {
+                useBuiltIns: 'usage',
+                corejs: 3,
+                modules: 'commonjs',
+                targets: {
+                  ie      : 11,
+                  chrome  : 60,
+                  firefox : 56,
+                },
+              },
+            ]],
+            plugins: [
+              BabelTransformUnicodeRegex,
+            ],
+          },
+        },
+      },
       {
         test: /\.s(a|c)ss$/i,
         use: [
