@@ -14,7 +14,7 @@ id,type,item,item_id,amount,x,y,z,area,state
 22,unique,Idea,348,,83.8442,71.8242,-75.2045,,confirmed
 23,unique,Idea,346,,87.5952,71.8942,-74.9505,,confirmed
 24,unique,Idea,139,,116.922,80.9528,-199.715,,confirmed
-1030,unique,Idea,,,-400,0,-140,,needs check
+1030,unique,Idea,,,-40,0,-140,,needs check
 1022,unique,Idea,282,,426.039,197.923,836.507,NewHome,confirmed
 1023,unique,Idea,283,,428.374,197.109,835.552,NewHome,confirmed
 317,unique,Idea,141,,467.77,56.106,441.32,AncientStables,needs check
