@@ -1,9 +1,9 @@
 id,type,item,item_id,amount,x,y,z,area,state
 987,material,Spystal,48,2,-793.036,76.644,-368.436,,needs check
-439,material,Spystal,48,1,-772.385,59.2955,-632.558,,needs check
+439,material,Spystal,48,1,-772.385,59.2955,-632.558,,confirmed
 440,material,Spystal,48,1,-690.35,77.6753,-450.603,,needs check
-441,material,Spystal,48,2,-661.56,67.07,-658.23,,needs check
-442,material,Spystal,48,1,-576.081,37.0075,-768.436,,needs check
+441,material,Spystal,48,2,-661.56,67.07,-658.23,,confirmed
+442,material,Spystal,48,1,-576.081,37.0075,-768.436,,confirmed
 194,material,Spystal,48,2,-525.076,77.048,-249.398,,confirmed
 216,material,Spystal,48,2,-427.93,72.55,-138.96,,confirmed
 443,material,Spystal,48,2,-410.93,62.45,-699.96,,needs check

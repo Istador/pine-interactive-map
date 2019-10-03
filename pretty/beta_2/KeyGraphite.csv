@@ -1,7 +1,7 @@
 id,type,item,item_id,amount,x,y,z,area,state
 82,unique,KeyGraphite,187,2,-838.17,25.9,547.46,,confirmed
 83,unique,KeyGraphite,187,1,-836.61,61.47,-70.08,,confirmed
-335,unique,KeyGraphite,187,1,-800.03,68.32,-571.85,,needs check
+335,unique,KeyGraphite,187,1,-800.03,68.32,-571.85,,confirmed
 336,unique,KeyGraphite,187,1,-770.22,105.43,-235.45,,needs check
 84,unique,KeyGraphite,187,2,-736.8,26.23,-875.45,,confirmed
 85,unique,KeyGraphite,187,2,-736.57,126.45,-3.77002,,confirmed
@@ -20,7 +20,7 @@ id,type,item,item_id,amount,x,y,z,area,state
 88,unique,KeyGraphite,187,2,-597.11,222.47,319.57,,confirmed
 89,unique,KeyGraphite,187,2,-578.77,96.99,-432.43,,confirmed
 90,unique,KeyGraphite,187,1,-528.92,101.53,-160.28,,confirmed
-347,unique,KeyGraphite,187,2,-510.91,32.42,-798.41,,needs check
+347,unique,KeyGraphite,187,2,-510.91,32.42,-798.41,,confirmed
 91,unique,KeyGraphite,187,2,-510.37,131.25,138.46,,confirmed
 92,unique,KeyGraphite,187,2,-478.73,197.5,383.88,,confirmed
 93,unique,KeyGraphite,187,8,-455.991,69.0655,-573.733,,confirmed
@@ -46,7 +46,7 @@ id,type,item,item_id,amount,x,y,z,area,state
 354,unique,KeyGraphite,187,1,-237.23,115.11,411.21,,confirmed
 108,unique,KeyGraphite,187,2,-227.116,74.593,-212.77,,confirmed
 213,unique,KeyGraphite,187,2,-213.75,72.74,-118.91,,confirmed
-110,unique,KeyGraphite,187,1,-211.861,36.6955,-506.743,,needs check
+110,unique,KeyGraphite,187,1,-211.861,36.6955,-506.743,,confirmed
 109,unique,KeyGraphite,187,2,-211.52,96.05,614.33,,confirmed
 990,unique,KeyGraphite,187,2,-198,138.44,318.43,,needs check
 111,unique,KeyGraphite,187,1,-187.41,56.56,-433.49,,confirmed
@@ -61,10 +61,10 @@ id,type,item,item_id,amount,x,y,z,area,state
 357,unique,KeyGraphite,187,2,-101.35,90.57,550.93,,confirmed
 185,unique,KeyGraphite,187,1,-83.16,45.74,740.83,,confirmed
 359,unique,KeyGraphite,187,1,-61.36,93.79,292.8,,confirmed
-358,unique,KeyGraphite,187,2,-60.3,62.64,-496.03,,needs check
+358,unique,KeyGraphite,187,2,-60.3,62.64,-496.03,,confirmed
 118,unique,KeyGraphite,187,2,-47.3,59.02,-247.16,,confirmed
 119,unique,KeyGraphite,187,2,-46.8611,78.3755,-147.823,,needs check
-121,unique,KeyGraphite,187,2,-34.3611,51.4555,-414.673,,needs check
+121,unique,KeyGraphite,187,2,-34.3611,51.4555,-414.673,,confirmed
 120,unique,KeyGraphite,187,1,-30.059,85.826,88.859,,confirmed
 188,unique,KeyGraphite,187,2,-22.9,27.24,909.81,,confirmed
 122,unique,KeyGraphite,187,1,-13.61,76.77,426.17,,confirmed
