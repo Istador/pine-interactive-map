@@ -114,11 +114,15 @@ const tooltip = (row) =>
     + (row.area ? ' in ' + row.area : '')
 
 // detect uniqueness of IDs
-const uniqueIDs = {}
+let uniqueIDs = {}
 const registerRow = (row) => {
   if (! row.ID) { return }
   uniqueIDs[row.ID] = ! (row.ID in uniqueIDs)
 }
+
+// markers by id
+let markersByID = {}
+const id2marker = (id) => markersByID[id]
 
 const obj2marker = (row) => {
   row.hasUniqueID = (row.ID && uniqueIDs[row.ID])
@@ -138,16 +142,22 @@ const obj2marker = (row) => {
         )
       }
     )
+  if (row.hasUniqueID) {
+    markersByID[row.ID] = marker
+  }
+  marker.row = row
   return marker
 }
 
 const resetMarkers = () => {
-  Object.keys(uniqueIDs).forEach(k => delete uniqueIDs[k])
+  markersByID = {}
+  uniqueIDs = {}
 }
 
 module.exports = {
   registerRow,
   obj2marker,
+  id2marker,
   tint,
   resetMarkers,
 }

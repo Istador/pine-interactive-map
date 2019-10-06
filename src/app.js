@@ -7,6 +7,7 @@
   const { datasource } = require('./js/datasource')
   const { registerRow, obj2marker } = require('./js/markers')
   const { translate, langComponent, langControl } = require('./js/i18n')
+  const { initHash } = require('./js/hash')
 
   // initialize the map
   const map = L.map('map', {
@@ -78,4 +79,6 @@
     .then(() => map.invalidateSize(false))
     // auto zoom
     .then(() => map.fitBounds(bounds, { animate: false }))
+    // parse parameters from window.location.hash
+    .then(() => initHash(map))
 })()

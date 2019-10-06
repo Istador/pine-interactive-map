@@ -7,7 +7,7 @@ const { translate, langComponent } = require('./i18n')
 const { versions, changeVersion } = require('./versions')
 
 const overlays = {}
-const currentLayers = () => layers().map(x => x.split('.'))
+let currentLayers = layers().map(x => x.split('.'))
 const onlyExistingLayers = ([type, item]) => type in overlays && item in overlays[type]
 
 const addOverlay = (type, item) => {
@@ -67,7 +67,7 @@ const initLayerControl = (map) => {
             },
             true, // isOverlay and not baseLayer
             typeName, // group name
-            ! currentLayers().filter(onlyExistingLayers).some(def => def[0] === type) // collapse groups that have no layers selected
+            ! currentLayers.filter(onlyExistingLayers).some(def => def[0] === type) // collapse groups that have no layers selected
           )
         )
     )
@@ -83,6 +83,7 @@ const initLayerControl = (map) => {
         }
       }
       saveLayers(selectedLayers)
+      currentLayers = layers().map(x => x.split('.'))
       const selectedVersion = versions.reduce((out, v) => layerControl._map.hasLayer(baseLayers[v]) ? v : out)
       if (version() !== selectedVersion) {
         saveVersion(selectedVersion)
@@ -95,14 +96,13 @@ const initLayerControl = (map) => {
 }
 
 // add all selected layers to overlays, so that they can be added to the map before they are created dynamically
-currentLayers().forEach(([type, item]) => addOverlay(type, item))
+currentLayers.forEach(([type, item]) => addOverlay(type, item))
 
 // flattened Array of all selected layers
 const overlaysArray = Object.values(overlays).map(x => Object.values(x)).reduce((a, x) => [...a, ...x], [])
 
 // remove all existing layers from the map
-const resetLayers = (map) => {
-  // remove from map
+const removeLayers = (map) => {
   for (const type in overlays) {
     for (const item in overlays[type]) {
       if (overlays[type][item]) {
@@ -110,6 +110,12 @@ const resetLayers = (map) => {
       }
     }
   }
+}
+
+// reset the component by removing everything
+const resetLayers = (map) => {
+  // remove from map
+  removeLayers(map)
   // remove from cached data structure
   Object.keys(overlays).forEach(key => {
     delete overlays[key]
@@ -120,7 +126,7 @@ const resetLayers = (map) => {
 
 const reinitLayers = (map) => {
   // readd the selected layers to the map
-  currentLayers()
+  currentLayers
     .filter(onlyExistingLayers)
     .forEach(([type, item]) => {
       map.addLayer(overlays[type][item])
@@ -129,10 +135,45 @@ const reinitLayers = (map) => {
   layerControlReset()
 }
 
+const hasLayer = (map, type, item) =>
+     type in overlays
+  && item in overlays[type]
+  && overlays[type][item]
+  && map.hasLayer(overlays[type][item])
+
+const addLayers = (map, layers) => {
+  try {
+    for (const layer of layers.split(',')) {
+      try {
+        const [type, item] = layer.split('.')
+        if (type && item && type in overlays && item in overlays[type] && overlays[type][item]) {
+          map.addLayer(overlays[type][item])
+          currentLayers.push([type, item])
+        }
+      }
+      catch {}
+    }
+  }
+  catch {}
+  // reinit the component
+  layerControlReset()
+}
+
+const setLayers = (map, layers) => {
+  // remove layers from map
+  removeLayers(map)
+  currentLayers = []
+  // add layers to map
+  addLayers(map, layers)
+}
+
 module.exports = {
   overlays: overlaysArray,
   addMarker,
   initLayerControl,
   resetLayers,
   reinitLayers,
+  hasLayer,
+  addLayers,
+  setLayers,
 }
