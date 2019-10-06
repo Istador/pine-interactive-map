@@ -8,6 +8,7 @@ module.exports = {
     datasource     : 'Contribute',
     mark_seen      : 'Mark completed',
     unmark_seen    : 'Mark not completed',
+    permalink      : 'Permalink',
     styleTitle: {
       seen: {
         show: 'Completed markers are shown normally',

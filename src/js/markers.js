@@ -103,6 +103,15 @@ const popup = (row, marker) => {
       marker._icon.classList[row.seen ? 'add' : 'remove']('pine-poi-seen')
     })
   }
+  // permalink
+  if (row.hasUniqueID) {
+    const link = L.DomUtil.create('a', '', div)
+    link.setAttribute('href', '#id=' + row.ID)
+    link.setAttribute('title', translate('ui', 'permalink'))
+    const button = L.DomUtil.create('button', '', link)
+    button.setAttribute('type', 'button')
+    button.innerHTML = '<span>🔗</span>'
+  }
   return div
 }
 

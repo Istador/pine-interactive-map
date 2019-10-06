@@ -51,7 +51,9 @@ $green5: rgb( 72,  99,  68); $green5_transp: rgba( 72,  99,  68, 0.700);
       }
       // buttons
       button {
-        color: $link;
+        span {
+          filter: $black2lightwhite;
+        }
         background-color: $green2;
         &:hover {
           background-color: $green1;
