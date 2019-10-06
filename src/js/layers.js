@@ -11,8 +11,8 @@ const bounds = gameBounds.map(([x, y]) => [ x - 1024, y + 1024 ])
 
 // bigger maximum bounds for better UX
 const maxBounds = [
-  bounds[0].map(x => x - 512),
-  bounds[1].map(x => x + 512),
+  bounds[0].map(x => x - 1024),
+  bounds[1].map(x => x + 1024),
 ]
 
 // pine maps
