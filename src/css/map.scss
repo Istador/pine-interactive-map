@@ -12,17 +12,6 @@ body {
     > div.leaflet-tile-pane {
       filter: saturate(0.8);
     }
-    > div.leaflet-overlay-pane {
-      z-index: 199;
-      // L.imageOverlay (2D)
-      > img {
-        filter: saturate(0.6);
-      }
-      // L.svgOverlay (Water)
-      > svg {
-        z-index: -1;
-      }
-    }
   }
 }
 

@@ -24,11 +24,14 @@
     noWrap             : true,
     maxBounds,
     layers: [
-      water,
       baseLayers[version()],
       ...overlays
     ],
   })
+  const pane = map.createPane('water')
+  pane.style.zIndex = -1
+  pane.style.pointerEvents = 'none'
+  water.addTo(map)
 
   // auto zoom
   map.fitBounds(bounds, { animate: false })

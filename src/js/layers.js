@@ -52,7 +52,9 @@ const water = L.svgOverlay(
       bounds[0].map(x => x - 8192),
       bounds[1].map(x => x + 8192),
     ],
-    {}
+    {
+      pane: 'water',
+    }
   )
 
 // Custom Coordinate System - see https://gis.stackexchange.com/questions/200865/leaflet-crs-simple-custom-scale
