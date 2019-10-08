@@ -102,7 +102,7 @@ module.exports = {
     },
     unique: {
       '.'          : 'Unique',
-      amphiscisorb : 'Amphiscis Orb',
+      amphiscusorb : 'Amphiscus Orb',
       chest        : 'Chest',
       emblem       : 'Amphiscis Emblem',
       idea         : 'Idea',

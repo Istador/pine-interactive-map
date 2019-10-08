@@ -103,7 +103,7 @@ module.exports = {
       quest,
     },
     unique: {
-      amphiscisorb: {
+      amphiscusorb: {
         iconSize      : null,
         iconAnchor    : [ 8,  10 ],
         popupAnchor   : [ 0, -10 ],
