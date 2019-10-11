@@ -11,7 +11,7 @@ const text2number = (text) => {
 const fetch = {
   spreadsheet: () => window.axios.get(`${__JSON__}`.replace('${VERSION}', version())),
   wiki: () => window.wtf.fetch(
-    'Interactive Map/' + version(),
+    'Interactive Map/' + version().replace('.', '_'),
     'pine',
     {
       wikiUrl: __JSON__,
