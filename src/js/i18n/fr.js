@@ -8,7 +8,7 @@ module.exports = {
     datasource     : 'Contributer',
     mark_seen      : 'Marqué terminé',
     unmark_seen    : 'Marqué non terminé',
-    permalink      : 'Permalien,
+    permalink      : 'Permalien',
     styleTitle: {
       seen: {
         show: 'Les marqueurs complétés sont montrés normalement',
@@ -33,12 +33,12 @@ module.exports = {
     },
     food: {
       '.'             : 'Aliments',
-      alpafantmeat    : "Viande d'Alpafant",
+      alpafantmeat    : 'Viande d\'Alpafant',
       anurashroom     : 'Champignon Anura',
-      avianpepper     : "Poivre d'Avian",
+      avianpepper     : 'Poivre d\'Avian',
       carrant         : 'Carrant',
       dunerice        : 'Dunerice',
-      edenfruit       : 'Fruit d'Eden',
+      edenfruit       : 'Fruit d\'Eden',
       fatplant        : 'Plante grasse',
       leafdough       : 'Pâte à feuilles',
       meageryam       : 'Meageryam',
@@ -60,7 +60,7 @@ module.exports = {
     },
     material: {
       '.'                : 'Matériel',
-      alpafantleather    : 'Cuire d'alpafant',
+      alpafantleather    : 'Cuire d\'alpafant',
       beagalite          : 'Beagalite',
       bleekerantenna     : 'Antenne de Bleeker',
       dryclay            : 'Argile sèche',
@@ -102,9 +102,9 @@ module.exports = {
     },
     unique: {
       '.'          : 'Unique',
-      amphiscusorb : "Obres d'amphiscus",
+      amphiscusorb : 'Obres d\'amphiscus',
       chest        : 'Coffres',
-      emblem       : "Emblème d'amphiscis",
+      emblem       : 'Emblème d\'amphiscis',
       idea         : 'Idée',
       journal      : 'Journal / Livre',
       keygraphite  : 'Clé de Graphite',
