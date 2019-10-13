@@ -36,6 +36,7 @@ module.exports = {
       alpafantmeat    : 'Alpafant Meat',
       anurashroom     : 'Anura Shroom',
       avianpepper     : 'Avian Pepper',
+      bleekerthigh    : 'Bleeker Thigh',
       carrant         : 'Carrant',
       dunerice        : 'Dunerice',
       edenfruit       : 'Eden Fruit',
@@ -54,9 +55,10 @@ module.exports = {
       commonwheat     : 'Commonwheat',
     },
     item: {
-      '.'   : 'Item',
-      equip : 'Equipment',
-      quest : 'Quest',
+      '.'        : 'Item',
+      equip      : 'Equipment',
+      outfinding : 'Outfinding',
+      quest      : 'Quest',
     },
     material: {
       '.'                : 'Material',
