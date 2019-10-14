@@ -5,13 +5,13 @@
  *
  * And adds a runtime replacement of regular expressions.
  *
- * Add this to the application:
- * window.rewritePattern = require('regexpu-core')
- *
  * See https://github.com/babel/babel/issues/10523 for further details
  */
 
 const rewritePattern = require('regexpu-core')
+const { addDefault } = require('@babel/helper-module-imports')
+
+let rewritePatternIdentifier
 
 function convert(path, t) {
   const args = path.get('arguments')
@@ -27,14 +27,14 @@ function convert(path, t) {
     )
   }
   else {
+    if (! rewritePatternIdentifier) {
+      rewritePatternIdentifier = addDefault(path, 'regexpu-core')
+    }
     return t.newExpression(
       path.node.callee,
       [
         t.callExpression(
-          t.memberExpression(
-            t.identifier('window'),
-            t.identifier('rewritePattern'),
-          ),
+          rewritePatternIdentifier,
           [
             pattern.deopt.node,
           ],
