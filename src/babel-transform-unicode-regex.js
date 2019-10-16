@@ -11,8 +11,6 @@
 const rewritePattern = require('regexpu-core')
 const { addDefault } = require('@babel/helper-module-imports')
 
-let rewritePatternIdentifier
-
 function convert(path, t) {
   const args = path.get('arguments')
   const evaluatedArgs = args.map((a) => a.evaluate())
@@ -27,9 +25,7 @@ function convert(path, t) {
     )
   }
   else {
-    if (! rewritePatternIdentifier) {
-      rewritePatternIdentifier = addDefault(path, 'regexpu-core')
-    }
+    const rewritePatternIdentifier = addDefault(path, 'regexpu-core')
     return t.newExpression(
       path.node.callee,
       [
