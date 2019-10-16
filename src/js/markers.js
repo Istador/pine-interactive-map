@@ -61,7 +61,7 @@ const row2marker = (row) => L.marker(
   }
 )
 
-const showProp = (prop) => ! [ 'seen', 'hasUniqueID' ].includes(prop) && ! /_html$/.test(prop)
+const showProp = (prop) => ! [ 'seen', 'hasUniqueID', 'screenshot' ].includes(prop) && ! /_html$/.test(prop)
 
 const showCompleteButton = (row) => (
      storage().can()
@@ -79,9 +79,25 @@ const popup = (row, marker) => {
   //title
   const title = L.DomUtil.create('h4', '', div)
   title.innerHTML = type2name(row.type) + ' - ' + item2name(row.type)(row.item)
+  // Screenshots
+  if (row.screenshot) {
+    const filename = row.screenshot.replace(' ', '_')
+    const screenshot = L.DomUtil.create('div', 'pine-screenshot', div)
+    const a = L.DomUtil.create('a', '', L.DomUtil.create('div', 'pine-screenshot', div))
+    a.setAttribute('href', `${__WIKI__}File:${filename}`)
+    a.setAttribute('target', '_blank')
+    const img = L.DomUtil.create('img', '', a)
+    img.setAttribute('src', `${__WIKI__}Special:Redirect/file/${filename}?width=240&height=240`)
+    // update the popup, to adjust it's size to the image (but only once!)
+    if (! row.screenshot_html) {
+      img.onload = () => {
+        row.screenshot_html = 'loaded'
+        if (marker._popup) { marker._popup.update() }
+      }
+    }
+  }
   // add all properties to the table
   const tbody = L.DomUtil.create('tbody', '', L.DomUtil.create('table', '', div))
-  // TODO: images and/or videos
   Object.keys(row).filter(showProp).forEach((k) => {
     const tr = L.DomUtil.create('tr', '', tbody)
     if (row.ID) { tr.setAttribute('data-ID', row.ID) }
