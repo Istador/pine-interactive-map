@@ -65,7 +65,7 @@ const transform = {
             : val
           )
           if (sentence.data.links || sentence.data.fmt) {
-            obj[key + '_html'] = sentence.html({formatting: true}).replace(' href="./', ` target="_blank" href="${__WIKI__}`)
+            obj[key + '_html'] = sentence.html({formatting: true}).replace(/ href="\.\//g, ` target="_blank" href="${__WIKI__}`)
           }
           else if (key === 'type' || key === 'item') {
             obj[key + '_html'] = val
