@@ -61,6 +61,12 @@ module.exports = {
       tingflower      : 'Tingblume',
       waddletoothloin : 'Watschelzahn-Lende',
     },
+    idea: {
+      '.'    : 'Idee',
+      chest  : 'Truhe',
+      pickup : 'Aufhebbar',
+      quest  : 'Quest',
+    },
     item: {
       '.'   : 'Gegenstand',
       equip : 'Ausrüstung',
@@ -95,8 +101,8 @@ module.exports = {
       door  : 'Tür',
       lever : 'Hebel',
     },
-    spawn: {
-      '.'         : 'Kreaturen',
+    nest: {
+      '.'         : 'Nest',
       alpafant    : 'Alpafant',
       bleeker     : 'Schnapper',
       puffle      : 'Fluffi',
@@ -106,13 +112,18 @@ module.exports = {
       '.'      : 'NPC',
       chief    : 'Häuptling',
       merchant : 'Händler',
+      village  : 'Dorf',
+    },
+    spawn: {
+      '.'         : 'Kreaturen',
+      alpafant    : 'Alpafant',
+      bleeker     : 'Schnapper',
+      puffle      : 'Fluffi',
+      waddletooth : 'Watschelzahn',
     },
     unique: {
       '.'          : 'Einzigartig',
       amphiscusorb : 'Amphiscus-Kugel',
-      chest        : 'Truhe',
-      emblem       : 'Amphiscus-Emblem',
-      idea         : 'Idee',
       journal      : 'Journal / Buch',
       keygraphite  : 'Schlüsselgraphit',
     },

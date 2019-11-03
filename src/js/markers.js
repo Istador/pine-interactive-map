@@ -19,6 +19,11 @@ const tints = {
     n: 5,
     i: 0,
   },
+  nest: {
+    map: {},
+    n: 4,
+    i: 6,
+  },
   spawn: {
     map: {},
     n: 4,
@@ -133,7 +138,15 @@ const popup = (row, marker) => {
 
 const tooltip = (row) =>
   (row.amount && ! isNaN(Number(row.amount)) ? row.amount + 'x ' : '')
-    + item2name(row.type)(row.item)
+    + (
+      row.item === 'quest' && [ 'idea', 'item' ].includes(row.type)
+      ? item2name(row.type)(row.item) + ' ' + type2name(row.type)
+      : (
+        row.type === 'idea' || row.type === 'npc' && row.item === 'quest'
+        ? type2name(row.type)
+        : item2name(row.type)(row.item)
+      )
+    )
     + (row.title ? ': ' + row.title : '')
     + '<br/>(' + row.x + ', ' + row.z + ')'
     + (row.area ? ' in ' + row.area : '')

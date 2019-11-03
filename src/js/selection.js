@@ -1,17 +1,19 @@
 const { storage } = require('./util')
 const { versions } = require('./versions')
-const { baseLayers } = require('./layers.js')
+const { baseLayers } = require('./layers')
+const { mapOldName } = require('./names')
 
 const defaultVersion = versions[0]
 const defaultLayers = [
+  'entrance.cave',
   'entrance.vault',
+  'idea.chest',
+  'idea.pickup',
+  'idea.quest',
   'item.equip',
   'item.quest',
-  'npc.quest',
+  'npc.village',
   'unique.amphiscusorb',
-  'unique.chest',
-  'unique.emblem',
-  'unique.idea',
 ]
 
 const layers  = 'pine-selected-layers'
@@ -23,9 +25,11 @@ const get  = (key, def, inside = false) => () => {
 }
 const save = (key) => (val) => storage().set(key, val)
 
+const mapAll = (f) => () => f().map(mapOldName)
+
 module.exports = {
   version     : get(version, defaultVersion, baseLayers),
-  layers      : get(layers, defaultLayers),
+  layers      : mapAll(get(layers, defaultLayers)),
   saveVersion : save(version),
   saveLayers  : save(layers),
 }

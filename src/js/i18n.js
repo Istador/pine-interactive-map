@@ -2,15 +2,15 @@ const { storage } = require('./util')
 
 
 const data = {
-  en: require('./i18n/en.js'),
-  de: require('./i18n/de.js'),
-  fr: require('./i18n/fr.js'),
-  it: require('./i18n/it.js'),
-  es: require('./i18n/es.js'),
-  //zh: require('./i18n/zh.js'),
-  //ru: require('./i18n/ru.js'),
-  pg: require('./i18n/pg.js'),
-  //du: require('./i18n/du.js'),
+  en: require('./i18n/en'),
+  de: require('./i18n/de'),
+  fr: require('./i18n/fr'),
+  it: require('./i18n/it'),
+  es: require('./i18n/es'),
+  //zh: require('./i18n/zh'),
+  //ru: require('./i18n/ru'),
+  pg: require('./i18n/pg'),
+  //du: require('./i18n/du'),
 }
 
 

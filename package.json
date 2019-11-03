@@ -1,6 +1,6 @@
 {
   "name": "pine-interactive-map",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Interactive Map for the video game Pine, that is currently in development.",
   "main": "src/app.js",
   "scripts": {
@@ -37,7 +37,7 @@
     "@babel/runtime": "^7.6.3",
     "axios": "^0.19.0",
     "babel-loader": "^8.0.6",
-    "core-js": "^3.3.2",
+    "core-js": "^3.3.6",
     "css-loader": "^3.2.0",
     "dotenv": "^8.2.0",
     "file-loader": "^4.2.0",
@@ -47,14 +47,14 @@
     "leaflet-languageselector": "github:buche/leaflet-languageselector#30f6bdcf7e2f5fe9a283f3dfc5bd6e64c94ac511",
     "leaflet-panel-layers": "github:stefanocudini/leaflet-panel-layers#2627c873b70dae1270400be6713bac66a5765615",
     "mini-css-extract-plugin": "^0.8.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "preload-webpack-plugin": "^3.0.0-beta.4",
     "sass-loader": "^7.3.1",
     "script-ext-html-webpack-plugin": "^2.1.4",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.9",
+    "webpack-cli": "^3.3.10",
     "webpack-spritesmith": "^1.0.2",
-    "wtf_wikipedia": "^7.7.1"
+    "wtf_wikipedia": "^7.7.2"
   }
 }

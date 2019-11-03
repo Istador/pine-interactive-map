@@ -1,6 +1,6 @@
 const escapeHtml = (str) => str.replace(/[&<>'"]/g, x => '&#' + x.charCodeAt(0) + ';')
 
-const { capitalize } = require('./names')
+const { capitalize, mapOldBoth } = require('./names')
 const { version } = require('./selection')
 
 const text2number = (text) => {
@@ -76,6 +76,9 @@ const transform = {
             obj[key] = Math.round(obj[key] * 100) / 100
           }
         }
+        const [ type, item ] = mapOldBoth(obj.type, obj.item)
+        obj.type = type
+        obj.item = item
         out.push(obj)
       }
       return out

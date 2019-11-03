@@ -23,6 +23,12 @@ module.exports = {
       tingflower      : 'Tinifiore',
       waddletoothloin : 'Lonza di Waddletooth',
     },
+    idea: {
+      '.'    : 'Idea',
+      //chest  : '',
+      //pickup : '',
+      //quest  : '',
+    },
     material: {
       '.'                : 'Materiale',
       alpafantleather    : 'Pelle di Alpafante',
@@ -48,6 +54,13 @@ module.exports = {
       toothstone         : 'Tartaro',
       waddletoothblubber : 'Brava di Waddletooth',
     },
+    nest: {
+      //'.'         : '',
+      alpafant    : 'Alpafante',
+      bleeker     : 'Bleeker',
+      puffle      : 'Puffle',
+      waddletooth : 'Waddletooth',
+    },
     spawn: {
       '.'         : 'Creatura',
       alpafant    : 'Alpafante',
@@ -57,8 +70,6 @@ module.exports = {
     },
     unique: {
       amphiscusorb : 'Sfera di Amphiscus',
-      emblem       : 'Sfera di Amphiscus',
-      idea         : 'Idea',
       keygraphite  : 'Chiavigrafite',
     },
   },

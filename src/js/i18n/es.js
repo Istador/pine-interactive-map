@@ -23,6 +23,12 @@ module.exports = {
       tingflower      : 'Hierba de los dientes',
       waddletoothloin : 'Lomo de Contodiente',
     },
+    idea: {
+      '.'   : 'Idea',
+      //chest  : '',
+      //pickup : '',
+      //quest  : '',
+    },
     material: {
       '.'                : 'Materiales',
       alpafantleather    : 'Piel de Alpafante',
@@ -48,6 +54,13 @@ module.exports = {
       toothstone         : 'Piedra dental',
       waddletoothblubber : 'Grasa de Contodiente',
     },
+    nest: {
+      //'.'         : '',
+      alpafant    : 'Alpafante',
+      bleeker     : 'Bleeker',
+      puffle      : 'Nubesco',
+      waddletooth : 'Contodiente',
+    },
     spawn: {
       '.'         : 'Criatura',
       alpafant    : 'Alpafante',
@@ -57,8 +70,6 @@ module.exports = {
     },
     unique: {
       amphiscusorb : 'Orbes de Anfibu',
-      emblem       : 'Orbes de Anfibu',
-      idea         : 'Idea',
       keygraphite  : 'Grafito de Llave',
     },
   },

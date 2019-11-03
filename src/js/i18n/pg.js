@@ -23,6 +23,12 @@ module.exports = {
       tingflower      : 'Frozinha',
       waddletoothloin : 'Filé de Dorsa',
     },
+    idea: {
+      '.'    : 'Ideia',
+      //chest  : '',
+      //pickup : '',
+      //quest  : '',
+    },
     material: {
       '.'                : 'Material',
       alpafantleather    : 'Couro de Alpafante',
@@ -48,6 +54,13 @@ module.exports = {
       toothstone         : 'Plaquita',
       waddletoothblubber : 'Banha de Dorsa',
     },
+    nest: {
+      //'.'         : '',
+      alpafant    : 'Alpafante',
+      bleeker     : 'Tretão',
+      puffle      : 'Bombo',
+      waddletooth : 'Dorsa',
+    },
     spawn: {
       '.'         : 'Criatura',
       alpafant    : 'Alpafante',
@@ -57,8 +70,6 @@ module.exports = {
     },
     unique: {
       amphiscusorb : 'Orbes dos Ampesce',
-      emblem       : 'Orbes dos Ampesce',
-      idea         : 'Ideia',
       keygraphite  : 'Grafite de Chave',
     },
   },

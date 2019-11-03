@@ -54,6 +54,12 @@ module.exports = {
       waddletoothloin : 'Longe de Waddletooth',
       commonwheat     : 'Blé Commun',
     },
+    idea: {
+      '.'    : 'Idée',
+      chest  : 'Coffres',
+      //pickup : '',
+      quest  : 'Quêtes',
+    },
     item: {
       '.'        : 'Objet',
       equip      : 'Équipement',
@@ -93,8 +99,8 @@ module.exports = {
       lever          : 'Levier',
       pinsocket      : 'Prise de broche',
     },
-    spawn: {
-      '.'         : 'Créatures',
+    nest: {
+      //'.'         : '',
       alpafant    : 'Alpafant',
       bleeker     : 'Bleeker',
       puffle      : 'Puffle',
@@ -105,13 +111,18 @@ module.exports = {
       chief    : 'Chef',
       merchant : 'Marchant',
       quest    : 'Quêtes',
+      //village  : '',
+    },
+    spawn: {
+      '.'         : 'Créatures',
+      alpafant    : 'Alpafant',
+      bleeker     : 'Bleeker',
+      puffle      : 'Puffle',
+      waddletooth : 'Waddletooth',
     },
     unique: {
       '.'          : 'Unique',
       amphiscusorb : 'Orbes',
-      chest        : 'Coffres',
-      emblem       : 'Emblème d\'amphiscis',
-      idea         : 'Idée',
       journal      : 'Journal / Livre',
       keygraphite  : 'Graphite de Clé',
     },

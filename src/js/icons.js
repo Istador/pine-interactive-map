@@ -1,9 +1,18 @@
-const quest = {
+const topLeft = {
+  iconSize      : null,
+  iconAnchor    : [  8,  8 ],
+  popupAnchor   : [ -8, -8 ],
+  tooltipAnchor : [ -8, -8 ],
+}
+
+const topCenter = {
   iconSize      : null,
   iconAnchor    : [ 8,  8 ],
   popupAnchor   : [ 0, -8 ],
   tooltipAnchor : [ 0, -8 ],
 }
+
+const quest = topCenter
 
 const stone = {
   iconSize      : null,
@@ -11,6 +20,14 @@ const stone = {
   popupAnchor   : [ 3.5, -8 ],
   tooltipAnchor : [ 3.5, -8 ],
 }
+
+const smallStone = {
+  iconSize      : null,
+  iconAnchor    : [ 5.6,  8 ],
+  popupAnchor   : [ 2.8, -8 ],
+  tooltipAnchor : [ 2.8, -8 ],
+}
+
 
 module.exports = {
   icons: {
@@ -30,12 +47,16 @@ module.exports = {
       vault: quest,
     },
     food: {
+      default: topLeft,
+    },
+    idea: {
       default: {
         iconSize      : null,
-        iconAnchor    : [  8,  8 ],
-        popupAnchor   : [ -8, -8 ],
-        tooltipAnchor : [ -8, -8 ],
+        iconAnchor    : [ 8,  5.5 ],
+        popupAnchor   : [ 0, -5.5 ],
+        tooltipAnchor : [ 0, -5.5 ],
       },
+      quest,
     },
     item: {
       default: {
@@ -53,7 +74,7 @@ module.exports = {
         popupAnchor   : [ 1.5, -6.75 ],
         tooltipAnchor : [ 1.5, -6.75 ],
       },
-      beagalite: stone,
+      beagalite: smallStone,
       dryclay: {
         iconSize      : null,
         iconAnchor    : [ 7,  8 ],
@@ -68,19 +89,9 @@ module.exports = {
         tooltipAnchor : [ 4, -8 ],
       },
       leaniron: stone,
-      lunarodos: {
-        iconSize      : null,
-        iconAnchor    : [ 8,  8 ],
-        popupAnchor   : [ 0, -8 ],
-        tooltipAnchor : [ 0, -8 ],
-      },
+      lunarodos: topCenter,
       sandstone: stone,
-      spystal: {
-        iconSize      : null,
-        iconAnchor    : [ 5.6,  8 ],
-        popupAnchor   : [ 2.8, -8 ],
-        tooltipAnchor : [ 2.8, -8 ],
-      },
+      spystal: smallStone,
       toothstone: stone,
     },
     mechanic: {
@@ -91,16 +102,15 @@ module.exports = {
         tooltipAnchor : [ 0, -8 ],
       },
     },
-    spawn: {
-      default: {
-        iconSize      : null,
-        iconAnchor    : [ 8,  8 ],
-        popupAnchor   : [ 0, -8 ],
-        tooltipAnchor : [ 0, -8 ],
-      },
+    nest: {
+      default: topCenter,
     },
     npc: {
+      village: topCenter,
       quest,
+    },
+    spawn: {
+      default: topCenter,
     },
     unique: {
       amphiscusorb: {
@@ -108,24 +118,6 @@ module.exports = {
         iconAnchor    : [ 8,  10 ],
         popupAnchor   : [ 0, -10 ],
         tooltipAnchor : [ 0, -10 ],
-      },
-      chest: {
-        iconSize      : null,
-        iconAnchor    : [ 8,  5.5 ],
-        popupAnchor   : [ 0, -5.5 ],
-        tooltipAnchor : [ 0, -5.5 ],
-      },
-      emblem: {
-        iconSize      : null,
-        iconAnchor    : [ 8,  10 ],
-        popupAnchor   : [ 0, -10 ],
-        tooltipAnchor : [ 0, -10 ],
-      },
-      idea: {
-        iconSize      : null,
-        iconAnchor    : [ 8,  5.5 ],
-        popupAnchor   : [ 0, -5.5 ],
-        tooltipAnchor : [ 0, -5.5 ],
       },
       journal: {
         iconSize      : null,

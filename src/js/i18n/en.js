@@ -68,6 +68,12 @@ module.exports = {
       tingflower      : 'Tingflower',
       waddletoothloin : 'Waddletooth Loin',
     },
+    idea: {
+      '.'    : 'Idea',
+      chest  : 'Chest',
+      pickup : 'Pick up',
+      quest  : 'Quest',
+    },
     item: {
       '.'        : 'Item',
       equip      : 'Equipment',
@@ -107,8 +113,8 @@ module.exports = {
       lever          : 'Lever',
       pinsocket      : 'Pin Socket',
     },
-    spawn: {
-      '.'         : 'Spawn',
+    nest: {
+      '.'         : 'Nest',
       alpafant    : 'Alpafant',
       bleeker     : 'Bleeker',
       puffle      : 'Puffle',
@@ -119,13 +125,18 @@ module.exports = {
       chief    : 'Chief',
       merchant : 'Merchant',
       quest    : 'Quest',
+      village  : 'Village',
+    },
+    spawn: {
+      '.'         : 'Spawn',
+      alpafant    : 'Alpafant',
+      bleeker     : 'Bleeker',
+      puffle      : 'Puffle',
+      waddletooth : 'Waddletooth',
     },
     unique: {
       '.'          : 'Unique',
       amphiscusorb : 'Amphiscus Orb',
-      chest        : 'Chest',
-      emblem       : 'Amphiscis Emblem',
-      idea         : 'Idea',
       journal      : 'Journal / Book',
       keygraphite  : 'Key Graphite',
     },

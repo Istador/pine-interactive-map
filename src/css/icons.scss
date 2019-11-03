@@ -80,6 +80,11 @@ div.leaflet-marker-pane > div.pine-marker {
     @include tint(16);
   }
 
+  // idea
+  &.pine-marker-idea {
+    @include scaled($pine-icon-chest);
+  }
+
   // item
   &.pine-marker-item {
     @include scaled($pine-icon-equip, 0.6);
@@ -93,7 +98,8 @@ div.leaflet-marker-pane > div.pine-marker {
 
     // beagalite
     &.pine-marker-material-beagalite {
-      @include scaled($pine-icon-beagalite);
+      @include scaled($pine-icon-beagalite, 0.5, 0.7);
+      filter: hue-rotate(90deg) brightness(2);
     }
     // dullrock
     &.pine-marker-material-dullrock {
@@ -121,7 +127,7 @@ div.leaflet-marker-pane > div.pine-marker {
     // sandstone
     &.pine-marker-material-sandstone {
       @include scaled($pine-icon-beagalite);
-      filter: hue-rotate(90deg) brightness(2);
+      filter: hue-rotate(90deg) brightness(2.5) saturate(0.75);
     }
     // spystal
     &.pine-marker-material-spystal {
@@ -142,15 +148,23 @@ div.leaflet-marker-pane > div.pine-marker {
     @include tint(5);
   }
 
+  // npc
+  &.pine-marker-npc-village
+  {
+    @include scaled($pine-icon-village);
+  }
+
   // spawn
-  &.pine-marker-spawn {
+  &.pine-marker-spawn
+  , &.pine-marker-nest {
     // default
     @include scaled($pine-icon-nest);
     @include tint(4);
   }
 
   // quest
-  &.pine-marker-item-quest
+  &.pine-marker-idea-quest
+  , &.pine-marker-item-quest
   , &.pine-marker-npc-quest
   , &.pine-marker-entrance-quest
   , &.pine-marker-entrance-vault
@@ -164,19 +178,9 @@ div.leaflet-marker-pane > div.pine-marker {
     &.pine-marker-unique-amphiscusorb {
       @include scaled($pine-icon-emblem);
     }
-    // emblem
-    &.pine-marker-unique-emblem {
-      @include scaled($pine-icon-emblem);
-    }
     // keygraphite
     &.pine-marker-unique-keygraphite {
       @include scaled($pine-icon-keygraphite, 10/32);
-    }
-    // chest, idea
-    &.pine-marker-unique-chest
-    , &.pine-marker-unique-idea
-    {
-      @include scaled($pine-icon-chest);
     }
     // journal / book
     &.pine-marker-unique-journal {

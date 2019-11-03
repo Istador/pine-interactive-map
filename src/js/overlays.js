@@ -1,7 +1,7 @@
 const { lazy } = require('./util')
 const { baseLayers } = require('./layers')
 const { tint } = require('./markers')
-const { type2name, item2name } = require('./names')
+const { type2name, item2name, mapOldName } = require('./names')
 const { layers, saveLayers, version, saveVersion } = require('./selection')
 const { translate, langComponent } = require('./i18n')
 const { versions, changeVersion } = require('./versions')
@@ -145,7 +145,7 @@ const addLayers = (map, layers) => {
   try {
     for (const layer of layers.split(',')) {
       try {
-        const [type, item] = layer.split('.')
+        const [type, item] = mapOldName(layer).split('.')
         if (type && item && type in overlays && item in overlays[type] && overlays[type][item]) {
           map.addLayer(overlays[type][item])
           currentLayers.push([type, item])
