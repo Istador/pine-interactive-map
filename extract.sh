@@ -99,6 +99,9 @@ function Item {
     -e 's/^Dullrock_Dunes/Dullrock/'                   \
     -e 's/^([a-zA-Z]+)_Spawner( \([0-9]+\))?/\1/'      \
     -e 's/^AlbamareChest/Chest/'                       \
+    -e 's/^Cave_Entrance(_NoRocks)?(_c[0-9]{2,3})?_//' \
+    -e 's/^c[0-9]{2}_//'                               \
+    -e 's/^Village_?Square-/Village-/'                 \
     -e 's/^(MQ035_)?Pickup_?(Idea)[_\-]/\2-/'          \
     -e 's/ \([0-9]+\)\-/\-/'                           \
     -e 's/^([^-]+)-.+$/\1/'                            \
@@ -277,7 +280,6 @@ function gameobject {
   fi
   local asset="$(AssetName "$file")"
   local item="$(Item "$file")"
-  local outfile="$OUTDIR/$item.csv"
   local transf=$(transform "$file" | transf2file "$asset")
   local pos=$(position "$transf" "$asset")
   if [ "$pos" == '' ] ; then
@@ -294,11 +296,19 @@ function gameobject {
     type='Unique'
   elif [[ "$item" = 'Alpafant' ]] || [[ "$item" = 'Bleeker' ]] || [[ "$item" = 'Puffle' ]] || [[ "$item" = 'Waddletooth' ]] ; then
     type='Spawn'
+  elif [[ "$item" = 'Village' ]] ; then
+    type='NPC'
   elif [[ "$file" =~ ^MaterialCluster_ ]] ; then
     type='Material'
   elif [[ "$file" =~ ^FoodCluster_ ]] ; then
     type='Food'
+  elif [[ "$file" =~ ^Cave_?Entrance_ ]] || [[ "$file" =~ ^c[0-9]{2}_ ]] ; then
+    type='Entrance'
+    area="$item"
+    item="Cave"
   fi
+
+  local outfile="$OUTDIR/$item.csv"
 
   # extract Area from asset filename
   if [[ "$file" =~ _BuildPlayer-[cV][0-9]{2}_ ]] ; then
@@ -444,7 +454,7 @@ fi
 # main loop
 cd "$ALL"
 FOUND=($(find . -name "*\-GameObject\.json"  \
-  | grep -P '^./(Pillar_Amphiscis|Pillar-|KeyGraphite_Cluster_|(Material|Food)Cluster_|(Alpafant|Bleeker|Puffle|Waddletooth)_Spawner( \([0-9]+\))?\-|(MQ035_)?Pickup_?Idea(\-|_(?!Spot\-))|AlbamareChest\-)'  \
+  | grep -P '^./(Cave_Entrance_|c[0-9]{2}_(GobbledewTomb|AmamsCavern)|Village_?Square-|Pillar_Amphiscis|Pillar-|KeyGraphite_Cluster_|(Material|Food)Cluster_|(Alpafant|Bleeker|Puffle|Waddletooth)_Spawner( \([0-9]+\))?\-|(MQ035_)?Pickup_?Idea(\-|_(?!Spot\-))|AlbamareChest\-)'  \
   | grep -E "$SEARCH"  \
 ))
 n=${#FOUND[@]}
