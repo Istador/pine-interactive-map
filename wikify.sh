@@ -25,7 +25,7 @@ while read file ; do
 
   sed -E                                                             \
       -e 's/,/ || /g'                                                \
-      -e 's/(\|\|[^\|]+)$/||  ||  || game assets \1/'                \
+      -e 's/(\|\|[^\|]+)$/||  ||  || game assets || \1/'             \
       -e "s/\| ($like_they_are) \|/| [[\1]] |/gi"                    \
       -e 's/\| Bone \|/| [[Crassbone]] |/g'                          \
       -e 's/\| DouglasCone \|/| [[Grandcone]] |/g'                   \
