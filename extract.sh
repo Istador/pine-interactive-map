@@ -7,8 +7,8 @@ fi
 
 type="$1"
 
-VERSION="beta_3"
 GAME="$USERPROFILE\\AppData\\Local\\Kartridge.kongregate.com\\games\\309550"
+VERSION="v1.4"
 SHAREDASSETS="$GAME\\Pine_Data\\StreamingAssets\\bundles"
 
 DIR="`dirname \"$(readlink -f \"$0\")\"`"
@@ -222,8 +222,17 @@ function position {
   local parID=$(father "$1")
   local parent=''
   local offset=''
+  local gobj=''
+  local active=''
   while [ "$parID" != 0  ] ; do
     parent=$(echo "$parID" | transf2file "$2")
+    gobj=$(echo "$parent"                                \
+      | xargs -i bash -c 'transf2object "{}"'            \
+      | xargs -i bash -c "findGameObject \"{}\" \"$2\""  \
+    )
+    if [ "`is_active "$gobj"`" != '1' ] ; then
+      return
+    fi
     offset=$(coords "$parent")
     pos=$(add "$pos" "$offset")
     parID=$(father "$parent")
@@ -246,6 +255,13 @@ function add {
   echo "$(plus ${a[0]} ${b[0]}),$(plus ${a[1]} ${b[1]}),$(plus ${a[2]} ${b[2]})"
 }
 
+# is gameobject active
+function is_active {
+  local active=`grep '0 bool m_IsActive": true' "$1" | wc -l`
+  if [ "$active" != '0' ] ; then
+    echo '1'
+  fi
+}
 
 
 ###############################################################################
@@ -255,11 +271,19 @@ function add {
 # what to do for one gameobject
 function gameobject {
   local file="$1"
+  if [ "`is_active "$file"`" != '1' ] ; then
+    out='inactive'
+    return
+  fi
   local asset="$(AssetName "$file")"
   local item="$(Item "$file")"
   local outfile="$OUTDIR/$item.csv"
   local transf=$(transform "$file" | transf2file "$asset")
   local pos=$(position "$transf" "$asset")
+  if [ "$pos" == '' ] ; then
+    out='inactive'
+    return
+  fi
   local n=''
   local item_id="${TYPE2ITEMID[$item]}"
   local type='Unknown'
