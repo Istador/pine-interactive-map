@@ -71,7 +71,7 @@ const showProp = (prop) => ! [ 'seen', 'hasUniqueID', 'screenshot' ].includes(pr
 const showCompleteButton = (row) => (
      storage().can()
   && row.hasUniqueID
-  && [ 'unique', 'item', 'npc', 'entrance' ].includes(row.type)
+  && [ 'unique', 'idea', 'item', 'npc', 'entrance' ].includes(row.type)
 )
 
 const updateToggle = (toggle, row) => {
