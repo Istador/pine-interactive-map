@@ -11,7 +11,7 @@ module.exports = {
       dunerice        : 'Duneçuz',
       //edenfruit       : '',
       fatplant        : 'Gordosa',
-      //leafdough       : '',
+      leafdough       : 'Pasta Folha',
       meageryam       : 'Ecãme',
       mudbeet         : 'Raiz-da-terra',
       nuctus          : 'Nuctus',

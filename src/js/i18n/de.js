@@ -49,7 +49,7 @@ module.exports = {
       dunerice        : 'Dünenreis',
       edenfruit       : 'Edenfrucht',
       fatplant        : 'Fettpflanze',
-      //leafdough       : '',
+      leafdough       : 'Blattteig',
       meageryam       : 'Mageryams',
       mudbeet         : 'Schlammrübe',
       nuctus          : 'Nuctus',

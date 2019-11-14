@@ -41,7 +41,7 @@ module.exports = {
       dunerice        : 'Riz de Dune',
       edenfruit       : 'Fruit d\'Eden',
       fatplant        : 'Grotiron',
-      leafdough       : 'Pâte à feuilles',
+      leafdough       : 'Pâte Feuilletée',
       meageryam       : 'Patate Maigre',
       mudbeet         : 'Betterave de Boue',
       nuctus          : 'Nuctus',
