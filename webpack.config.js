@@ -10,7 +10,6 @@ const HtmlWebpackPlugin          = require('html-webpack-plugin')
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 const PreloadWebpackPlugin       = require('preload-webpack-plugin')
 const SpritesmithPlugin          = require('webpack-spritesmith')
-const BabelTransformUnicodeRegex = require('./src/babel-transform-unicode-regex')
 
 require('dotenv').config()
 
@@ -97,7 +96,7 @@ module.exports = {
               },
             ]],
             plugins: [
-              BabelTransformUnicodeRegex,
+              'transform-unicode-regexp-runtime',
             ],
           },
         },
