@@ -5,6 +5,7 @@ const { type2name, item2name, mapOldName } = require('./names')
 const { layers, saveLayers, version, saveVersion } = require('./selection')
 const { translate, langComponent } = require('./i18n')
 const { versions, changeVersion } = require('./versions')
+const { rememberCollapsed, isCollapsed, resetCollapsed, addCollapsed } = require('./collapsed')
 
 const overlays = {}
 let currentLayers = layers().map(x => x.split('.'))
@@ -22,6 +23,15 @@ const addOverlay = (type, item) => {
 const addMarker = (type, item, marker) => {
   addOverlay(type, item)
   marker.addTo(overlays[type][item])
+}
+
+const collapseGroup = (type) => {
+  // collapse how it was before
+  const collapsed = isCollapsed(type)
+  if (collapsed !== null) { return collapsed }
+  // first run, collapse groups that have no layers selected
+  const selected = currentLayers.filter(onlyExistingLayers).filter(def => def[0] === type).length
+  return selected === 0
 }
 
 // map key to name, sort by name
@@ -56,24 +66,29 @@ const initLayerControl = (map) => {
       }
     }
 
+    resetCollapsed()
+
     // sort the overlays by name
-    mapsort(overlays, type2name, (type, typeName, items) =>
-        mapsort(items, item2name(type), (item, itemName, layer) =>
-          layerControl._addLayer(
-            {
-              layer : layer,
-              name  : itemName + ' (' + layer.getLayers().length + ')',
-              icon  : `<i class="pine-marker pine-marker-${type} pine-marker-${type}-${item}${tint(type, item)}"> </i>`,
-            },
-            true, // isOverlay and not baseLayer
-            typeName, // group name
-            ! currentLayers.filter(onlyExistingLayers).some(def => def[0] === type) // collapse groups that have no layers selected
-          )
+    mapsort(overlays, type2name, (type, typeName, items) => {
+      addCollapsed(type, typeName)
+      const collapsed = collapseGroup(type)
+      mapsort(items, item2name(type), (item, itemName, layer) =>
+        layerControl._addLayer(
+          {
+            layer : layer,
+            name  : itemName + ' (' + layer.getLayers().length + ')',
+            icon  : `<i class="pine-marker pine-marker-${type} pine-marker-${type}-${item}${tint(type, item)}"> </i>`,
+          },
+          true, // isOverlay and not baseLayer
+          typeName, // group name
+          collapsed // group collapsed
         )
-    )
+      )
+    })
 
     // listen to changes to the selected layers => save
     L.DomEvent.on(layerControl, 'panel:selected panel:unselected', () => {
+      // selected layers
       const selectedLayers = []
       for (const type in overlays) {
         for (const item in overlays[type]) {
@@ -84,6 +99,8 @@ const initLayerControl = (map) => {
       }
       saveLayers(selectedLayers)
       currentLayers = layers().map(x => x.split('.'))
+
+      // selected game version
       const selectedVersion = versions.reduce((out, v) => layerControl._map.hasLayer(baseLayers[v]) ? v : out)
       if (version() !== selectedVersion) {
         saveVersion(selectedVersion)
@@ -114,6 +131,8 @@ const removeLayers = (map) => {
 
 // reset the component by removing everything
 const resetLayers = (map) => {
+  // remember collapsed groups
+  rememberCollapsed()
   // remove from map
   removeLayers(map)
   // remove from cached data structure

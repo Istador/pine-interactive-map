@@ -1,4 +1,5 @@
 const { storage } = require('./util')
+const { rememberCollapsed } = require('./collapsed')
 
 
 const data = {
@@ -32,6 +33,7 @@ const i18n = (() => {
     if (_lang !== lang) {
       _lang = lang
       storage().set('pine-selected-language', _lang)
+      rememberCollapsed()
       _listeners.forEach(cb => cb(_lang))
     }
   }
