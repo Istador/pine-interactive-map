@@ -29,9 +29,10 @@ const collapseGroup = (type) => {
   // collapse how it was before
   const collapsed = isCollapsed(type)
   if (collapsed !== null) { return collapsed }
-  // first run, collapse groups that have no layers selected
+  // first run, collapse groups that have no layers selected or all of them selected
+  const all      = Object.keys(overlays[type]).length
   const selected = currentLayers.filter(onlyExistingLayers).filter(def => def[0] === type).length
-  return selected === 0
+  return selected === 0 || selected >= all
 }
 
 // map key to name, sort by name
@@ -52,6 +53,7 @@ const initLayerControl = (map) => {
       {
         title: translate('ui', 'title'),
         collapsibleGroups: true,
+        groupCheckboxes: true,
         compact: true,
       }
     )
