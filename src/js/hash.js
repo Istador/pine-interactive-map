@@ -1,5 +1,6 @@
 const { id2marker } = require('./markers')
 const { setLayers, addLayers, hasLayer } = require('./overlays')
+const { highlightArea } = require('./areas')
 
 const enabled = (() => {
   let state = true
@@ -12,6 +13,7 @@ const enabled = (() => {
 
 const initHash = (map) => {
   let circle
+  let area
   const hashChange = (() => {
     let hash
     const old = {}
@@ -31,7 +33,7 @@ const initHash = (map) => {
       let coords
       let marker
       let layers
-      let add_layers
+      let add_layers = ''
 
       // id
       if (hashes.id && old.id !== hashes.id) {
@@ -73,6 +75,11 @@ const initHash = (map) => {
         return
       }
 
+      // area layer
+      if (hashes.area) {
+        add_layers += (add_layers ? ',' : '') + 'area.' + hashes.area
+      }
+
       // do actions
 
       // select layers
@@ -81,6 +88,16 @@ const initHash = (map) => {
       }
       else if (add_layers) {
         addLayers(map, add_layers)
+      }
+
+      // area
+      if (hashes.area) {
+        if (area) { area() }
+        area = highlightArea(hashes.area, map)
+      }
+      else if (area) {
+        area()
+        area = undefined
       }
 
       // draw circle and panTo / zoom

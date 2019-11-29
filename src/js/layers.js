@@ -30,33 +30,39 @@ versions.forEach(v => {
 })
 
 // water background
-const svg = (new DOMParser())
-  .parseFromString(
-    `
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8192 8192">
-      <defs>
-       <pattern patternUnits="userSpaceOnUse" id="water" x="0" y="0" width="256" height="256">
-         <image width="256" height="256" xlink:href="img/map/water.png"/>
-       </pattern>
-      </defs>
-      <rect width="8192" height="8192" fill="url(#water)" fill-opacity="0.5"/>
-    </svg>
-    `,
-    'text/xml'
-  )
-  .documentElement
+const addWater = (map) => {
+  const svg = (new DOMParser())
+    .parseFromString(
+      `
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8192 8192">
+        <defs>
+         <pattern patternUnits="userSpaceOnUse" id="water" x="0" y="0" width="256" height="256">
+           <image width="256" height="256" xlink:href="img/map/water.png"/>
+         </pattern>
+        </defs>
+        <rect width="8192" height="8192" fill="url(#water)" fill-opacity="0.5"/>
+      </svg>
+      `,
+      'text/xml'
+    )
+    .documentElement
 
-const water = L.svgOverlay(
-    svg,
-    [
-      bounds[0].map(x => x - 8192),
-      bounds[1].map(x => x + 8192),
-    ],
-    {
-      pane: 'water',
-    }
-  )
+  const water = L.svgOverlay(
+      svg,
+      [
+        bounds[0].map(x => x - 8192),
+        bounds[1].map(x => x + 8192),
+      ],
+      {
+        pane: 'water',
+      }
+    )
 
+  const pane = map.createPane('water')
+  pane.style.zIndex = -1
+  pane.style.pointerEvents = 'none'
+  water.addTo(map)
+}
 // Custom Coordinate System - see https://gis.stackexchange.com/questions/200865/leaflet-crs-simple-custom-scale
 L.CRS.Pine = L.extend({}, L.CRS.Simple, {
   projection: L.Projection.LonLat,
@@ -76,5 +82,5 @@ module.exports = {
   bounds,
   maxBounds,
   baseLayers,
-  water,
+  addWater,
 }

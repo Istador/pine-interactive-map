@@ -25,6 +25,10 @@ const addMarker = (type, item, marker) => {
   marker.addTo(overlays[type][item])
 }
 
+const removeMarker = (type, item, marker) => {
+  overlays[type][item].removeLayer(marker)
+}
+
 const collapseGroup = (type) => {
   // collapse how it was before
   const collapsed = isCollapsed(type)
@@ -78,7 +82,7 @@ const initLayerControl = (map) => {
         layerControl._addLayer(
           {
             layer : layer,
-            name  : itemName + ' (' + layer.getLayers().length + ')',
+            name  : itemName + ( type === 'area' ? '' : ' (' + layer.getLayers().length + ')' ),
             icon  : `<i class="pine-marker pine-marker-${type} pine-marker-${type}-${item}${tint(type, item)}"> </i>`,
           },
           true, // isOverlay and not baseLayer
@@ -191,6 +195,7 @@ const setLayers = (map, layers) => {
 module.exports = {
   overlays: overlaysArray,
   addMarker,
+  removeMarker,
   initLayerControl,
   resetLayers,
   reinitLayers,

@@ -80,7 +80,7 @@ const updateToggle = (toggle, row) => {
 }
 
 const popup = (row, marker) => {
-  const div   = L.DomUtil.create('div', classes('popup', row))
+  const div = L.DomUtil.create('div', classes('popup', row))
   //title
   const title = L.DomUtil.create('h4', '', div)
   title.innerHTML = type2name(row.type) + ' - ' + item2name(row.type)(row.item)

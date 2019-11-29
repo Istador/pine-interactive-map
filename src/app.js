@@ -1,8 +1,9 @@
 (() => {
   require('./js/coordinates')
   require('./js/style')
-  const { bounds, maxBounds, baseLayers, water } = require('./js/layers')
+  const { bounds, maxBounds, baseLayers, addWater } = require('./js/layers')
   const { overlays, addMarker, initLayerControl } = require('./js/overlays')
+  const { addAreas } = require('./js/areas')
   const { version } = require('./js/selection')
   const { datasource } = require('./js/datasource')
   const { registerRow, obj2marker } = require('./js/markers')
@@ -29,10 +30,9 @@
       ...overlays
     ],
   })
-  const pane = map.createPane('water')
-  pane.style.zIndex = -1
-  pane.style.pointerEvents = 'none'
-  water.addTo(map)
+
+  // water
+  addWater(map)
 
   // auto zoom
   map.fitBounds(bounds, { animate: false })
@@ -55,6 +55,9 @@
       'true'  : translate('ui', 'fullscreen_off'),
     }
   }))
+
+  // areas
+  addAreas(map)
 
   // language selector
   langControl().addTo(map)

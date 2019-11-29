@@ -12,6 +12,19 @@ body {
     > div.leaflet-tile-pane {
       filter: saturate(0.7);
     }
+    // areas
+    > div.leaflet-areas-pane > svg {
+      cursor: default;
+      pointer-events: none;
+      filter: saturate(0.8);
+      > g > path {
+        pointer-events: visiblepainted;
+        opacity: 0.6;
+        &:hover {
+          opacity: 1.0;
+        }
+      }
+    }
   }
 }
 

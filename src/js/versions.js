@@ -4,9 +4,11 @@ const changeVersion = (map) => {
   const { addMarker, resetLayers, reinitLayers } = require('./overlays')
   const { datasource } = require('./datasource')
   const { registerRow, obj2marker, resetMarkers } = require('./markers')
+  const { addAreas } = require('./areas')
 
   resetMarkers()
   resetLayers(map)
+  addAreas(map)
   datasource()
     .then(rows => {
       rows.forEach(registerRow)

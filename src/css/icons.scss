@@ -60,6 +60,33 @@ div.leaflet-marker-pane > div.pine-marker {
     }
   }
 
+  // areas
+  &.pine-marker-area {
+    @include scaled($pine-icon-keygraphite, 10/32);
+    background-image: unset;
+    &.pine-marker-area-1  { background-color: #d477f5; }
+    &.pine-marker-area-2  { background-color: #99c561; }
+    &.pine-marker-area-3  { background-color: #e07b85; }
+    &.pine-marker-area-4  { background-color: #e0cf7b; }
+    &.pine-marker-area-5  { background-color: #7bb9e0; }
+    &.pine-marker-area-6  { background-color: #7b8ce0; }
+    &.pine-marker-area-7  { background-color: #fefc5d; }
+    &.pine-marker-area-8  { background-color: #b27be0; }
+    &.pine-marker-area-9  { background-color: #c5e07b; }
+    &.pine-marker-area-10 { background-color: #2d4653; }
+    &.pine-marker-area-11 { background-color: #9ae07b; }
+    &.pine-marker-area-12 { background-color: #fe835d; }
+    &.pine-marker-area-13 { background-color: #e0c37b; }
+    &.pine-marker-area-14 { background-color: #3f64fe; }
+    &.pine-marker-area-15 { background-color: #603c6d; }
+    &.pine-marker-area-16 { background-color: #fe5dc5; }
+    &.pine-marker-area-17 { background-color: #82b67d; }
+    &.pine-marker-area-18 { background-color: #99f4fe; }
+    &.pine-marker-area-19 { background-color: #e0a77b; }
+    &.pine-marker-area-20 { background-color: #6b5456; }
+    &.pine-marker-area-21 { background-color: #7da3b6; }
+  }
+
   // entrance
   &.pine-marker-entrance {
     // cave
