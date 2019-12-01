@@ -1,4 +1,5 @@
 const { areas } = require('./areas_data')
+const { storage } = require('./util')
 const { bounds } = require('./layers')
 const { addMarker, removeMarker } = require('./overlays')
 const { translate } = require('./i18n')
@@ -8,14 +9,32 @@ const viewBox = '0 0 135.47 135.47'
 const offset  = '-38.72444,-53.135815'
 const scale = 2048 / 135.47
 
+const classes = (key, area, alwaysUnseen = false) => (
+  `pine-${key} pine-${key}-area`
+  + (! alwaysUnseen && seen(area) ? ' pine-poi-seen' : '')
+)
+
+const seen = (area) => {
+  if (! ('seen' in area)) {
+    area.seen = storage().get('pine-poi-seen-area-' + area.id) || false
+  }
+  return area.seen
+}
+
+const updateToggle = (toggle, area) => {
+  toggle.setAttribute('title', translate('ui', area.seen ? 'unmark_seen' : 'mark_seen'))
+  toggle.innerHTML = '<span>' + (area.seen ? '&#x21ba;' : '&#x2713;') + '</span>'
+}
+
 const tooltip = (area) => () => translate('names', 'area', area.id)
 const tooltipOpts = {
   sticky: true,
   direction: 'top',
 }
 
-const popup = (area, marker) => () => {
-  const div = L.DomUtil.create('div', 'pine-popup pine-popup-area')
+const popup = (area) => () => {
+  const marker = area.layer
+  const div = L.DomUtil.create('div', classes('popup', area))
 
   const type = translate('names', 'area', '.')
   const name = translate('names', 'area', area.id)
@@ -33,6 +52,7 @@ const popup = (area, marker) => () => {
   a.setAttribute('target', '_blank')
   const img = L.DomUtil.create('img', '', a)
   img.setAttribute('src', `${__WIKI__}Special:Redirect/file/${filename}?width=240&height=240`)
+
   // update the popup, to adjust it's size to the image (but only once!)
   if (! area.screenshot_html) {
     img.onload = () => {
@@ -40,6 +60,7 @@ const popup = (area, marker) => () => {
       if (marker._popup) { marker._popup.update() }
     }
   }
+
   // add all properties to the table
   const row = {
     type  : type,
@@ -53,6 +74,20 @@ const popup = (area, marker) => () => {
     const td = L.DomUtil.create('td', '', tr)
     td.innerHTML = row[k]
   })
+
+  // button to mark area as completed / not-completed
+  if (storage().can()) {
+    const toggle = L.DomUtil.create('button', '', div)
+    toggle.setAttribute('type', 'button')
+    updateToggle(toggle, area)
+    L.DomEvent.on(toggle, 'click', () => {
+      area.seen = ! area.seen
+      storage().set('pine-poi-seen-area-' + area.id, area.seen)
+      updateToggle(toggle, area)
+      div.classList[area.seen ? 'add' : 'remove']('pine-poi-seen')
+      marker.getElement().classList[area.seen ? 'add' : 'remove']('pine-poi-seen')
+    })
+  }
 
   // permalink
   const link = L.DomUtil.create('a', '', div)
@@ -195,8 +230,10 @@ const points = (area) => {
 }
 
 area2overlay = (area, fill, stroke, strokeWidth) => {
+  const real = ! fill && ! stroke && ! strokeWidth
+
   // use cache
-  if (! fill && ! stroke && ! strokeWidth && area.layer && area.svg) {
+  if (real && area.layer && area.svg) {
     return area
   }
   const svg = (new DOMParser())
@@ -225,15 +262,18 @@ area2overlay = (area, fill, stroke, strokeWidth) => {
     {
       interactive : true,
       pane        : 'areas',
+      className   : classes('marker', area, ! real),
     }
   )
-  layer.bindTooltip(tooltip(area), tooltipOpts)
-  layer.bindPopup(popup(area, layer))
   // set cache
-  if (! fill && ! stroke && ! strokeWidth) {
+  if (real) {
     area.layer = layer
     area.svg   = svg
   }
+
+  layer.bindTooltip(tooltip(area), tooltipOpts)
+  layer.bindPopup(real ? popup(area) : area.layer._popup)
+
   return { layer, svg }
 }
 

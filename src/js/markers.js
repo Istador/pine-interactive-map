@@ -47,11 +47,12 @@ const row2icon = (row) => (
   : icons.default
 )
 
-const classes = (key, row) =>
+const classes = (key, row) => (
   `pine-${key} pine-${key}-${row.type} pine-${key}-${row.type}-${row.item}`
   + tint(row.type, row.item)
   + (row.seen ? ' pine-poi-seen' : '')
   + (row.confirmed !== 'confirmed' ? ' pine-unconfirmed' : '')
+)
 
 const row2marker = (row) => L.marker(
   [ row.z - 1024, row.x + 1024 ],

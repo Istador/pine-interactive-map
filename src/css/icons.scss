@@ -1,6 +1,8 @@
 @import '~icons.scss';
 
-div.leaflet-marker-pane > div.pine-marker {
+div.leaflet-marker-pane > div.pine-marker
+, div.leaflet-areas-pane > svg.pine-marker
+{
   // seen
   &.pine-poi-seen {
     #map[data-seen="fade"] & {
@@ -20,11 +22,13 @@ div.leaflet-marker-pane > div.pine-marker {
   // unconfirmed
   &.pine-unconfirmed {
     #map[data-unconfirmed="red"] &
-    , #map[data-unconfirmed="only"] & {
+    , #map[data-unconfirmed="only"] &
+    {
       filter: hue-rotate(0deg) !important;
     }
     #map[data-unconfirmed="red"] &:before
-    , #map[data-unconfirmed="only"] &:before {
+    , #map[data-unconfirmed="only"] &:before
+    {
       content: "";
       display: block;
       position: absolute;
