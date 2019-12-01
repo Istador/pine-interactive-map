@@ -171,9 +171,19 @@ const addLayers = (map, layers) => {
     for (const layer of layers.split(',')) {
       try {
         const [type, item] = mapOldName(layer).split('.')
+        // add the specific layer
         if (type && item && type in overlays && item in overlays[type] && overlays[type][item]) {
           map.addLayer(overlays[type][item])
           currentLayers.push([type, item])
+        }
+        // add all layers of this type
+        else if (type && ! item && type in overlays) {
+          for (const item in overlays[type]) {
+            if (overlays[type][item]) {
+              map.addLayer(overlays[type][item])
+              currentLayers.push([type, item])
+            }
+          }
         }
       }
       catch {}
