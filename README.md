@@ -2,7 +2,9 @@
 
 This project aims to provide a usable interactive map for the video game [Pine](https://pine-game.com/) by [Twirlbound](https://twirlbound.com/).
 
-https://pine.blackpinguin.de/
+~~https://pine.blackpinguin.de/~~ (currently not available)
+
+Temporary alternative: https://pine-rcl.spdns.de/
 
 
 ### Set up the project for local development
