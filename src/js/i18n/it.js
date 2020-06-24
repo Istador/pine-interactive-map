@@ -59,6 +59,12 @@ module.exports = {
       //pickup : '',
       //quest  : '',
     },
+    item: {
+      //'.'        : '',
+      //equip      : '',
+      //outfinding : '',
+      //quest      : '',
+    },
     material: {
       '.'                : 'Materiale',
       alpafantleather    : 'Pelle di Alpafante',
@@ -106,7 +112,9 @@ module.exports = {
       waddletooth : 'Waddletooth',
     },
     unique: {
+      //'.'          : '',
       amphiscusorb : 'Sfera di Amphiscus',
+      //journal      : '',
       keygraphite  : 'Chiavigrafite',
     },
   },

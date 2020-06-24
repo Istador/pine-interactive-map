@@ -11,7 +11,7 @@ const data = {
   //zh: require('./i18n/zh'),
   //ru: require('./i18n/ru'),
   pg: require('./i18n/pg'),
-  //du: require('./i18n/du'),
+  du: require('./i18n/du'),
 }
 
 

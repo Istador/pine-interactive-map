@@ -93,8 +93,10 @@ module.exports = {
       quest  : 'Quest',
     },
     item: {
-      '.'   : 'Gegenstand',
-      equip : 'Ausrüstung',
+      '.'        : 'Gegenstand',
+      equip      : 'Ausrüstung',
+      outfinding : 'Äußerfund',
+      quest      : 'Quest',
     },
     material: {
       '.'                : 'Material',
