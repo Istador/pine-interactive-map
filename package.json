@@ -32,9 +32,9 @@
   },
   "homepage": "https://github.com/Istador/pine-interactive-map",
   "dependencies": {
-    "@babel/core": "^7.10.3",
-    "@babel/preset-env": "^7.10.3",
-    "@babel/runtime": "^7.10.3",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/runtime": "^7.10.5",
     "@istador/leaflet-panel-layers": "^1.2.7",
     "axios": "^0.19.2",
     "babel-loader": "^8.1.0",
