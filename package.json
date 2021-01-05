@@ -36,7 +36,7 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/runtime": "^7.10.5",
     "@istador/leaflet-panel-layers": "^1.2.7",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-unicode-regexp-runtime": "^1.0.0",
     "core-js": "3.5.0",
