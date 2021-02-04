@@ -22,67 +22,67 @@ const fetch = {
 
 const transform = {
   spreadsheet: ({ data: { feed: { entry: entries } } }) => {
-      const keys = {}
-      const objs = {}
-      let moreKeys = true
-      const isKey = (cell) => moreKeys && /^[A-Z]+1$/.test(cell)
-      const n = entries.length
-      for (let i = 0 ; i < n; i++) {
-        if (!(i in entries)) { continue }
-        const e = entries[i]
-        const cell = e.title.$t
-        const cont = escapeHtml(e.content.$t)
-        if (isKey(cell)) {
-          keys[cell] = cont
+    const keys = {}
+    const objs = {}
+    let moreKeys = true
+    const isKey = (cell) => moreKeys && /^[A-Z]+1$/.test(cell)
+    const n = entries.length
+    for (let i = 0 ; i < n; i++) {
+      if (!(i in entries)) { continue }
+      const e = entries[i]
+      const cell = e.title.$t
+      const cont = escapeHtml(e.content.$t)
+      if (isKey(cell)) {
+        keys[cell] = cont
+      }
+      else {
+        moreKeys = false
+        const val = text2number(cont)
+        objs[cell] = val
+        const row = cell.replace(/[A-Z]/g, '')
+        const col = cell.replace(/[0-9]/g, '')
+        if (! (row in objs)) { objs[row] = {} }
+        objs[row][keys[ col + '1' ]] = val
+      }
+    }
+    return Object.values(objs)
+  },
+  wiki: async (document) => {
+    const table = document.tables(0).data
+    const out = []
+    for (const i in table) {
+      const row = table[i]
+      const obj = {}
+      for (const key in row) {
+        const sentence = row[key]
+        const text = sentence.data.text.trim()
+        if (! text) { continue }
+        const val = text2number(text)
+
+        obj[key] = (
+          key === 'type' || key === 'item'
+          ? val.replace(/[\_\- ]/g, '').toLowerCase()
+          : val
+        )
+        if (sentence.data.links || sentence.data.fmt) {
+          obj[key + '_html'] = sentence.html({formatting: true}).replace(/ href="\.\//g, ` target="_blank" href="${__WIKI__}`)
         }
-        else {
-          moreKeys = false
-          const val = text2number(cont)
-          objs[cell] = val
-          const row = cell.replace(/[A-Z]/g, '')
-          const col = cell.replace(/[0-9]/g, '')
-          if (! (row in objs)) { objs[row] = {} }
-          objs[row][keys[ col + '1' ]] = val
+        else if (key === 'type' || key === 'item') {
+          obj[key + '_html'] = val
+        }
+
+        // round coords
+        if (['x', 'y', 'z'].includes(key)) {
+          obj[key] = Math.round(obj[key] * 100) / 100
         }
       }
-      return Object.values(objs)
-    },
-    wiki: async (document) => {
-      const table = document.tables(0).data
-      const out = []
-      for (const i in table) {
-        const row = table[i]
-        const obj = {}
-        for (const key in row) {
-          const sentence = row[key]
-          const text = sentence.data.text.trim()
-          if (! text) { continue }
-          const val = text2number(text)
-
-          obj[key] = (
-            key === 'type' || key === 'item'
-            ? val.replace(/[\_\- ]/g, '').toLowerCase()
-            : val
-          )
-          if (sentence.data.links || sentence.data.fmt) {
-            obj[key + '_html'] = sentence.html({formatting: true}).replace(/ href="\.\//g, ` target="_blank" href="${__WIKI__}`)
-          }
-          else if (key === 'type' || key === 'item') {
-            obj[key + '_html'] = val
-          }
-
-          // round coords
-          if (['x', 'y', 'z'].includes(key)) {
-            obj[key] = Math.round(obj[key] * 100) / 100
-          }
-        }
-        const [ type, item ] = mapOldBoth(obj.type, obj.item)
-        obj.type = type
-        obj.item = item
-        out.push(obj)
-      }
-      return out
-    },
+      const [ type, item ] = mapOldBoth(obj.type, obj.item)
+      obj.type = type
+      obj.item = item
+      out.push(obj)
+    }
+    return out
+  },
 }
 
 module.exports = {
