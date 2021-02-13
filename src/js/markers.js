@@ -174,12 +174,6 @@ const obj2marker = (row) => {
       () => tooltip(row),
       {
         direction: 'top',
-        // workaround for https://github.com/Leaflet/Leaflet/issues/6764
-        offset: (
-          icon.tooltipAnchor[0]
-          ? [ icon.tooltipAnchor[0], 0 ]
-          : [0, 0]
-        )
       }
     )
   if (row.hasUniqueID) {

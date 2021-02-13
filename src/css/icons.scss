@@ -1,4 +1,4 @@
-@import '~icons.scss';
+@import 'img-icons.scss';
 
 div.leaflet-marker-pane > div.pine-marker
 , div.leaflet-areas-pane > svg.pine-marker
@@ -53,7 +53,7 @@ div.leaflet-marker-pane > div.pine-marker
 #map div.leaflet-marker-pane > div.pine-marker
 , #map i.leaflet-panel-layers-icon > i.pine-marker
 {
-  @include scaled($pine-icon-default);
+  @include scaled($pine-img-icon-default);
 
   // tint
   @mixin tint($n) {
@@ -66,7 +66,7 @@ div.leaflet-marker-pane > div.pine-marker
 
   // areas
   &.pine-marker-area {
-    @include scaled($pine-icon-keygraphite, 10/32);
+    @include scaled($pine-img-icon-keygraphite, 10/32);
     background-image: unset;
     &.pine-marker-area-1  { background-color: #d477f5; }
     &.pine-marker-area-2  { background-color: #99c561; }
@@ -95,79 +95,79 @@ div.leaflet-marker-pane > div.pine-marker
   &.pine-marker-entrance {
     // cave
     &.pine-marker-entrance-cave {
-      @include scaled($pine-icon-mohlenhill);
+      @include scaled($pine-img-icon-mohlenhill);
       filter: saturate(0) brightness(1.5);
     }
     // mohlenhill
     &.pine-marker-entrance-mohlenhill {
-      @include scaled($pine-icon-mohlenhill);
+      @include scaled($pine-img-icon-mohlenhill);
     }
   }
 
   // food
   &.pine-marker-food {
     // default
-    @include scaled($pine-icon-food);
+    @include scaled($pine-img-icon-food);
     @include tint(16);
   }
 
   // idea
   &.pine-marker-idea {
-    @include scaled($pine-icon-chest);
+    @include scaled($pine-img-icon-chest);
   }
 
   // item
   &.pine-marker-item {
-    @include scaled($pine-icon-equip, 0.6);
+    @include scaled($pine-img-icon-equip, 0.6);
   }
 
   // material
   &.pine-marker-material {
     // default
-    @include scaled($pine-icon-material);
+    @include scaled($pine-img-icon-material);
     @include tint(10);
 
     // beagalite
     &.pine-marker-material-beagalite {
-      @include scaled($pine-icon-beagalite, 0.5, 0.7);
+      @include scaled($pine-img-icon-beagalite, 0.5, 0.7);
       filter: hue-rotate(90deg) brightness(2);
     }
     // dullrock
     &.pine-marker-material-dullrock {
-      @include scaled($pine-icon-beagalite);
+      @include scaled($pine-img-icon-beagalite);
       filter: hue-rotate(-20deg) brightness(1.2) saturate(0.25);
     }
     // dryclay
     &.pine-marker-material-dryclay {
-      @include scaled($pine-icon-gravelmoss);
+      @include scaled($pine-img-icon-gravelmoss);
       filter: hue-rotate(80deg) brightness(2.0) saturate(0.10);
     }
     // gravelmoss
     &.pine-marker-material-gravelmoss {
-      @include scaled($pine-icon-gravelmoss);
+      @include scaled($pine-img-icon-gravelmoss);
     }
     // leaniron
     &.pine-marker-material-leaniron {
-      @include scaled($pine-icon-beagalite);
+      @include scaled($pine-img-icon-beagalite);
       filter: hue-rotate(-20deg) brightness(2.6) saturate(0.25);
     }
     // lunarodos
     &.pine-marker-material-lunarodos {
-      @include scaled($pine-icon-lunarodos);
+      @include scaled($pine-img-icon-lunarodos);
     }
     // sandstone
     &.pine-marker-material-sandstone {
-      @include scaled($pine-icon-beagalite);
+      @include scaled($pine-img-icon-beagalite);
       filter: hue-rotate(90deg) brightness(2.5) saturate(0.75);
     }
     // spystal
     &.pine-marker-material-spystal {
-      @include scaled($pine-icon-beagalite, 0.5, 0.7);
+      @include scaled($pine-img-icon-beagalite, 0.5, 0.7);
       filter: hue-rotate(-60deg) brightness(3);
     }
     // toothstone
     &.pine-marker-material-toothstone {
-      @include scaled($pine-icon-beagalite);
+      @include scaled($pine-img-icon-beagalite);
       filter: hue-rotate(-20deg) brightness(4.0) saturate(0.25);
     }
   }
@@ -175,21 +175,21 @@ div.leaflet-marker-pane > div.pine-marker
   // mechanic
   &.pine-marker-mechanic {
     // default
-    @include scaled($pine-icon-mechanic);
+    @include scaled($pine-img-icon-mechanic);
     @include tint(5);
   }
 
   // npc
   &.pine-marker-npc-village
   {
-    @include scaled($pine-icon-village);
+    @include scaled($pine-img-icon-village);
   }
 
   // spawn
   &.pine-marker-spawn
   , &.pine-marker-nest {
     // default
-    @include scaled($pine-icon-nest);
+    @include scaled($pine-img-icon-nest);
     @include tint(4);
   }
 
@@ -200,22 +200,22 @@ div.leaflet-marker-pane > div.pine-marker
   , &.pine-marker-entrance-quest
   , &.pine-marker-entrance-vault
   {
-    @include scaled($pine-icon-npc);
+    @include scaled($pine-img-icon-npc);
   }
 
   // unique
   &.pine-marker-unique {
     // amphiscusorb
     &.pine-marker-unique-amphiscusorb {
-      @include scaled($pine-icon-emblem);
+      @include scaled($pine-img-icon-emblem);
     }
     // keygraphite
     &.pine-marker-unique-keygraphite {
-      @include scaled($pine-icon-keygraphite, 10/32);
+      @include scaled($pine-img-icon-keygraphite, 10/32);
     }
     // journal / book
     &.pine-marker-unique-journal {
-      @include scaled($pine-icon-book);
+      @include scaled($pine-img-icon-book);
     }
   }
 }

@@ -14,8 +14,9 @@ const fetch = {
     'Interactive Map/' + version().replace('.', '_'),
     'pine',
     {
-      wikiUrl: __JSON__,
-      follow_redirects: true,
+      wiki             : __JSON__,
+      wikiUrl          : __JSON__,
+      follow_redirects : true,
     },
   ),
 }

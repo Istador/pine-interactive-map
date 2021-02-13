@@ -3,13 +3,14 @@ const fs      = require('fs')
 const path    = require('path')
 const dotenv  = require('dotenv')
 
-const MiniCssExtractPlugin       = require('mini-css-extract-plugin')
-const TerserPlugin               = require('terser-webpack-plugin')
-const OptimizeCSSAssetsPlugin    = require('optimize-css-assets-webpack-plugin')
-const HtmlWebpackPlugin          = require('html-webpack-plugin')
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
-const PreloadWebpackPlugin       = require('preload-webpack-plugin')
-const SpritesmithPlugin          = require('webpack-spritesmith')
+process.traceDeprecation = true;
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserPlugin         = require('terser-webpack-plugin')
+const HtmlWebpackPlugin    = require('html-webpack-plugin')
+const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin')
+const SpritesmithPlugin    = require('webpack-spritesmith')
+const CssMinimizerPlugin   = require('css-minimizer-webpack-plugin')
 
 require('dotenv').config()
 
@@ -65,14 +66,15 @@ module.exports = {
     minimize: true,
     minimizer: [
       new TerserPlugin({ parallel: true }),
-      new OptimizeCSSAssetsPlugin,
+      new CssMinimizerPlugin,
     ],
   },
   output: {
-    filename : '[name].[contenthash].min.js',
-    path     : path.join(__dirname, 'build'),
+    filename   : '[name].[contenthash].min.js',
+    path       : path.join(__dirname, 'build'),
     publicPath : 'build/',
   },
+  target: ['web', 'es5'],
   module: {
     rules: [
       {
@@ -85,9 +87,9 @@ module.exports = {
             presets: [[
               '@babel/preset-env',
               {
-                useBuiltIns: 'usage',
-                corejs: 3,
-                modules: 'commonjs',
+                useBuiltIns : 'usage',
+                corejs      : 3,
+                modules     : 'commonjs',
                 targets: {
                   ie      : 11,
                   chrome  : 60,
@@ -122,9 +124,9 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: '[name].[contenthash].[ext]',
-            publicPath: 'img/vendor/',
-            outputPath: 'img/vendor/',
+            name       : '[name].[contenthash].[ext]',
+            publicPath : 'img/vendor/',
+            outputPath : 'img/vendor/',
           },
         }],
       },
@@ -133,9 +135,9 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: '[name].[ext]',
-            publicPath: 'img',
-            outputPath: 'img',
+            name       : '[name].[ext]',
+            publicPath : 'img',
+            outputPath : 'img',
           },
         }],
       },
@@ -163,31 +165,33 @@ module.exports = {
         ? 'https://raw.githubusercontent.com/Istador/pine-interactive-map/tiles/{version}/{z}/{x}/{y}.png'
         : 'tiles/{version}/{z}/{x}/{y}.png'
       ),
+      'process.env': JSON.stringify({
+        NODE_ENV   : 'production',
+        NODE_DEBUG : 'https',
+      }),
     }),
     new HtmlWebpackPlugin({
-      filename: path.join(__dirname, 'index.html'),
-      template: 'src/index.template.html',
+      filename      : path.join(__dirname, 'index.html'),
+      template      : 'src/index.template.html',
+      scriptLoading : 'defer',
     }),
     new PreloadWebpackPlugin({
-      rel: 'preload',
-      include: 'allAssets',
-      fileBlacklist: [ /@2x/, /-2x/, /layers\./, /marker-icon\./ ],
-      as: (name) => ( /\.png$/.test(name) ? 'image' : ( /\.css$/.test(name) ? 'style' : 'script' ) ),
-    }),
-    new ScriptExtHtmlWebpackPlugin({
-      defaultAttribute: 'defer',
+      rel           : 'preload',
+      include       : 'all',
+      fileBlacklist : [ /@2x/, /-2x/, /layers\./, /marker-icon\./ ],
+      as            : (name) => ( /\.png$/.test(name) ? 'image' : ( /\.css$/.test(name) ? 'style' : 'script' ) ),
     }),
     new MiniCssExtractPlugin({
         filename: '[name].[contenthash].min.css',
     }),
-    spritesmith('icons',  'icons',  'icon'),
-    spritesmith('lang',   'langs',  'lang'),
-    spritesmith('styles', 'styles', 'style'),
-    new webpack.WatchIgnorePlugin([
+    spritesmith('icons',  'img-icons',  'img-icon'),
+    spritesmith('lang',   'img-langs',  'img-lang'),
+    spritesmith('styles', 'img-styles', 'img-style'),
+    new webpack.WatchIgnorePlugin({ paths: [
       path.join(__dirname, 'node_modules'),
       path.join(__dirname, 'build'),
       path.join(__dirname, 'index.html'),
-    ]),
+    ]}),
   ],
   watchOptions: {
     aggregateTimeout: 500,

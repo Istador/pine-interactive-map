@@ -1,5 +1,5 @@
-@import '~langs.scss';
-@import '~styles.scss';
+@import 'img-langs.scss';
+@import 'img-styles.scss';
 
 #map {
   // popup
@@ -43,8 +43,8 @@
       .leaflet-languageselector-langdiv {
         font-size: 0;
       }
-      @each $lang in $pine-langs-sprites {
-        $key: str-slice(nth($lang, 10), 11);
+      @each $lang in $pine-img-langs-sprites {
+        $key: str-slice(nth($lang, 10), 15);
         #languageselector_#{$key} {
           @include scaled($lang, 0.8);
         }
@@ -117,8 +117,8 @@
 }
 
 // style
-@each $sprite in $pine-styles-sprites {
-  $dynamic : str-slice(nth($sprite, 10), 12);
+@each $sprite in $pine-img-styles-sprites {
+  $dynamic : str-slice(nth($sprite, 10), 16);
   $pos     : str-index($dynamic, "-");
   $key     : str-slice($dynamic, 1, $pos - 1);
   $state   : str-slice($dynamic, $pos + 1);
