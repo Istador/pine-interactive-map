@@ -2,6 +2,7 @@ const { storage } = require('./util')
 const { icons } = require('./icons')
 const { type2name, item2name } = require('./names')
 const { translate } = require('./i18n')
+const { screenshot } = require('./screenshot')
 
 const tints = {
   food: {
@@ -87,21 +88,7 @@ const popup = (row, marker) => {
   title.innerHTML = type2name(row.type) + ' - ' + item2name(row.type)(row.item)
   // Screenshots
   if (row.screenshot) {
-    const filename = row.screenshot.replace(' ', '_')
-    const screenshot = L.DomUtil.create('div', 'pine-screenshot', div)
-    const a = L.DomUtil.create('a', '', L.DomUtil.create('div', 'pine-screenshot', div))
-    a.setAttribute('href', `${__WIKI__}File:${filename}`)
-    a.setAttribute('target', '_blank')
-    const img = L.DomUtil.create('img', '', a)
-    img.setAttribute('referrerpolicy', 'no-referrer')
-    img.setAttribute('src', `${__WIKI__}Special:Redirect/file/${filename}?width=240&height=240`)
-    // update the popup, to adjust it's size to the image (but only once!)
-    if (! row.screenshot_html) {
-      img.onload = () => {
-        row.screenshot_html = 'loaded'
-        if (marker._popup) { marker._popup.update() }
-      }
-    }
+    screenshot(row.screenshot.replace(' ', '_'), div, marker, row)
   }
   // add all properties to the table
   const tbody = L.DomUtil.create('tbody', '', L.DomUtil.create('table', '', div))

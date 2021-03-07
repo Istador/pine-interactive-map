@@ -3,6 +3,7 @@ const { storage } = require('./util')
 const { bounds } = require('./layers')
 const { addMarker, removeMarker } = require('./overlays')
 const { translate } = require('./i18n')
+const { screenshot } = require('./screenshot')
 
 // svg dimensions
 const viewBox = '0 0 135.47 135.47'
@@ -45,22 +46,7 @@ const popup = (area) => () => {
   title.innerHTML = type + ' - ' + name
 
   // Screenshots
-  const filename = 'Glossary-Area-' + wiki + '.png'
-  const screenshot = L.DomUtil.create('div', 'pine-screenshot', div)
-  const a = L.DomUtil.create('a', '', L.DomUtil.create('div', 'pine-screenshot', div))
-  a.setAttribute('href', `${__WIKI__}File:${filename}`)
-  a.setAttribute('target', '_blank')
-  const img = L.DomUtil.create('img', '', a)
-  img.setAttribute('referrerpolicy', 'no-referrer')
-  img.setAttribute('src', `${__WIKI__}Special:Redirect/file/${filename}?width=240&height=240`)
-
-  // update the popup, to adjust it's size to the image (but only once!)
-  if (! area.screenshot_html) {
-    img.onload = () => {
-      area.screenshot_html = 'loaded'
-      if (marker._popup) { marker._popup.update() }
-    }
-  }
+  screenshot('Glossary-Area-' + wiki + '.png', div, marker, area)
 
   // add all properties to the table
   const row = {
