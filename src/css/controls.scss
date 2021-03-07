@@ -1,5 +1,6 @@
-@import 'img-langs.scss';
-@import 'img-styles.scss';
+@use 'img-langs.scss'  as lang;
+@use 'img-styles.scss' as style;
+@use './mixins.scss' as m;
 
 #map {
   // popup
@@ -43,10 +44,10 @@
       .leaflet-languageselector-langdiv {
         font-size: 0;
       }
-      @each $lang in $pine-img-langs-sprites {
-        $key: str-slice(nth($lang, 10), 15);
+      @each $lang in lang.$langs-sprites {
+        $key: nth($lang, 10);
         #languageselector_#{$key} {
-          @include scaled($lang, 0.8);
+          @include m.scaled($lang, 0.8);
         }
         &[data-selected="#{$key}"] {
           #languageselector_#{$key} {
@@ -117,12 +118,12 @@
 }
 
 // style
-@each $sprite in $pine-img-styles-sprites {
-  $dynamic : str-slice(nth($sprite, 10), 16);
+@each $sprite in style.$styles-sprites {
+  $dynamic : nth($sprite, 10);
   $pos     : str-index($dynamic, "-");
   $key     : str-slice($dynamic, 1, $pos - 1);
   $state   : str-slice($dynamic, $pos + 1);
   #map[data-#{$key}=#{$state}] div.pine-style > div.pine-style-#{$key} > span {
-    @include scaled($sprite, 18/32);
+    @include m.scaled($sprite, 18/32);
   }
 }

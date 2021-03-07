@@ -27,12 +27,11 @@ const spritesmith = (dir, key, name) => new SpritesmithPlugin({
     image: path.resolve(__dirname, 'build/img/' + key + '.[contenthash].png'),
     css: [[
       path.resolve(__dirname, 'build/img/' + key + '.scss'),
-      { spritesheetName: 'pine-' + key },
+      { spritesheetName: name },
     ]],
   },
   apiOptions: {
     cssImageRef: '~' + key + '.[contenthash].png',
-    generateSpriteName: (p) => `pine-${name}-${path.parse(p).name}`,
   },
   spritesmithOptions: {
     padding: 4,
@@ -184,9 +183,9 @@ module.exports = {
     new MiniCssExtractPlugin({
         filename: '[name].[contenthash].min.css',
     }),
-    spritesmith('icons',  'img-icons',  'img-icon'),
-    spritesmith('lang',   'img-langs',  'img-lang'),
-    spritesmith('styles', 'img-styles', 'img-style'),
+    spritesmith('icons',  'img-icons',  'icons'),
+    spritesmith('lang',   'img-langs',  'langs'),
+    spritesmith('styles', 'img-styles', 'styles'),
     new webpack.WatchIgnorePlugin({ paths: [
       path.join(__dirname, 'node_modules'),
       path.join(__dirname, 'build'),

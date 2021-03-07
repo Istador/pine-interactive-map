@@ -1,3 +1,5 @@
+@use 'img-icons.scss' as icon;
+
 @mixin scaled($sprite, $scale: 0.5, $scalex : 1.0, $scaley: 1.0) {
   $sx: $scale * $scalex;
   $sy: $scale * $scaley;
@@ -17,7 +19,7 @@
   -webkit-mask-position: $x $y;
           mask-position: $x $y;
 
-  @include sprite((
+  @include icon.sprite((
     nth($sprite,  1) * $sx,
     nth($sprite,  2) * $sy,
     $x,
