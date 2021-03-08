@@ -1,4 +1,4 @@
-const screenshot = (filename, container, marker, row) => {
+const screenshot = (filename, container) => {
   const div  = L.DomUtil.create('div', 'pine-screenshot', container)
   const wrap = L.DomUtil.create('div', '', div)
 

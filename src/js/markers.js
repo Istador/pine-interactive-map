@@ -88,7 +88,7 @@ const popup = (row, marker) => {
   title.innerHTML = type2name(row.type) + ' - ' + item2name(row.type)(row.item)
   // Screenshots
   if (row.screenshot) {
-    screenshot(row.screenshot.replace(' ', '_'), div, marker, row)
+    screenshot(row.screenshot.replace(' ', '_'), div)
   }
   // add all properties to the table
   const tbody = L.DomUtil.create('tbody', '', L.DomUtil.create('table', '', div))
