@@ -14,6 +14,40 @@
     // screenshots
     .pine-screenshot {
       text-align: center;
+      > div {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        z-index: 1;
+        > iframe {
+          overflow: hidden;
+          width: 240px;
+          height: 240px;
+          max-width: 240px;
+          max-height: 240px;
+          border: 0;
+          background: repeating-linear-gradient(
+            -45deg,
+            transparent 0,
+            transparent 5px,
+            rgba(1, 1, 1, 0.1) 5px,
+            rgba(1, 1, 1, 0.1) 10px
+          );
+        }
+        // loading text
+        &::before {
+          content: 'image';
+          position: absolute;
+          display: block;
+          z-index: -1;
+          width: 100%;
+          top: 50%;
+          margin-top: -1em;
+          font-size: 2.5em;
+          letter-spacing: 0.05em;
+          color: rgba(1, 1, 1, 0.2);
+        }
+      }
     }
     // buttons
     button {
@@ -61,7 +95,7 @@
     // style
     &.pine-style {
       background-color: white;
-      & > div {
+      > div {
         display: inline-block;
         box-sizing: border-box;
         cursor: pointer;

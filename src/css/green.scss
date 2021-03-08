@@ -1,4 +1,4 @@
-$text:       rgb(209, 229, 207);
+$text:       rgb(209, 229, 207); $text_transp10: rgba(209, 229, 207, 0.1); $text_transp20: rgba(209, 229, 207, 0.2);
 $link:       rgb(200, 251, 195);
 $title:      rgb(228, 209, 163);
 $lightblack: rgb( 51,  72,  48);
@@ -69,6 +69,24 @@ $green5: rgb( 72,  99,  68); $green5_transp: rgba( 72,  99,  68, 0.700);
     a.leaflet-popup-close-button:hover {
       opacity: 0.5;
     }
+    // screenshot
+    .pine-screenshot {
+      > div {
+        > iframe {
+          background: repeating-linear-gradient(
+            -45deg,
+            transparent 0,
+            transparent 5px,
+            $text_transp10 5px,
+            $text_transp10 10px
+          );
+        }
+        // loading text
+        &::before {
+          color: $text_transp20;
+        }
+      }
+    }
   }
 
   // controls
@@ -95,7 +113,7 @@ $green5: rgb( 72,  99,  68); $green5_transp: rgba( 72,  99,  68, 0.700);
     &.pine-style {
       background-color: $green5_transp;
       border-color: transparent;
-      & > div {
+      > div {
         border-color: $lightwhite_transp;
       }
     }
