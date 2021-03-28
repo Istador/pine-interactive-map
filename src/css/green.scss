@@ -1,19 +1,19 @@
-$text:       rgb(209, 229, 207); $text_transp10: rgba(209, 229, 207, 0.1); $text_transp20: rgba(209, 229, 207, 0.2);
+$text:       rgb(209, 229, 207);
 $link:       rgb(200, 251, 195);
 $title:      rgb(228, 209, 163);
 $lightblack: rgb( 51,  72,  48);
 $black:      rgb( 21,  42,  18);
-$lightwhite: rgb(229, 255, 226); $lightwhite_transp: rgba(229, 255, 226, 0.2);
+$lightwhite: rgb(229, 255, 226); $lightwhite_transp: rgba($lightwhite, 0.2);
 $white:      #fff;
 
 $black2lightwhite: brightness(0) invert(1) sepia(2) saturate(2.3) hue-rotate(46deg);
 
 // light
-$green1: rgb(131, 171, 125); $green1_transp: rgba(131, 171, 125, 0.975);
+$green1: rgb(131, 171, 125); $green1_transp: rgba($green1, 0.975);
 $green2: rgb(101, 136,  96);
-$green3: rgb( 98, 132,  93); $green3_transp: rgba( 98, 132,  93, 0.800);
+$green3: rgb( 98, 132,  93); $green3_transp: rgba($green3, 0.800);
 $green4: rgb( 82,  99,  69);
-$green5: rgb( 72,  99,  68); $green5_transp: rgba( 72,  99,  68, 0.700);
+$green5: rgb( 72,  99,  68); $green5_transp: rgba($green5, 0.700);
 // dark
 
 #map {
@@ -77,13 +77,13 @@ $green5: rgb( 72,  99,  68); $green5_transp: rgba( 72,  99,  68, 0.700);
             -45deg,
             transparent 0,
             transparent 5px,
-            $text_transp10 5px,
-            $text_transp10 10px
+            rgba($text, 0.1) 5px,
+            rgba($text, 0.1) 10px
           );
         }
         // loading text
         &::before {
-          color: $text_transp20;
+          color: rgba($text, 0.2);
         }
       }
     }
