@@ -70,7 +70,7 @@ module.exports = {
       vault      : 'Voûtes',
     },
     food: {
-      '.'             : 'Nourritures',
+      '.'             : 'Aliments',
       alpafantmeat    : 'Viande de Alpafant',
       anurashroom     : 'Champi Anura',
       avianpepper     : 'Poivre d\'Avian',
