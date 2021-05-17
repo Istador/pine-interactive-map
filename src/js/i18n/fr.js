@@ -41,7 +41,7 @@ module.exports = {
   names: {
     area: {
       '.' : 'Zones',
-       1  : 'Maison', // Falaises instables
+       1  : 'Falaises Instables',
        2  : 'Bois du Coin',
        3  : 'Champs de Pollen',
        4  : 'Falaises Côtières',
