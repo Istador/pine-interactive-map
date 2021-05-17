@@ -40,7 +40,7 @@ module.exports = {
   },
   names: {
     area: {
-      '.' : 'Zones',
+      '.' : 'Zone',
        1  : 'Falaises Instables',
        2  : 'Bois du Coin',
        3  : 'Champs de Pollen',
@@ -64,10 +64,10 @@ module.exports = {
       21  : 'Bois Eloignés',
     },
     entrance: {
-      '.'        : 'Entrées', // ?
-      cave       : 'Grottes',
+      '.'        : 'Entrée',
+      cave       : 'Grotte',
       mohlenhill : 'Coline de Mohlen',
-      vault      : 'Voûtes',
+      vault      : 'Voûte',
     },
     food: {
       '.'             : 'Aliments',
@@ -93,14 +93,14 @@ module.exports = {
       waddletoothloin : 'Longe de Waddletooth',
     },
     idea: {
-      '.'    : 'Idées',
+      '.'    : 'Idée',
       chest  : 'Coffres',
       pickup : 'À ramasser',
       quest  : 'Quêtes',
     },
     item: {
-      '.'        : 'Objets',
-      equip      : 'Équipements',
+      '.'        : 'Objet',
+      equip      : 'Équipement',
       outfinding : 'Horsvention',
       quest      : 'Quêtes',
     },
@@ -130,11 +130,11 @@ module.exports = {
       waddletoothblubber : 'Gelée de Waddletooth',
     },
     mechanic: {
-      '.'            : 'Mécanismes',
-      door           : 'Portes',
-      electrotrigger : 'Déclencheurs électriques',
-      hittrigger     : 'Déclencheurs normaux',
-      lever          : 'Leviers',
+      '.'            : 'Mécanique',
+      door           : 'Porte',
+      electrotrigger : 'Déclencheur électrique',
+      hittrigger     : 'Déclencheur Normal',
+      lever          : 'Levier',
       pinsocket      : 'Prises de broche', // ??? check in-game name
     },
     nest: {
@@ -145,21 +145,21 @@ module.exports = {
       waddletooth : 'Waddletooth',
     },
     npc: {
-      '.'      : 'PNJs', // or « Personnages non-joueurs »
-      chief    : 'Chefs',
-      merchant : 'Marchants',
+      '.'      : 'PNJ', // or « Personnages non-joueurs »
+      chief    : 'Chef',
+      merchant : 'Marchant',
       quest    : 'Quêtes',
-      village  : 'Villages',
+      village  : 'Village',
     },
     spawn: {
-      '.'         : 'Points d\'apparition', // Points d'apparition
+      '.'         : 'Point d\'apparition',
       alpafant    : 'Alpafant',
       bleeker     : 'Bleeker',
       puffle      : 'Puffle',
       waddletooth : 'Waddletooth',
     },
     unique: {
-      '.'          : 'Objets unique',
+      '.'          : 'Objet unique',
       amphiscusorb : 'Orbes',
       journal      : 'Journal / Livre',
       keygraphite  : 'Graphite de Clé',
