@@ -70,7 +70,7 @@ module.exports = {
       vault      : 'Voûte',
     },
     food: {
-      '.'             : 'Aliments',
+      '.'             : 'Aliment',
       alpafantmeat    : 'Viande de Alpafant',
       anurashroom     : 'Champi Anura',
       avianpepper     : 'Poivre d\'Avian',
@@ -94,18 +94,18 @@ module.exports = {
     },
     idea: {
       '.'    : 'Idée',
-      chest  : 'Coffres',
+      chest  : 'Coffre',
       pickup : 'À ramasser',
-      quest  : 'Quêtes',
+      quest  : 'Quête',
     },
     item: {
       '.'        : 'Objet',
       equip      : 'Équipement',
       outfinding : 'Horsvention',
-      quest      : 'Quêtes',
+      quest      : 'Quête',
     },
     material: {
-      '.'                : 'Matériaux',
+      '.'                : 'Matériel',
       alpafantleather    : 'Cuir de Alpafant',
       beagalite          : 'Beagalite',
       bleekerantenna     : 'Antenne de Bleeker',
