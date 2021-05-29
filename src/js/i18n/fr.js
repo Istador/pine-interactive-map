@@ -66,7 +66,7 @@ module.exports = {
     entrance: {
       '.'        : 'Entrée',
       cave       : 'Grotte',
-      mohlenhill : 'Coline de Mohlen',
+      mohlenhill : 'Coline de Mohlen', // Beta only
       vault      : 'Voûte',
     },
     food: {
@@ -78,7 +78,7 @@ module.exports = {
       carrant         : 'Carseille',
       commonwheat     : 'Blé Commun',
       dunerice        : 'Riz de Dune',
-      edenfruit       : 'Fruit d\'Eden',
+      edenfruit       : 'Fruit d\'Eden', // Beta only
       fatplant        : 'Grotiron',
       leafdough       : 'Pâte Feuilletée',
       meageryam       : 'Patate Maigre',

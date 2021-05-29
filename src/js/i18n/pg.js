@@ -1,4 +1,43 @@
 module.exports = {
+  ui: {
+    //title          : 'Pine Interactive Map',
+    //zoom_in        : 'Zoom in',
+    //zoom_out       : 'Zoom out',
+    //fullscreen_on  : 'View Fullscreen',
+    //fullscreen_off : 'Exit Fullscreen',
+    //datasource     : 'Contribute',
+    //mark_seen      : 'Mark completed',
+    //unmark_seen    : 'Mark not completed',
+    //permalink      : 'Permalink',
+    styleTitle: {
+      seen: {
+        //show : 'Completed markers are shown normally',
+        //fade : 'Completed markers are faded out',
+        //hide : 'Completed markers are hidden',
+        //only : 'Only completed markers are shown',
+      },
+      unconfirmed: {
+        //show : 'Unconfirmed markers are shown normally',
+        //red  : 'Unconfirmed markers are tinted red',
+        //hide : 'Unconfirmed markers are hidden',
+        //only : 'Only unconfirmed markers are shown',
+      },
+    },
+  },
+  properties: {
+    //type        : 'Category',
+    //item        : 'Type',
+    //item_id     : 'Item-ID',
+    //amount      : 'Amount',
+    //x           : 'X',
+    //y           : 'Y',
+    //z           : 'Z',
+    //area        : 'Area',
+    //title       : 'Title',
+    //description : 'Description',
+    //source      : 'Source',
+    //confirmed   : 'Status',
+  },
   names: {
     area: {
       '.' : 'Área',
@@ -25,10 +64,10 @@ module.exports = {
       21  : 'Retiro da Floresta',
     },
     entrance: {
-      //'.'        : '',
+      //'.'        : 'Entrance',
       cave       : 'Caverna',
-      //mohlenhill : '',
-      //vault      : '',
+      //mohlenhill : 'Mohlen Hill', // Beta only
+      //vault      : 'Vault',
     },
     food: {
       '.'             : 'Alimento',
@@ -39,7 +78,7 @@ module.exports = {
       carrant         : 'Cemoura',
       commonwheat     : 'Trigo-comum',
       dunerice        : 'Duneçuz',
-      //edenfruit       : '',
+      //edenfruit       : 'Eden Fruit', // Beta only
       fatplant        : 'Gordosa',
       leafdough       : 'Pasta Folha',
       meageryam       : 'Ecãme',
@@ -55,15 +94,15 @@ module.exports = {
     },
     idea: {
       '.'    : 'Ideia',
-      //chest  : '',
-      //pickup : '',
-      //quest  : '',
+      //chest  : 'Chest',
+      //pickup : 'Pick up',
+      //quest  : 'Quest',
     },
     item: {
-      //'.'        : '',
-      //equip      : '',
-      //outfinding : '',
-      //quest      : '',
+      //'.'        : 'Item',
+      //equip      : 'Equipment',
+      //outfinding : 'Outfinding',
+      //quest      : 'Quest',
     },
     material: {
       '.'                : 'Material',
@@ -90,18 +129,26 @@ module.exports = {
       toothstone         : 'Plaquita',
       waddletoothblubber : 'Banha de Dorsa',
     },
+    mechanic: {
+      //'.'            : 'Mechanical',
+      //door           : 'Door',
+      //electrotrigger : 'Electrical Trigger',
+      //hittrigger     : 'Hit Trigger',
+      //lever          : 'Lever',
+      //pinsocket      : 'Pin Socket',
+    },
     nest: {
-      //'.'         : '',
+      //'.'         : 'Nest',
       alpafant    : 'Alpafante',
       bleeker     : 'Tretão',
       puffle      : 'Bombo',
       waddletooth : 'Dorsa',
     },
     npc: {
-      //'.'      : '',
-      //chief    : '',
-      //merchant : '',
-      //quest    : '',
+      //'.'      : 'NPC',
+      //chief    : 'Chief',
+      //merchant : 'Merchant',
+      //quest    : 'Quest',
       village  : 'Aldeia',
     },
     spawn: {
@@ -112,9 +159,9 @@ module.exports = {
       waddletooth : 'Dorsa',
     },
     unique: {
-      //'.'          : '',
+      //'.'          : 'Unique',
       amphiscusorb : 'Orbes dos Ampesce',
-      //journal      : '',
+      //journal      : 'Journal / Book',
       keygraphite  : 'Grafite de Chave',
     },
   },

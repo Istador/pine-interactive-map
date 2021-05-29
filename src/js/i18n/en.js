@@ -66,7 +66,7 @@ module.exports = {
     entrance: {
       '.'        : 'Entrance',
       cave       : 'Cave',
-      mohlenhill : 'Mohlen Hill',
+      mohlenhill : 'Mohlen Hill', // Beta only
       vault      : 'Vault',
     },
     food: {
@@ -78,7 +78,7 @@ module.exports = {
       carrant         : 'Carrant',
       commonwheat     : 'Commonwheat',
       dunerice        : 'Dunerice',
-      edenfruit       : 'Eden Fruit',
+      edenfruit       : 'Eden Fruit', // Beta only
       fatplant        : 'Fatplant',
       leafdough       : 'Leafdough',
       meageryam       : 'Meageryam',

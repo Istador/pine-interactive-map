@@ -1,4 +1,43 @@
 module.exports = {
+  ui: {
+    //title          : 'Pine Interactive Map',
+    //zoom_in        : 'Zoom in',
+    //zoom_out       : 'Zoom out',
+    //fullscreen_on  : 'View Fullscreen',
+    //fullscreen_off : 'Exit Fullscreen',
+    //datasource     : 'Contribute',
+    //mark_seen      : 'Mark completed',
+    //unmark_seen    : 'Mark not completed',
+    //permalink      : 'Permalink',
+    styleTitle: {
+      seen: {
+        //show : 'Completed markers are shown normally',
+        //fade : 'Completed markers are faded out',
+        //hide : 'Completed markers are hidden',
+        //only : 'Only completed markers are shown',
+      },
+      unconfirmed: {
+        //show : 'Unconfirmed markers are shown normally',
+        //red  : 'Unconfirmed markers are tinted red',
+        //hide : 'Unconfirmed markers are hidden',
+        //only : 'Only unconfirmed markers are shown',
+      },
+    },
+  },
+  properties: {
+    //type        : 'Category',
+    //item        : 'Type',
+    //item_id     : 'Item-ID',
+    //amount      : 'Amount',
+    //x           : 'X',
+    //y           : 'Y',
+    //z           : 'Z',
+    //area        : 'Area',
+    //title       : 'Title',
+    //description : 'Description',
+    //source      : 'Source',
+    //confirmed   : 'Status',
+  },
   names: {
     area: {
       '.' : 'Área',
@@ -25,10 +64,10 @@ module.exports = {
       21  : 'Arboledas Remotas',
     },
     entrance: {
-      //'.'        : '',
+      //'.'        : 'Entrance',
       cave       : 'Cueva',
-      //mohlenhill : '',
-      //vault      : '',
+      //mohlenhill : 'Mohlen Hill', // Beta only
+      //vault      : 'Vault',
     },
     food: {
       '.'             : 'Comida',
@@ -39,7 +78,7 @@ module.exports = {
       carrant         : 'Grosanahoria',
       commonwheat     : 'Trigo blando',
       dunerice        : 'Arroz de la duna',
-      //edenfruit       : '',
+      //edenfruit       : 'Eden Fruit', // Beta only
       fatplant        : 'Gordiplanta',
       leafdough       : 'Masa frondosa',
       meageryam       : 'Poconiato',
@@ -55,15 +94,15 @@ module.exports = {
     },
     idea: {
       '.'   : 'Idea',
-      //chest  : '',
-      //pickup : '',
-      //quest  : '',
+      //chest  : 'Chest',
+      //pickup : 'Pick up',
+      //quest  : 'Quest',
     },
     item: {
-      //'.'        : '',
-      //equip      : '',
-      //outfinding : '',
-      //quest      : '',
+      //'.'        : 'Item',
+      //equip      : 'Equipment',
+      //outfinding : 'Outfinding',
+      //quest      : 'Quest',
     },
     material: {
       '.'                : 'Materiales',
@@ -90,18 +129,26 @@ module.exports = {
       toothstone         : 'Piedra dental',
       waddletoothblubber : 'Grasa de Contodiente',
     },
+    mechanic: {
+      //'.'            : 'Mechanical',
+      //door           : 'Door',
+      //electrotrigger : 'Electrical Trigger',
+      //hittrigger     : 'Hit Trigger',
+      //lever          : 'Lever',
+      //pinsocket      : 'Pin Socket',
+    },
     nest: {
-      //'.'         : '',
+      //'.'         : 'Nest',
       alpafant    : 'Alpafante',
       bleeker     : 'Bleeker',
       puffle      : 'Nubesco',
       waddletooth : 'Contodiente',
     },
     npc: {
-      //'.'      : '',
-      //chief    : '',
-      //merchant : '',
-      //quest    : '',
+      //'.'      : 'NPC',
+      //chief    : 'Chief',
+      //merchant : 'Merchant',
+      //quest    : 'Quest',
       village  : 'Pueblo',
     },
     spawn: {
@@ -112,9 +159,9 @@ module.exports = {
       waddletooth : 'Contodiente',
     },
     unique: {
-      //'.'          : '',
+      //'.'          : 'Unique',
       amphiscusorb : 'Orbes de Anfibu',
-      //journal      : '',
+      //journal      : 'Journal / Book',
       keygraphite  : 'Grafito de Llave',
     },
   },

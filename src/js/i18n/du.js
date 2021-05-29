@@ -1,4 +1,43 @@
 module.exports = {
+  ui: {
+    //title          : 'Pine Interactive Map',
+    //zoom_in        : 'Zoom in',
+    //zoom_out       : 'Zoom out',
+    //fullscreen_on  : 'View Fullscreen',
+    //fullscreen_off : 'Exit Fullscreen',
+    //datasource     : 'Contribute',
+    //mark_seen      : 'Mark completed',
+    //unmark_seen    : 'Mark not completed',
+    //permalink      : 'Permalink',
+    styleTitle: {
+      seen: {
+        //show : 'Completed markers are shown normally',
+        //fade : 'Completed markers are faded out',
+        //hide : 'Completed markers are hidden',
+        //only : 'Only completed markers are shown',
+      },
+      unconfirmed: {
+        //show : 'Unconfirmed markers are shown normally',
+        //red  : 'Unconfirmed markers are tinted red',
+        //hide : 'Unconfirmed markers are hidden',
+        //only : 'Only unconfirmed markers are shown',
+      },
+    },
+  },
+  properties: {
+    //type        : 'Category',
+    //item        : 'Type',
+    //item_id     : 'Item-ID',
+    //amount      : 'Amount',
+    //x           : 'X',
+    //y           : 'Y',
+    //z           : 'Z',
+    //area        : 'Area',
+    //title       : 'Title',
+    //description : 'Description',
+    //source      : 'Source',
+    //confirmed   : 'Status',
+  },
   names: {
     area: {
       '.' : 'Gebied',
@@ -25,9 +64,9 @@ module.exports = {
       21  : 'Verre Bosrand',
     },
     entrance: {
-      //'.'        : '',
+      //'.'        : 'Entrance',
       cave       : 'Grot',
-      //mohlenhill : '',
+      //mohlenhill : 'Mohlen Hill', // Beta only
       vault      : 'Kluis',
     },
     food: {
@@ -39,7 +78,7 @@ module.exports = {
       carrant         : 'Krentel',
       commonwheat     : 'Gewoneweit',
       dunerice        : 'Duinrijst',
-      //edenfruit       : '',
+      //edenfruit       : 'Eden Fruit', // Beta only
       fatplant        : 'Vetplant',
       leafdough       : 'Bladerdeeg',
       meageryam       : 'Magerwortel',
@@ -55,15 +94,15 @@ module.exports = {
     },
     idea: {
       '.'    : 'Idee',
-      //chest  : '',
-      //pickup : '',
-      //quest  : '',
+      //chest  : 'Chest',
+      //pickup : 'Pick up',
+      //quest  : 'Quest',
     },
     item: {
-      //'.'        : '',
+      //'.'        : 'Item',
       equip      : 'Uitrusting',
       outfinding : 'Uitvinding',
-      //quest      : '',
+      //quest      : 'Quest',
     },
     material: {
       '.'                : 'Materialen',
@@ -90,18 +129,26 @@ module.exports = {
       toothstone         : 'Tandsteen',
       waddletoothblubber : 'Waddeltand Blubber',
     },
+    mechanic: {
+      //'.'            : 'Mechanical',
+      //door           : 'Door',
+      //electrotrigger : 'Electrical Trigger',
+      //hittrigger     : 'Hit Trigger',
+      //lever          : 'Lever',
+      //pinsocket      : 'Pin Socket',
+    },
     nest: {
-      //'.'         : '',
+      //'.'         : 'Nest',
       alpafant    : 'Alpafant',
       bleeker     : 'Bleeker',
       puffle      : 'Puffel',
       waddletooth : 'Waddeltand',
     },
     npc: {
-      //'.'      : '',
-      //chief    : '',
-      //merchant : '',
-      //quest    : '',
+      //'.'      : 'NPC',
+      //chief    : 'Chief',
+      //merchant : 'Merchant',
+      //quest    : 'Quest',
       village  : 'Dorp',
     },
     spawn: {
@@ -112,9 +159,9 @@ module.exports = {
       waddletooth : 'Waddeltand',
     },
     unique: {
-      //'.'          : '',
+      //'.'          : 'Unique',
       amphiscusorb : 'Amfiscus Bollen',
-      //journal      : '',
+      //journal      : 'Journal / Book',
       keygraphite  : 'Sleutelgrafiet',
     },
   },

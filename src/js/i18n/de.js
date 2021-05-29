@@ -8,6 +8,7 @@ module.exports = {
     datasource     : 'Beitragen',
     mark_seen      : 'Als erledigt markieren',
     unmark_seen    : 'Als unerledigt markieren',
+    permalink      : 'Permalink',
     styleTitle: {
       seen: {
         show : 'Erledigte Marker werden normal angezeigt',
@@ -26,11 +27,16 @@ module.exports = {
   properties: {
     type        : 'Kategorie',
     item        : 'Typ',
+    item_id     : 'Item-ID',
     amount      : 'Anzahl',
+    x           : 'X',
+    y           : 'Y',
+    z           : 'Z',
     area        : 'Bereich',
     title       : 'Bezeichnung',
     description : 'Beschreibung',
     source      : 'Quelle',
+    confirmed   : 'Status',
   },
   names: {
     area: {
@@ -60,7 +66,7 @@ module.exports = {
     entrance: {
       '.'        : 'Eingang',
       cave       : 'Höhle',
-      //mohlenhill : '',
+      mohlenhill : 'Mollerhügel', // Beta only
       vault      : 'Gruft',
     },
     food: {
@@ -72,7 +78,7 @@ module.exports = {
       carrant         : 'Carrant',
       commonwheat     : 'Brotweizen',
       dunerice        : 'Dünenreis',
-      edenfruit       : 'Edenfrucht',
+      edenfruit       : 'Edenfrucht', // Beta only
       fatplant        : 'Fettpflanze',
       leafdough       : 'Blattteig',
       meageryam       : 'Mageryams',
@@ -124,9 +130,12 @@ module.exports = {
       waddletoothblubber : 'Watschelzahn-Speck',
     },
     mechanic: {
-      '.'   : 'Mechanisch',
-      door  : 'Tür',
-      lever : 'Hebel',
+      '.'            : 'Mechanisch',
+      door           : 'Tür',
+      electrotrigger : 'Elektrischer Schalter',
+      hittrigger     : 'Zielscheibe',
+      lever          : 'Hebel',
+      pinsocket      : 'Pin Socket',
     },
     nest: {
       '.'         : 'Nest',

@@ -26,7 +26,7 @@ If you wish to reset all of the user data saved, just type the following into th
 localStorage.clear()
 ```
 
-### How to link to the Map?
+### How to link to the map?
 
 The map has 6 parameters, that can be given to the hash portion of the URL (meaning that they aren't send to the server, but are only evaluated by the browser):
 - `id`: integer, map-internal ID for every entry on the map. Permalinks can be found in the popups.
