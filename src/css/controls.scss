@@ -132,6 +132,12 @@
       height: unset !important;
       max-height: calc(100vh - 60px) !important;
       overflow-y: auto;
+      // hide if only one version
+      .leaflet-panel-layers-base {
+        > .leaflet-panel-layers-item:first-child:last-child {
+          display: none;
+        }
+      }
       // hr - between maps and overlays
       div.leaflet-panel-layers-separator {
         visibility: hidden;
