@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use 'img-icons.scss' as icon;
 @use './mixins.scss' as m;
 
@@ -60,14 +61,14 @@ div.leaflet-marker-pane > div.pine-marker
   @mixin tint($n) {
     @for $i from 0 to $n {
       &.pine-marker-tint.pine-marker-tint-#{$i} {
-        filter: saturate(0.8) hue-rotate(($i/$n)*360deg);
+        filter: saturate(0.8) hue-rotate(math.div($i, $n) * 360deg);
       }
     }
   }
 
   // areas
   &.pine-marker-area {
-    @include m.scaled(icon.$keygraphite, 10/32);
+    @include m.scaled(icon.$keygraphite, math.div(10, 32));
     background-image: unset;
     &.pine-marker-area-1  { background-color: #d477f5; }
     &.pine-marker-area-2  { background-color: #99c561; }
@@ -212,7 +213,7 @@ div.leaflet-marker-pane > div.pine-marker
     }
     // keygraphite
     &.pine-marker-unique-keygraphite {
-      @include m.scaled(icon.$keygraphite, 10/32);
+      @include m.scaled(icon.$keygraphite, math.div(10, 32));
     }
     // journal / book
     &.pine-marker-unique-journal {

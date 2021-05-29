@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use 'img-langs.scss'  as lang;
 @use 'img-styles.scss' as style;
 @use './mixins.scss' as m;
@@ -158,6 +159,6 @@
   $key     : str-slice($dynamic, 1, $pos - 1);
   $state   : str-slice($dynamic, $pos + 1);
   #map[data-#{$key}=#{$state}] div.pine-style > div.pine-style-#{$key} > span {
-    @include m.scaled($sprite, 18/32);
+    @include m.scaled($sprite, math.div(18, 32));
   }
 }
