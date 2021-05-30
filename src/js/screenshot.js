@@ -1,6 +1,7 @@
 const screenshot = (filename, container) => {
-  const div  = L.DomUtil.create('div', 'pine-screenshot', container)
-  const wrap = L.DomUtil.create('div', '', div)
+  const div   = L.DomUtil.create('div', 'pine-screenshot', container)
+  const wrap  = L.DomUtil.create('div', '', div)
+  const fname = filename.replace(/^File:/, '')
 
   // img.referrerpolicy doesn't work in IE11, so put it into an iframe with meta.referrer = never
   const iframe = L.DomUtil.create('iframe', '', wrap)
@@ -12,8 +13,8 @@ const screenshot = (filename, container) => {
       + '<meta name="referrer" content="never">'
       + '<style>*{overflow:hidden;margin:0;}</style>'
       + '</head><body>'
-      + `<a href="${__WIKI__}File:${filename}" target="_blank">`
-      + `<img src="${__WIKI__}Special:Redirect/file/${filename}?width=240&height=240" referrerpolicy="no-referrer">`
+      + `<a href="${__WIKI__}File:${fname}" target="_blank">`
+      + `<img src="${__WIKI__}Special:Redirect/file/${fname}?width=240&height=240" referrerpolicy="no-referrer">`
       + '</a></body></html>'
     )
     // stop browser thinking it's infinite loading
