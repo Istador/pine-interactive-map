@@ -10,6 +10,12 @@
   const { translate, langComponent, langControl } = require('./js/i18n')
   const { initHash } = require('./js/hash')
 
+  document.documentElement.className += (
+    ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
+    ? ' touch'
+    : ' notouch'
+  )
+
   // initialize the map
   const map = L.map('map', {
     crs                : L.CRS.Pine,

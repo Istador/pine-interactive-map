@@ -76,8 +76,14 @@
   div.leaflet-control {
     // language
     &.leaflet-languageselector-control {
+      padding: 6px 3px;
+      .leaflet-languageselector-languagesdiv {
+        display: flex;
+      }
       .leaflet-languageselector-langdiv {
         font-size: 0;
+        display: none;
+        margin: 0 3px;
       }
       @each $lang in lang.$langs-sprites {
         $key: nth($lang, 10);
@@ -86,9 +92,25 @@
         }
         &[data-selected="#{$key}"] {
           #languageselector_#{$key} {
-            filter: saturate(0.5);
-            opacity: 0.5;
+            display: block;
             cursor: default;
+          }
+        }
+        &[data-selected="#{$key}"] {
+          .leaflet-languageselector-languagesdiv {
+            html.notouch &:hover, html.touch &:focus {
+              #languageselector_#{$key} {
+                filter: saturate(0.5);
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+      .leaflet-languageselector-languagesdiv {
+        html.notouch &:hover, html.touch &:focus {
+          .leaflet-languageselector-langdiv {
+            display: block;
           }
         }
       }

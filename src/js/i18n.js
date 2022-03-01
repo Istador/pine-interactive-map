@@ -83,10 +83,19 @@ i18n.langControl = () => {
     position: 'bottomleft',
     callback: i18n.setLang,
   })
+
+  // tell the DOM which language is selected (for CSS rules)
   const setLangSelected = (lang) => languageControl._container.setAttribute('data-selected', lang)
   i18n.onLangChange(setLangSelected)
   setLangSelected(i18n.getLang())
+
+  // add localized titles to the flag icons
   Array.from(languageControl._container.children[0].children).forEach(c => c.setAttribute('title', c.innerHTML))
+
+  // make the container focusable and unfocus it after changing the language (to expand/collapse the menu on mobile)
+  languageControl._container.children[0].setAttribute('tabindex', '0')
+  i18n.onLangChange(() => languageControl._container.children[0].blur())
+
   return languageControl
 }
 
