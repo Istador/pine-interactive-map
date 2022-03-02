@@ -1,0 +1,67 @@
+name: gh-pages
+
+on:
+  push:
+    branches: [ public ]
+  pull_request:
+    branches: [ public ]
+  workflow_dispatch: # or manual
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: checkout
+      uses: actions/checkout@v2
+      with:
+        ref: public
+        fetch-depth: 1
+        submodules: false
+
+    - name: load img submodule
+      run: git submodule update --init --depth 1 -- img
+
+    - name: install node 14
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14
+
+    - name: install node_modules
+      run: npm ci
+
+    - name: build static files
+      run: npm run build
+      env:
+        IMGMODE  : github
+        WIKI     : https://pine.fandom.com/wiki/
+        VERSIONS : '["Version_1.0"]'
+        DATAMODE : wiki
+        SOURCE   : https://pine.fandom.com/wiki/Interactive_Map
+        JSON     : https://pine.fandom.com/api.php
+
+    - name: build artifacts
+      run: tar -cvf artifact.tar ./index.html ./build/ ./img/map/water.png
+
+    - name: upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: github-pages
+        path: artifact.tar
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+    - name: deploy artifacts to github page
+      uses: actions/deploy-pages@v1
+      id: deployment
