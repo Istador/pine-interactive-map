@@ -1,4 +1,4 @@
-const screenshot = (filename, container) => {
+const screenshot = (filename, container, article = '') => {
   const div   = L.DomUtil.create('div', 'pine-screenshot', container)
   const wrap  = L.DomUtil.create('div', '', div)
   const fname = filename.replace(/^File:/, '')
@@ -13,7 +13,7 @@ const screenshot = (filename, container) => {
       + '<meta name="referrer" content="never">'
       + '<style>*{overflow:hidden;margin:0;}</style>'
       + '</head><body>'
-      + `<a href="${__WIKI__}File:${fname}" target="_blank">`
+      + `<a href="${__WIKI__}${article}?file=${fname}" target="_blank">`
       + `<img src="${__WIKI__}Special:Redirect/file/${fname}?width=240&height=240" referrerpolicy="no-referrer">`
       + '</a></body></html>'
     )

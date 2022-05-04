@@ -46,7 +46,7 @@ const popup = (area) => () => {
   title.innerHTML = type + ' - ' + name
 
   // Screenshots
-  screenshot('Glossary-Area-' + wiki + '.png', div)
+  screenshot('Glossary-Area-' + wiki + '.png', div, wiki)
 
   // add all properties to the table
   const row = {

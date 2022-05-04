@@ -72,8 +72,12 @@ const transform = {
           obj[key + '_html'] = val
         }
 
+        if ([ 'title', 'item', 'type' ].includes(key) && sentence.data.links) {
+          obj[key + '_link'] = sentence.data.links[0].page.replace(' ', '_')
+        }
+
         // round coords
-        if (['x', 'y', 'z'].includes(key)) {
+        if ([ 'x', 'y', 'z' ].includes(key)) {
           obj[key] = Math.round(obj[key] * 100) / 100
         }
       }
