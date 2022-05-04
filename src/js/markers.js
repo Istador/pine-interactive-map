@@ -67,7 +67,7 @@ const row2marker = (row) => L.marker(
     ))
   }
 )
-const dont_show = [ 'seen', 'hasUniqueID', 'screenshot', 'title_link', 'item_link', 'type_link' ]
+const dont_show = [ 'seen', 'hasUniqueID', 'screenshot', 'screenshot_page', 'title_link', 'item_link', 'type_link' ]
 const showProp = (prop) => ! dont_show.includes(prop) && ! /_html$/.test(prop)
 
 const showCompleteButton = (row) => (
@@ -88,7 +88,7 @@ const popup = (row, marker) => {
   title.innerHTML = type2name(row.type) + ' - ' + item2name(row.type)(row.item)
   // Screenshots
   if (row.screenshot) {
-    screenshot(row.screenshot.replace(' ', '_'), div, row.title_link || row.item_link || row.type_link)
+    screenshot(row.screenshot.replace(' ', '_'), div, row.screenshot_page || row.title_link || row.item_link || row.type_link)
   }
   // add all properties to the table
   const tbody = L.DomUtil.create('tbody', '', L.DomUtil.create('table', '', div))

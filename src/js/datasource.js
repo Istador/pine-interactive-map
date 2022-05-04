@@ -72,8 +72,8 @@ const transform = {
           obj[key + '_html'] = val
         }
 
-        if ([ 'title', 'item', 'type' ].includes(key) && sentence.data.links) {
-          obj[key + '_link'] = sentence.data.links[0].page.replace(' ', '_')
+        if ([ 'title', 'item', 'type' ].includes(key) && row.screenshot && sentence.data.links) {
+          obj[key + '_link'] = sentence.data.links[0].page
         }
 
         // round coords

@@ -2,6 +2,7 @@ const screenshot = (filename, container, article = '') => {
   const div   = L.DomUtil.create('div', 'pine-screenshot', container)
   const wrap  = L.DomUtil.create('div', '', div)
   const fname = filename.replace(/^File:/, '')
+  const page  = article.replace(' ', '_')
 
   // img.referrerpolicy doesn't work in IE11, so put it into an iframe with meta.referrer = never
   const iframe = L.DomUtil.create('iframe', '', wrap)
@@ -13,7 +14,7 @@ const screenshot = (filename, container, article = '') => {
       + '<meta name="referrer" content="never">'
       + '<style>*{overflow:hidden;margin:0;}</style>'
       + '</head><body>'
-      + `<a href="${__WIKI__}${article}?file=${fname}" target="_blank">`
+      + `<a href="${__WIKI__}${page}?file=${fname}" target="_blank">`
       + `<img src="${__WIKI__}Special:Redirect/file/${fname}?width=240&height=240" referrerpolicy="no-referrer">`
       + '</a></body></html>'
     )
