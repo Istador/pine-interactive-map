@@ -16,7 +16,8 @@ require('dotenv').config()
 
 fs.existsSync('./build/') || fs.mkdirSync('./build/')
 fs.copyFileSync('./node_modules/axios/dist/axios.js', './build/axios.js')
-fs.copyFileSync('./node_modules/wtf_wikipedia/builds/wtf_wikipedia.js', './build/wtf_wikipedia.js')
+fs.copyFileSync('./node_modules/wtf_wikipedia/builds/wtf_wikipedia-client.min.js', './build/wtf_wikipedia.js')
+fs.copyFileSync('./node_modules/wtf-plugin-html/builds/wtf-plugin-html.cjs', './build/wtf_html.js')
 
 const spritesmith = (dir, key, name) => new SpritesmithPlugin({
   src: {

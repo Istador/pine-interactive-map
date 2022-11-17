@@ -2,26 +2,29 @@ const escapeHtml = (str) => str.replace(/[&<>'"]/g, x => '&#' + x.charCodeAt(0) 
 
 const { capitalize, mapOldBoth } = require('./names')
 const { version } = require('./selection')
+const { lazy } = require('./util')
 
 const text2number = (text) => {
   const num = Number(text.replace(',', '.'))
   return ( isNaN(num) ? text : num )
 }
 
+const wikiUrl = lazy(() => new URL(__JSON__))
+
 const fetch = {
   spreadsheet: () => window.axios.get(`${__JSON__}`.replace('${VERSION}', version())),
   wiki: () => window.wtf.fetch(
     'Interactive Map/' + version().replace('.', '_'),
-    'pine',
     {
-      wiki             : __JSON__,
-      wikiUrl          : __JSON__,
+      domain : wikiUrl().hostname,
+      path   : wikiUrl().pathname.substr(1),
       follow_redirects : true,
     },
   ),
 }
 
 const transform = {
+  // Google Sheets v3 API has been turned down, so this doesn't work anymore
   spreadsheet: ({ data: { feed: { entry: entries } } }) => {
     const keys = {}
     const objs = {}
@@ -49,7 +52,7 @@ const transform = {
     return Object.values(objs)
   },
   wiki: async (document) => {
-    const table = document.tables(0).data
+    const table = document.tables()[0].data
     const out = []
     for (const i in table) {
       const row = table[i]
@@ -65,15 +68,15 @@ const transform = {
           ? val.replace(/[\_\- ]/g, '').toLowerCase()
           : val
         )
-        if (sentence.data.links || sentence.data.fmt) {
+        if (sentence.data.links.length || sentence.data.fmt) {
           obj[key + '_html'] = sentence.html({formatting: true}).replace(/ href="\.\//g, ` target="_blank" href="${__WIKI__}`)
         }
         else if (key === 'type' || key === 'item') {
           obj[key + '_html'] = val
         }
 
-        if ([ 'title', 'item', 'type' ].includes(key) && row.screenshot && sentence.data.links) {
-          obj[key + '_link'] = sentence.data.links[0].page
+        if ([ 'title', 'item', 'type' ].includes(key) && row.screenshot && sentence.data.links.length) {
+          obj[key + '_link'] = sentence.data.links[0].data.page
         }
 
         // round coords
