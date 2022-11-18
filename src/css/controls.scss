@@ -176,6 +176,12 @@
           vertical-align: middle;
         }
       }
+      // group checkbox
+      .leaflet-panel-layers-grouplabel .leaflet-panel-layers-selector {
+        visibility: visible;
+        position: relative;
+        right: unset;
+      }
     }
   }
 }

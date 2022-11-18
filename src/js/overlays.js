@@ -57,7 +57,7 @@ const initLayerControl = (map) => {
       {
         title: translate('ui', 'title'),
         collapsibleGroups: true,
-        groupCheckboxes: true,
+        selectorGroup: true,
         compact: true,
       }
     )

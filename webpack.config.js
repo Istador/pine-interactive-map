@@ -49,8 +49,8 @@ module.exports = {
     leaflet: [
       './node_modules/leaflet/dist/leaflet.js',
       './node_modules/leaflet/dist/leaflet.css',
-      './node_modules/@istador/leaflet-panel-layers/dist/leaflet-panel-layers.src.js',
-      './node_modules/@istador/leaflet-panel-layers/dist/leaflet-panel-layers.src.css',
+      './node_modules/leaflet-panel-layers/dist/leaflet-panel-layers.src.js',
+      './node_modules/leaflet-panel-layers/dist/leaflet-panel-layers.src.css',
       './node_modules/leaflet-fullscreen/dist/Leaflet.fullscreen.js',
       './node_modules/leaflet-fullscreen/dist/leaflet.fullscreen.css',
       './node_modules/leaflet-languageselector/leaflet-languageselector.js',
