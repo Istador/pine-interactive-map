@@ -79,6 +79,10 @@ const transform = {
           obj[key + '_link'] = sentence.data.links[0].data.page
         }
 
+        if (key === 'screenshot' && val) {
+          obj[key] = sentence.data.wiki.replace(/^\[\[:File:/, '').replace(/\]\]$/, '')
+        }
+
         // round coords
         if ([ 'x', 'y', 'z' ].includes(key)) {
           obj[key] = Math.round(obj[key] * 100) / 100
